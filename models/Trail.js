@@ -26,7 +26,6 @@ Trail.init(
         key: 'id'
       }
     },
-
-
+    
   }
 )

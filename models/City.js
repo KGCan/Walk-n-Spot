@@ -17,7 +17,5 @@ City.init(
         key: 'id'
       }
     },
-
-
   }
 )

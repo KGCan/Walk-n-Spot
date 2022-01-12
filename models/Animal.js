@@ -12,5 +12,11 @@ Animal.init(
       allowNull: false,
     },
 
+    sighting_id: {
+      references: {
+        model: 'sighting',
+        key: 'id'
+      }
+    },
   }
 )
