@@ -34,8 +34,13 @@ Trail.init(
         model: 'animal',
         key: 'id'
       }
-    },
-    
+    }, 
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'trail'
   }
 )
 

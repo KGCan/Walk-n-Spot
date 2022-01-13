@@ -19,11 +19,19 @@ City.init(
     },
 
     trail_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'trail',
         key: 'id'
       }
     },
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'city'
   }
 )
 
