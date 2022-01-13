@@ -1,3 +1,10 @@
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+// create our Animal model
+class Animal extends Model {
+}
+
 Animal.init(
   {
     id: {
@@ -20,3 +27,5 @@ Animal.init(
     },
   }
 )
+
+module.exports = Animal;

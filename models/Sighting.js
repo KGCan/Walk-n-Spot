@@ -1,3 +1,10 @@
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+// create our Sighting model
+class Sighting extends Model {
+}
+
 Sighting.init(
     {
         id: {
@@ -35,3 +42,5 @@ Sighting.init(
         },
     }
 )
+
+module.exports = Sighting;

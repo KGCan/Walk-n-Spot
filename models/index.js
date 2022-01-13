@@ -1,4 +1,8 @@
 const User = require("./User");
+const Trail = require("./Trail")
+const City = require("./City")
+const Sighting = require("./Sighting")
+const Animal = require("./Animal")
 
 City.hasMany(Trail, {
 
@@ -37,3 +41,4 @@ Sighting.belongsToMany(Animal, {
 });
 
 
+module.exports = {Trail, City, Animal, User, Sighting};
