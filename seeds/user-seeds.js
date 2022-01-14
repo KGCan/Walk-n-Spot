@@ -13,7 +13,7 @@ const userData = [
     },
     {
         username: 'fred8910',
-        email: 'fred@example.com',
+        email: 'fred252@example.com',
         password: '8910'
     },
     {
@@ -23,7 +23,7 @@ const userData = [
     },
     {
         username: 'peter1314',
-        email: 'mary@example.com',
+        email: 'mary5@example.com',
         password: '1314'
     },
     {
@@ -33,6 +33,6 @@ const userData = [
     }
 ]
 
-const seedUsers = () => Trail.bulkCreate(userData);
+const seedUsers = () => User.bulkCreate(userData);
 
 module.exports = seedUsers;
