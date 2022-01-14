@@ -1,4 +1,3 @@
-
 const User = require("./User");
 const Trail = require("./Trail")
 // const City = require("./City")
@@ -14,9 +13,16 @@ const TrailAnimal = require("./TrailAnimal");
 //     foreignKey: 'city_id'
 // });
 
+
+
+
+
+
+
 Animal.belongsToMany(Trail, {
   through: TrailAnimal,
   foreignKey: 'animal_id'
+
 });
 
 Trail.belongsToMany(Animal, {
@@ -40,6 +46,23 @@ TrailAnimal.belongsTo(Animal, {
   foreignKey: 'animal_id'
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 User.hasMany(Trail, {
     foreignKey: 'user_id'
 });
@@ -47,15 +70,15 @@ User.hasMany(Trail, {
 Trail.hasMany(User, {
   foreignKey: 'trail_id'
 });
-
+*/
 // Trail.hasMany(User, {
 //   foreignKey: 'user_id'
 // });
-
+/*
 Trail.belongsTo(User, {
     foreignKey: 'user_id'
 });
-
+*/
 // User.hasMany(Sighting, {
 
 // });
