@@ -1,12 +1,3 @@
-// import important parts of sequelize library
-const { Model, DataTypes } = require('sequelize');
-// import our database connection from config.js
-const sequelize = require('../config/connection');
-
-// Initialize Trail model (table) by extending off Sequelize's Model class
-class Trail extends Model { }
-
-
 Trail.init(
   {
     id: {
@@ -34,7 +25,7 @@ Trail.init(
 
     animal_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'animal',
         key: 'id'
@@ -49,4 +40,6 @@ Trail.init(
   }
 )
 
-module.exports = Trail;
+
+  }
+)

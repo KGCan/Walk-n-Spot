@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User, Animal, Trail, Sighting, City } = require("../../models");
+
+
 // GET /api/users
 router.get('/', (req, res) => {
   // Access our User model and run .findAll() method)
@@ -12,51 +14,55 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
+
 // GET /api/users/1
 router.get('/:id', (req, res) => {
-    User.findOne({
-        attributes: { exclude: ['password'] },
-        where: {
-            id: req.params.id
-        },
-        include: [
-          {
-            model: Trail,
-            attributes: ['id', 'trail_name', ],
-            include: {
-                model: Animal,
-                attributes: ['id', 'animal_name', ]
-            }
-          },
-        //   {
-        //     model: Comment,
-        //     attributes: ['id', 'comment_text', 'created_at'],
-        //     include: {
-        //       model: Post,
-        //       attributes: ['title']
-        //     }
-        //   },
-        //   {
-        //     model: Post,
-        //     attributes: ['title'],
-        //     through: Vote,
-        //     as: 'voted_posts'
-        //   }
-        ]
-        })
-        .then(userData => {
-            if (!userData) {
-            res.status(404).json({ message: 'User not found' });
-            return;
-            }
-            res.json(userData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+  User.findOne({
+    attributes: { exclude: ['password'] },
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {
+        model: Trail,
+        attributes: ['id', 'trail_name',],
+        include: {
+          model: Animal,
+          attributes: ['id', 'animal_name',]
+        }
+      },
+      //   {
+      //     model: Comment,
+      //     attributes: ['id', 'comment_text', 'created_at'],
+      //     include: {
+      //       model: Post,
+      //       attributes: ['title']
+      //     }
+      //   },
+      //   {
+      //     model: Post,
+      //     attributes: ['title'],
+      //     through: Vote,
+      //     as: 'voted_posts'
+      //   }
+    ]
+  })
+    .then(userData => {
+      if (!userData) {
+        res.status(404).json({ message: 'User not found' });
+        return;
+      }
+      res.json(userData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 // POST /api/users
+
 // router.post('/',  (req, res) => {
 //   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 //   User.create({
@@ -119,7 +125,7 @@ router.post('/login',  (req, res) => {
     });
   });
 });
-router.post('/logout',  (req, res) => {
+router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -130,15 +136,15 @@ router.post('/logout',  (req, res) => {
   }
 });
 // PUT /api/users/1
-router.put('/:id',  (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-    // pass in req.body instead to only update what's passed through
-    User.update(req.body, {
-      individualHooks: true,
-      where: {
-        id: req.params.id
-      }
-    })
+router.put('/:id', (req, res) => {
+  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  // pass in req.body instead to only update what's passed through
+  User.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id
+    }
+  })
 });
 // DELETE /api/users/1
 router.delete('/:id', (req, res) => {
