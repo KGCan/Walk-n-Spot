@@ -27,6 +27,10 @@ Animal.init(
         key: 'id'
       }
     },
+
+    // counter: {
+
+    // }
   },
 
   {

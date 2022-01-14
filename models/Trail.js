@@ -21,10 +21,15 @@ Trail.init(
       allowNull: false,
     },
 
-    coordinates: {
+
+    lat: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
 
+    lon: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
 
     animal_id: {
