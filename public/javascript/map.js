@@ -60,9 +60,8 @@ async function commentFormHandler(event) {
         });
 
         if (response.ok) {
-            const coordinates = coordinates.split(" ,");
-            Add_Map(coordinates[0], coordinates[1]);
-            AddMarker()
+            Add_Map(lat, lon);
+            AddMarker(lat, lon);
         document.location.reload();
         } else {
         alert(response.statusText);
