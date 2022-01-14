@@ -1,5 +1,3 @@
-// const UserTrail = sequelize.define('UserTrails', {}, { timestamps: false });
-
 // imp primary parts of sequelize lib
 const { Model, DataTypes } = require('sequelize');
 
@@ -11,28 +9,31 @@ const sequelize = require('../config/connection');
 class UserTrail extends Model { }
 
 //create Junction Model/join/Through Table
-UserTrail.init({
-  id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  user_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: 'user',
-      key: 'id'
+
+UserTrail.init(
+  // define columns
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    },
+    trail_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'trail',
+        key: 'id'
+      }
     }
   },
-  trail_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: 'trail',
-      key: 'id'
-    }
-  }
-},
   // 2nd param of init
   {
     sequelize,

@@ -6,7 +6,7 @@ const { User, Animal, Trail, } = require("../../models");
 router.get('/', (req, res) => {
   // Access our User model and run .findAll() method)
   User.findAll({
-    // attributes: { exclude: ['password'] },
+    attributes: { exclude: ['password'] },
     // // attributes: ['id', 'username', 'email'],
     include: {
       model: Trail,
