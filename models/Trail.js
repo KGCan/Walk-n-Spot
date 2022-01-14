@@ -1,3 +1,12 @@
+const { Model, DataTypes } = require('sequelize');
+const { isModuleNamespaceObject } = require('util/types');
+const sequelize = require('../config/connection');
+
+// create our User model
+class Trail extends Model { }
+
+
+
 Trail.init(
   {
     id: {
@@ -34,12 +43,15 @@ Trail.init(
         model: 'animal',
         key: 'id'
       }
-    }, 
+    },
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'trail'
   }
 )
+
+module.exports = Trail

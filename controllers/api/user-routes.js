@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Animal, Trail,  } = require("../../models");
+const { User, Animal, Trail, } = require("../../models");
 // GET /api/users
 router.get('/', (req, res) => {
   // Access our User model and run .findAll() method)
@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 
 // GET /api/users/1
@@ -99,7 +98,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/login',  (req, res) => {
+router.post('/login', (req, res) => {
   User.findOne({
     where: {
       email: req.body.email
