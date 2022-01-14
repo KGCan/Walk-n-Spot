@@ -1,0 +1,27 @@
+const seedAnimal = require('./animal-seeds');
+const seedTrail = require('./trail-seeds');
+const seedCity = require('./city-seeds');
+const seedUser = require('./user-seeds');
+
+const sequelize = require('../config/connection');
+
+const seedAll = async () => {
+  await sequelize.sync({ force: true });
+  console.log('\n----- DATABASE SYNCED -----\n');
+
+  await seedAnimal();
+  console.log('\n----- Animals SEEDED -----\n');
+
+  await seedTrail();
+  console.log('\n----- Trails SEEDED -----\n');
+
+  await seedCity();
+  console.log('\n----- Cities SEEDED -----\n');
+
+  await seedUser();
+  console.log('\n----- User SEEDED -----\n');
+
+  process.exit(0);
+};
+
+seedAll();
