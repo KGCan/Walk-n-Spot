@@ -1,44 +1,46 @@
+
 const User = require("./User");
-const Trail = require("./Trail")
-const City = require("./City")
-const Sighting = require("./Sighting")
-const Animal = require("./Animal")
+// const Trail = require("./Trail")
+// const City = require("./City")
+// const Sighting = require("./Sighting")
+// const Animal = require("./Animal")
 
-City.hasMany(Trail, {
+// City.hasMany(Trail, {
+//     foreignKey: 'city_id'
+// });
 
-});
-
-Trail.belongsTo(City, {
-
-});
-
-Animal.belongsToMany(Trail, {
-
-});
-
-Trail.hasMany(Animal, {
-
-});
-
-User.hasMany(Trail, {
-
-});
-
-Trail.hasMany(User, {
-
-});
-
-User.hasMany(Sighting, {
-
-});
-
-Sighting.belongsToMany(User, {
-
-});
-
-Sighting.belongsToMany(Animal, {
-
-});
+// Trail.belongsTo(City, {
+//     foreignKey: 'city_id'
+// });
 
 
-module.exports = {Trail, City, Animal, User, Sighting};
+// Animal.belongsToMany(Trail, {
+//     through: 
+// });
+
+// Trail.hasMany(Animal, {
+
+// });
+
+// User.hasMany(Trail, {
+//     foreignKey: 'user_id'
+// });
+
+// Trail.belongsTo(User, {
+//     foreignKey: 'user_id'
+// });
+
+// User.hasMany(Sighting, {
+
+// });
+
+// Sighting.belongsToMany(User, {
+
+// });
+
+// Sighting.belongsToMany(Animal, {
+
+// });
+
+
+module.exports = {User};
