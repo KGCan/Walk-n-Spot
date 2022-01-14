@@ -9,30 +9,33 @@ const UserTrail = require("./UserTrail")
 
 
 //   -------   Trail & User Associations Start -------
-User.belongsToMany(Trail, {
-  through: UserTrail,
-  // foreignKey: 'user_id'
-});
 
 Trail.belongsToMany(User, {
   through: UserTrail,
-  // foreignKey: 'trail_id'
+  foreignKey: 'trail_id'
+});
+
+User.belongsToMany(Trail, {
+  through: UserTrail,
+  foreignKey: 'user_id'
 });
 
 
 
-User.hasMany(UserTrail, {
-  // foreignKey: 'user_id'
-})
-UserTrail.belongsTo(User, {
-  // foreignKey: 'user_id'
-});
-Trail.hasMany(UserTrail, {
-  // foreignKey: 'trail_id'
-})
-UserTrail.belongsTo(Trail, {
-  // foreignKey: 'trail_id'
-});
+
+
+// User.hasMany(UserTrail, {
+//   // foreignKey: 'user_id'
+// })
+// UserTrail.belongsTo(User, {
+//   // foreignKey: 'user_id'
+// });
+// Trail.hasMany(UserTrail, {
+//   // foreignKey: 'trail_id'
+// })
+// UserTrail.belongsTo(Trail, {
+//   // foreignKey: 'trail_id'
+// });
 
 
 // User.hasMany(Trail, {
@@ -64,21 +67,21 @@ Trail.belongsToMany(Animal, {
   foreignKey: 'trail_id'
 });
 
-Trail.hasMany(TrailAnimal, {
-  foreignKey: 'trail_id'
-})
+// Trail.hasMany(TrailAnimal, {
+//   foreignKey: 'trail_id'
+// })
 
-TrailAnimal.belongsTo(Trail, {
-  foreignKey: 'trail_id'
-});
+// TrailAnimal.belongsTo(Trail, {
+//   foreignKey: 'trail_id'
+// });
 
-Animal.hasMany(TrailAnimal, {
-  foreignKey: 'animal_id'
-})
+// Animal.hasMany(TrailAnimal, {
+//   foreignKey: 'animal_id'
+// })
 
-TrailAnimal.belongsTo(Animal, {
-  foreignKey: 'animal_id'
-})
+// TrailAnimal.belongsTo(Animal, {
+//   foreignKey: 'animal_id'
+//})
 //  ------- Trail &  Animal Associations END --------
 
 
