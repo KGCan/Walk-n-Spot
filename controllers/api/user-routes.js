@@ -62,23 +62,46 @@ router.get('/:id', (req, res) => {
     });
 });
 // POST /api/users
-router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-  User.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password
-  })
-    .then(userData => {
-      req.session.save(() => {
-        req.session.user_id = userData.id;
-        req.session.username = userData.username;
-        req.session.loggedIn = true;
-        res.json(userData);
-      });
-    })
+
+// router.post('/',  (req, res) => {
+//   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+//   User.create({
+//     username: req.body.username,
+//     email: req.body.email,
+//     password: req.body.password
+//   })
+//     .then(userData => {
+//       req.session.save(() => {
+//         req.session.user_id = userData.id;
+//         req.session.username = userData.username;
+//         req.session.loggedIn = true;
+//         res.json(userData);
+//       });
+//     })
+// });
+
+
+router.post('/', async (req, res) => {
+  try {
+    const newUser = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    req.session.save(() => {
+      req.session.userId = newUser.id;
+      req.session.username = newUser.username;
+      req.session.loggedIn = true;
+
+      res.json(newUser);
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
-router.post('/login', (req, res) => {
+
+router.post('/login',  (req, res) => {
   User.findOne({
     where: {
       email: req.body.email

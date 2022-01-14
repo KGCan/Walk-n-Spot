@@ -20,11 +20,24 @@ Animal.init(
     },
 
     sighting_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'sighting',
         key: 'id'
       }
     },
+
+    // counter: {
+
+    // }
+  },
+
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'animal'
   }
 )
 
