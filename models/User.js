@@ -37,7 +37,15 @@ User.init(
       validate: {
         len: [4]
       }
-    }
+    },
+    // trail_id: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'trail',
+    //     key: 'id'
+    //   }
+    //}
   },
   {
     hooks: {
