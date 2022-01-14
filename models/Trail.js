@@ -21,6 +21,10 @@ Trail.init(
       allowNull: false,
     },
 
+    city_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
     lat: {
       type: DataTypes.STRING,
