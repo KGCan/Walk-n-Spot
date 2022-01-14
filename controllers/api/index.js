@@ -9,9 +9,9 @@ const animalRoutes = require('./animal-routes.js');
 
 
 router.use('/user', userRoutes);
-// router.use('/trail', trailRoutes);
+router.use('/trail', trailRoutes);
 // router.use('/sighting', sightingRoutes);
 // router.use('/city', cityRoutes);
-// router.use('/animal', animalRoutes);
+router.use('/animal', animalRoutes);
 
 module.exports = router;

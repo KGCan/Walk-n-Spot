@@ -1,9 +1,9 @@
 
 const User = require("./User");
-// const Trail = require("./Trail")
+const Trail = require("./Trail")
 // const City = require("./City")
 // const Sighting = require("./Sighting")
-// const Animal = require("./Animal")
+const Animal = require("./Animal")
 
 // City.hasMany(Trail, {
 //     foreignKey: 'city_id'
@@ -43,4 +43,4 @@ const User = require("./User");
 // });
 
 
-module.exports = {User};
+module.exports = {User, Trail, Animal} 

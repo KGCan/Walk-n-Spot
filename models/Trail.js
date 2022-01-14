@@ -12,6 +12,10 @@ Trail.init(
       allowNull: false,
     },
 
+    city_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
     lat: {
       type: DataTypes.STRING,
@@ -37,9 +41,5 @@ Trail.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'trail'
-  }
-)
-
-
   }
 )
