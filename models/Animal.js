@@ -17,7 +17,7 @@ Animal.init(
     animal_name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }
 
     // sighting_id: {
     //   type: DataTypes.INTEGER,

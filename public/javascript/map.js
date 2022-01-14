@@ -49,14 +49,15 @@ async function commentFormHandler(event) {
 
     if (comment_text) {
         const response = await fetch('/api/city', {
-        method: 'GET',
-        body: JSON.stringify({
-            post_id,
-            comment_text
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+            method: 'GET',
+            body: JSON.stringify({
+                trail_name,
+                lat,
+                lon
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
 
         if (response.ok) {
