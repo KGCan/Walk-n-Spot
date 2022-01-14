@@ -13,9 +13,16 @@ const TrailAnimal = require("./TrailAnimal");
 //     foreignKey: 'city_id'
 // });
 
+
+
+
+
+
+
 Animal.belongsToMany(Trail, {
   through: TrailAnimal,
   foreignKey: 'animal_id'
+
 });
 
 Trail.belongsToMany(Animal, {
@@ -23,21 +30,11 @@ Trail.belongsToMany(Animal, {
   foreignKey: 'trail_id'
 });
 
-Trail.hasMany(TrailAnimal, {
-  foreignKey: 'trail_id'
-})
 
-TrailAnimal.belongsTo(Trail, {
-  foreignKey: 'trail_id'
-});
 
-Animal.hasMany(TrailAnimal, {
-  foreignKey: 'animal_id'
-})
 
-TrailAnimal.belongsTo(Animal, {
-  foreignKey: 'animal_id'
-})
+
+
 
 /*
 User.hasMany(Trail, {
