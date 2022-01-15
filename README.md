@@ -54,5 +54,27 @@ Find your favorite animals on your hike
 
 #### Sites We Used or Were Inspired By
 
-If we use picks form here we need to give credit:
-https://unsplash.com/s/photos/trail
+* https://unsplash.com/s/photos/trail
+* https://firebase.google.com/
+* https://www.mapbox.com/showcase/alltrails
+* https://mapsplatform.google.com/pricing/
+* https://bestlifeonline.com/animal-puns/
+* https://leanylabs.com/blog/npm-packages-for-nodejs/
+* https://day.js.org/
+* validator
+* https://www.answers.tv/hike-seek
+* https://reiparkscaliforniahikeandseek.splashthat.com/
+* https://www.getyourguide.com/hike-and-seek-s117957/
+* https://material.io/develop
+* https://getbootstrap.com/docs/5.1/examples/
+* https://www.tutorialspoint.com/expressjs/expressjs_sessions.htm
+* https://support.alltrails.com/hc/en-us/articles/360018930772-How-do-I-export-a-file-from-AllTrails-
+* https://www.parks.ca.gov/?page_id=21805
+* https://www.nps.gov/index.htm
+* https://handlebarsjs.com/contributing/button-links.html
+* https://stackoverflow.com/questions/46669097/sequelize-use-left-joins-instead-of-nested-inner-join-for-many-to-many-associati
+* https://sequelize.org/master/manual/advanced-many-to-many.html
+* https://getbootstrap.com/docs/5.1/components/card/#horizontal
+* https://www.pexels.com/ 
+* https://www.pexels.com/license/
+ 
