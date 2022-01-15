@@ -47,21 +47,21 @@ Trail.belongsToMany(Animal, {
   foreignKey: 'trail_id'
 });
 
-Trail.hasMany(TrailAnimal, {
-  foreignKey: 'trail_id'
-})
+// Trail.hasMany(TrailAnimal, {
+//   foreignKey: 'trail_id'
+// })
 
-TrailAnimal.belongsTo(Trail, {
-  foreignKey: 'trail_id'
-});
+// TrailAnimal.belongsTo(Trail, {
+//   foreignKey: 'trail_id'
+// });
 
-Animal.hasMany(TrailAnimal, {
-  foreignKey: 'animal_id'
-})
+// Animal.hasMany(TrailAnimal, {
+//   foreignKey: 'animal_id'
+// })
 
-TrailAnimal.belongsTo(Animal, {
-  foreignKey: 'animal_id'
-})
+// TrailAnimal.belongsTo(Animal, {
+//   foreignKey: 'animal_id'
+// })
 //  ------- Trail &  Animal Associations END --------
 
 
