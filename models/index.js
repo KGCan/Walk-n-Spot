@@ -14,45 +14,25 @@ Trail.belongsToMany(User, {
   through: UserTrail,
   foreignKey: 'trail_id'
 });
-
 User.belongsToMany(Trail, {
   through: UserTrail,
   foreignKey: 'user_id'
 });
 
+// ** Extra USER/TRAIL Associations to do other queries if needed **
+User.hasMany(UserTrail, {
+  // foreignKey: 'user_id'
+})
+UserTrail.belongsTo(User, {
+  // foreignKey: 'user_id'
+});
+Trail.hasMany(UserTrail, {
+  // foreignKey: 'trail_id'
+})
+UserTrail.belongsTo(Trail, {
+  // foreignKey: 'trail_id'
+});
 
-
-
-
-// User.hasMany(UserTrail, {
-//   // foreignKey: 'user_id'
-// })
-// UserTrail.belongsTo(User, {
-//   // foreignKey: 'user_id'
-// });
-// Trail.hasMany(UserTrail, {
-//   // foreignKey: 'trail_id'
-// })
-// UserTrail.belongsTo(Trail, {
-//   // foreignKey: 'trail_id'
-// });
-
-
-// User.hasMany(Trail, {
-//   foreignKey: 'user_id'
-// });
-
-// Trail.hasMany(User, {
-//   foreignKey: 'trail_id'
-// });
-
-// // Trail.hasMany(User, {
-// //   foreignKey: 'user_id'
-// // });
-
-// Trail.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
 //   -------   Trail & User Associations END -------
 
 
@@ -67,27 +47,27 @@ Trail.belongsToMany(Animal, {
   foreignKey: 'trail_id'
 });
 
-// Trail.hasMany(TrailAnimal, {
-//   foreignKey: 'trail_id'
-// })
+Trail.hasMany(TrailAnimal, {
+  foreignKey: 'trail_id'
+})
 
-// TrailAnimal.belongsTo(Trail, {
-//   foreignKey: 'trail_id'
-// });
+TrailAnimal.belongsTo(Trail, {
+  foreignKey: 'trail_id'
+});
 
-// Animal.hasMany(TrailAnimal, {
-//   foreignKey: 'animal_id'
-// })
+Animal.hasMany(TrailAnimal, {
+  foreignKey: 'animal_id'
+})
 
-// TrailAnimal.belongsTo(Animal, {
-//   foreignKey: 'animal_id'
-//})
+TrailAnimal.belongsTo(Animal, {
+  foreignKey: 'animal_id'
+})
 //  ------- Trail &  Animal Associations END --------
 
 
 
 
-module.exports = { User, Trail, Animal, TrailAnimal }
+module.exports = { User, Trail, Animal, TrailAnimal, UserTrail }
 
 
 
