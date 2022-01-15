@@ -4,6 +4,7 @@ const TrailAnimalData = [
   {
     animal_id: 1,
     trail_id: 1,
+    //counter = 5, to tell how many animal was sighted in that trail
   },
   {
     animal_id: 2,

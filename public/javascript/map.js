@@ -25,7 +25,7 @@ var Add_Map = function (lat, lon) {
 var AddMarker = function (lat, lon, n, img_url, address) {
         if(lat&&lon){
         marker[n] = L.marker([lat, lon]).addTo(mymap);
-        marker[n].bindPopup('<img src=' + img_url + '>' + address).openPopup();
+        marker[n].bindPopup(/*'<img src=' + img_url + '>' + */address).openPopup();
         }
 };
 
@@ -42,36 +42,28 @@ var Map_reset = function () {
 async function commentFormHandler(event) {
     event.preventDefault();
 
-    const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
-    const post_id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-    ];
-
-    if (comment_text) {
-        const response = await fetch('/api/city', {
+    if (1) {
+        const response = await fetch('/api/trail', {
         method: 'GET',
-        body: JSON.stringify({
-            post_id,
-            comment_text
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-        });
+        })
+        .then(response => response.json())
+        .then(function (json) {
+            Add_Map(json[0].lat, json[0].lon);
 
-        if (response.ok) {
-            Add_Map(lat, lon);
-            AddMarker(lat, lon);
-        document.location.reload();
-        } else {
-        alert(response.statusText);
-        }
+            const city_input = document.querySelector("select[name='state-option']").value;
+            const animal_input = document.querySelector("select[name='state-option']").value;
+
+            if(json[0].city_name === city_input && json[0].animal.animal_name === animal_input){
+                AddMarker(json[0].lat, json[0].lon, json[0].id, '123', json[0].trail_name);
+            }
+         
+        });
     }
 
 
 }
 
-document.querySelector('.SearchCity').addEventListener('submit', commentFormHandler);
+document.querySelector('.SearchCity').addEventListener('click', commentFormHandler);
 
 /*
 var formSubmitHandler = function (event) { //Get Input
