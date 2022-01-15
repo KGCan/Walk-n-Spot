@@ -8,3 +8,6 @@ Find your favorite animals on your hike
 
 If we use picks form here we need to give credit:
 https://unsplash.com/s/photos/trail
+& unsplash license
+
+another free site Pexels.com
