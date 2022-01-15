@@ -45,8 +45,8 @@ router.get('/results', (req, res) => {
         });
 });
 // ---------  pseudocode card & results Direction ----------
-// when search then redirects to Results Page
-//if then decided to login 
+// when user searches then redirects to Results Page
+//if they then decided to login 
 // they should be redirected back to Results Page
 // if  havent searched city yet, then login =>  redir to homepage;
 // if searched then log in, ==> redir to search Results
