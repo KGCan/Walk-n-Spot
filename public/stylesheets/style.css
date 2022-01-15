@@ -3,8 +3,9 @@
 }
 
 .hero {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.15)), url('http://placekitten.com/2000/300');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.55)), url("../assets/images/hero-deer-2.jpg");
     background-size:cover;
+    background-position: 50% 30%;
 }
 
 #map {
