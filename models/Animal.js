@@ -1,3 +1,10 @@
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+// create  Animal model
+class Animal extends Model {
+}
+
 Animal.init(
   {
     id: {
@@ -12,11 +19,26 @@ Animal.init(
       allowNull: false,
     },
 
-    sighting_id: {
-      references: {
-        model: 'sighting',
-        key: 'id'
-      }
-    },
+    // sighting_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'sighting',
+    //     key: 'id'
+    //   }
+    // },
+
+    // counter: {
+
+    // }
+  },
+  // 2nd param of init
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'animal'
   }
 )
+
+module.exports = Animal;

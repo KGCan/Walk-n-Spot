@@ -1,10 +1,10 @@
-// import important parts of sequelize library
 const { Model, DataTypes } = require('sequelize');
-// import our database connection from config.js
+// const { isModuleNamespaceObject } = require('util/types');
 const sequelize = require('../config/connection');
 
-// Initialize Trail model (table) by extending off Sequelize's Model class
+// create our User model
 class Trail extends Model { }
+
 
 
 Trail.init(
@@ -21,22 +21,37 @@ Trail.init(
       allowNull: false,
     },
 
-    coordinates: {
+    city_name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
 
+    lat: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    lon: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
 
     animal_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'animal',
         key: 'id'
       }
     },
-    
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'trail'
   }
 )
 
-module.exports = Trail;
+module.exports = Trail

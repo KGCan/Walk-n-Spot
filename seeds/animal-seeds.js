@@ -99,4 +99,4 @@ const animalData = [
 
 const seedAnimals = () => Animal.bulkCreate(animalData);
 
-module.exports = seedAnimals;
+module.exports = seedAnimals; 
