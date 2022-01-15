@@ -42,25 +42,31 @@ var Map_reset = function () {
 async function commentFormHandler(event) {
     event.preventDefault();
 
-    if (1) {
-        const response = await fetch('/api/trail', {
-        method: 'GET',
-        })
-        .then(response => response.json())
-        .then(function (json) {
-            Add_Map(json[0].lat, json[0].lon);
-
-            const city_input = document.querySelector('#CityInput').value.trim();
-            const animal_input = document.querySelector("select[name='AnimalInput']").value;
-
-            if(json[0].city_name === city_input && json[0].animals[0].animal_name === animal_input){
-                AddMarker(json[0].lat, json[0].lon, json[0].id, '123', json[0].trail_name);
-            }
-         
-        });
+    if(first === 0){
+        Map_reset();
     }
 
+    const response = await fetch('/api/trail', {
+    method: 'GET',
+    })
+    .then(response => response.json())
+    .then(function (json) {
+        Add_Map(json[0].lat, json[0].lon);
 
+        const city_input = document.querySelector('#CityInput').value.trim();
+        const animal_input = document.querySelector("select[name='AnimalInput']").value;
+        var found = 0;
+
+        for(var i = 0; i < json.length; i++){ //track city
+            for(var j = 0; j < json[i].animals.length; j++) { //track animals
+                if(json[i].city_name === city_input && json[i].animals[j].animal_name === animal_input){
+                    AddMarker(json[i].lat, json[i].lon, found, '123', json[i].trail_name);
+                    found++;
+                }
+            }
+        }
+         
+    });
 }
 
 document.querySelector('.SearchCity').addEventListener('click', commentFormHandler);
