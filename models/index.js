@@ -57,12 +57,6 @@ module.exports = { User, Trail, Animal, TrailAnimal, UserTrail }
 
 
 
-
-
-
-
-
-
 //  ---------------- DRAFT CODE  ----------------------
 
 
@@ -72,6 +66,7 @@ module.exports = { User, Trail, Animal, TrailAnimal, UserTrail }
 
 // Trail.belongsTo(City, {
 //     foreignKey: 'city_id'
+
 // });
 
 // User.hasMany(Sighting, {
