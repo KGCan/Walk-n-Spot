@@ -8,16 +8,20 @@ const trailData = [
         lon: '-121.5077',
         animal_id: 1,
     },
-    // {
-    //     trail_name: 'Sacramento River Parkway',
-    //     coordinates: '38.5838, -121.5060',
-    //     animal_id: 1,
-    // },
-    // {
-    //     trail_name: 'Riverfront Promenade',
-    //     coordinates: '38.5770, -121.5086',
-    //     animal_id: 1
-    // },
+    {
+        trail_name: 'Sacramento River Parkway',
+        city_name: 'Sacramento',
+        lat: '38.5838',
+        lon: '-121.5060',
+        animal_id: 1,
+    },
+    {
+        trail_name: 'Riverfront Promenade',
+        city_name: 'Sacramento',
+        lat: '38.5770',
+        lon: '-121.5086',
+        animal_id: 2
+    },
     // {
     //     trail_name: 'Creekside Park & Nature Area',
     //     coordinates: '38.6140, -121.3938',

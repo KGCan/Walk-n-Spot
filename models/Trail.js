@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const { isModuleNamespaceObject } = require('util/types');
+// const { isModuleNamespaceObject } = require('util/types');
 const sequelize = require('../config/connection');
 
 // create our User model
