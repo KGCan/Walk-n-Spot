@@ -8,7 +8,7 @@ const animalData = [
         animal_name: 'Bear',
     },
     {
-        animal_name: 'Turtles',
+        animal_name: 'Turtle',
     },
     {
         animal_name: 'Cow',
