@@ -6,6 +6,7 @@ const trailData = [
         city_name: 'Sacramento',
         lat: '38.6010',
         lon: '-121.5077',
+        trail_img: './public/assets/images/creek-1-sm.jpg',
         animal_id: 1,
     },
     {
@@ -13,14 +14,16 @@ const trailData = [
         city_name: 'Sacramento',
         lat: '38.5838',
         lon: '-121.5060',
-        animal_id: 1,
+        trail_img: './public/assets/images/creek-2-sm.jpg',
+        animal_id: 1,        
     },
     {
         trail_name: 'Riverfront Promenade',
         city_name: 'Sacramento',
         lat: '38.5770',
         lon: '-121.5086',
-        animal_id: 2
+        trail_img: './public/assets/images/creek-3-sm.jpg',
+        animal_id: 2,
     },
     // {
     //     trail_name: 'Creekside Park & Nature Area',
