@@ -8,7 +8,7 @@ const cityRoutes = require('./city-routes.js');
 const animalRoutes = require('./animal-routes.js');
 
 
-router.use('/user', userRoutes);
+//router.use('/user', userRoutes);
 router.use('/trail', trailRoutes);
 // router.use('/sighting', sightingRoutes);
 // router.use('/city', cityRoutes);

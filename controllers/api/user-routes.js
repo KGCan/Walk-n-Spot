@@ -1,10 +1,28 @@
 const router = require('express').Router();
-const { User, Animal, Trail, } = require("../../models");
+const { User, Animal, Trail, TrailAnimal, } = require("../../models");
+
+
+
+
 // GET /api/users
 router.get('/', (req, res) => {
   // Access our User model and run .findAll() method)
   User.findAll({
-    attributes: { exclude: ['password'] }
+    attributes: { exclude: ['password'] },
+    include: [
+      // {
+      //   model: Animal,
+      //   attributes: ['animal_name']
+      // },
+      {
+        model: Trail,
+        attributes: [['id', 'trail_id'], 'trail_name', 'animal_id'],
+
+        through: {
+          attributes: [],
+        },
+      },
+    ]
   })
     .then(userData => res.json(userData))
     .catch(err => {
@@ -13,7 +31,7 @@ router.get('/', (req, res) => {
     });
 });
 
-
+/*
 // GET /api/users/1
 router.get('/:id', (req, res) => {
   User.findOne({
@@ -161,5 +179,5 @@ router.delete('/:id', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
+});*/
 module.exports = router;

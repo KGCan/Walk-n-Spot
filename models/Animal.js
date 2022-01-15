@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Animal model
+// create  Animal model
 class Animal extends Model {
 }
 
@@ -32,6 +32,7 @@ Animal.init(
 
     // }
   },
+  // 2nd param of init
   {
     sequelize,
     freezeTableName: true,
