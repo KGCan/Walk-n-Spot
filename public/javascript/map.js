@@ -50,10 +50,10 @@ async function commentFormHandler(event) {
         .then(function (json) {
             Add_Map(json[0].lat, json[0].lon);
 
-            const city_input = document.querySelector("select[name='state-option']").value;
-            const animal_input = document.querySelector("select[name='state-option']").value;
+            const city_input = document.querySelector('#CityInput').value.trim();
+            const animal_input = document.querySelector("select[name='AnimalInput']").value;
 
-            if(json[0].city_name === city_input && json[0].animal.animal_name === animal_input){
+            if(json[0].city_name === city_input && json[0].animals[0].animal_name === animal_input){
                 AddMarker(json[0].lat, json[0].lon, json[0].id, '123', json[0].trail_name);
             }
          
