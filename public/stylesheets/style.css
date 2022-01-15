@@ -3,11 +3,36 @@
 }
 
 .hero {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.15)), url('http://placekitten.com/2000/300');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.55)), url("../assets/images/hero-deer-2.jpg");
     background-size:cover;
+    background-position: 50% 30%;
 }
 
 #map {
     margin-top: 20px; 
     height: 350px; 
+}
+
+header nav {
+    margin: 7px 0;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li a {
+    padding: 10px 22px;
+    font-weight:lighter;
+    font-size:23px;
+}
+
+header nav ul li a:hover {
+    background: yellowgreen;
+    border-radius: 15px;
+    color: black;
 }
