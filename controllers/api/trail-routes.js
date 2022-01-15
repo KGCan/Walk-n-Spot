@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Animal, Trail, } = require("../../models");
+const { User, Animal, Trail, TrailAnimal} = require("../../models");
 
 
 // GET /api/users
@@ -8,11 +8,12 @@ router.get('/', (req, res) => {
   Trail.findAll({
     // attributes: { exclude: ['password'] }
     //map()
-    attributes: ['trail_name'],
+    attributes: ['id', 'trail_name','city_name', 'lat', 'lon'],
     include: [
       {
         model: Animal,
         attributes: ['animal_name']
+        
       }
     ]
 

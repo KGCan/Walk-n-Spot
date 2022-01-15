@@ -38,6 +38,7 @@ User.init(
         len: [4]
       }
     },
+<<<<<<< HEAD
     // trail_id: {
     //   type: DataTypes.STRING,
     //   allowNull: false,
@@ -46,6 +47,16 @@ User.init(
     //     key: 'id'
     //   }
     //}
+=======
+    trail_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'trail',
+        key: 'id'
+      }
+    },
+>>>>>>> e7b8bba2e3abaa6da0d102f0e352a56d53d5f19f
   },
   {
     hooks: {
