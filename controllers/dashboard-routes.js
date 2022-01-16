@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // const withAuth = require('../utils/auth');
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const { User, Trail } = require('../models');
 
 
 router.get('/', (req, res) => {
@@ -11,11 +11,33 @@ router.get('/', (req, res) => {
             id: req.session.user_id
         },
 
+        attributes: { exclude: ['password'] },
+        include: [
+          // {
+          //   model: Animal,
+          //   attributes: ['animal_name']
+          // },
+          {
+            model: Trail,
+            attributes: [['id', 'trail_id'], 'trail_name', 'animal_id'],
+    
+            through: {
+              attributes: [],
+            },
+          },
+        ]
+
     })
         .then(trailData => {
 
             const trails = trailData.map(trail => trail.get({ plain: true }));
-            console.log(trailData)
+  
+            if (trailData[0].dataValues.trails[0]== null) {
+                console.log(trailData)
+            } else {
+                console.log(trailData[0].dataValues.trails[0].trail_name)
+
+            }
 
             res.render('dashboard', {
                 trails,
