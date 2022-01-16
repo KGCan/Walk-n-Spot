@@ -10,12 +10,9 @@ const sequelize = require('../config/connection');
 
 
 const seedAll = async () => {
-<<<<<<< HEAD
-  await sequelize.sync({ force: true });
-=======
-  await sequelize.sync({ force: false });
 
->>>>>>> e7b8bba2e3abaa6da0d102f0e352a56d53d5f19f
+  await sequelize.sync({ force: true });
+
   console.log('\n----- DATABASE SYNCED -----\n');
 
   await seedAnimal();
