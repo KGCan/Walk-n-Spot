@@ -2,9 +2,9 @@ const router = require('express').Router();
 const { reverseMultiplyAndSum } = require('validator/lib/util/algorithms');
 const sequelize = require('../config/connection');
 //const { Post, User, Comment } = require('../models');
-const { Trail, User } = require('../models');
+const { Trail, User, Animal, TrailAnimal } = require('../models');
 
-
+// Homepage route
 router.get('/', (req, res) => {
     console.log(req.session);
     User.findAll({
@@ -42,19 +42,22 @@ router.get('/results', (req, res) => {
     Trail.findAll({
         // attributes: { exclude: ['password'] }
         //map()
-        attributes: ['id', 'trail_name'],
-        // include: [
-        //     {
-        //         model: Animal,
-        //         attributes: ['animal_name']
-
-        //     }
-        // ]
+        attributes: ['id', 'trail_name', 'trail_img'],
+        include: [
+            {
+                model: Animal,
+                attributes: ['animal_name']
+                
+            }
+        ]
 
     })
         .then(trailData => {
             const trails = trailData.map(trail => trail.get({ plain: true }));
+            console.log(trailData[0].animals[1].trail_animal.sighting)
 
+
+            // console.log(trails)
             res.render('results', {
                 trails,
                 loggedIn: req.session.loggedIn
