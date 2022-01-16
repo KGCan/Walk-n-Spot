@@ -123,13 +123,11 @@ router.post('/login', (req, res) => {
   }).then(userData => {
     if (!userData) {
       res.status(400).json({ message: 'Incorrect email and/or password!' });
-      alert('Incorrect email and/or password!')
       return;
     }
     const validPassword = userData.checkPassword(req.body.password);
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect email and/or password!' });
-      alert
       return;
     }
     req.session.save(() => {
