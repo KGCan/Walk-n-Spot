@@ -1,0 +1,13 @@
+{{!map & card results go here:
+this page gets rendered after search results Promise is returned
+}}
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+{{#each trails as |trail| }}
+ {{> cards-info trail }}
+ {{/each}}
+    </div>
+  </div>
+</div>

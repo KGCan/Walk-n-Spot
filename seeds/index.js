@@ -30,8 +30,8 @@ const seedAll = async () => {
   // await seedCity();
   // console.log('\n----- Cities SEEDED -----\n');
 
- // await seedUser();
-  //console.log('\n----- User SEEDED -----\n');
+  await seedUser();
+  console.log('\n----- User SEEDED -----\n');
 
   await seedUserTrail();
   console.log('\n----- UserTrail SEEDED -----\n');

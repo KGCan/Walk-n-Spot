@@ -22,11 +22,9 @@ var Add_Map = function (lat, lon) {
     }
 };
 
-var AddMarker = function (lat, lon, n, img_url, address) {
-        if(lat&&lon){
-        marker[n] = L.marker([lat, lon]).addTo(mymap);
-        marker[n].bindPopup(/*'<img src=' + img_url + '>' + */address).openPopup();
-        }
+var AddMarker = function (lat, lon, n, img_url, trail_name, sighting) {
+    marker[n] = L.marker([lat, lon]).addTo(mymap);
+    marker[n].bindPopup(/*'<img src=' + img_url + '>' + */trail_name + " has " + sighting + " people spotted").openPopup();
 };
 
 var Map_reset = function () { 
@@ -42,51 +40,41 @@ var Map_reset = function () {
 async function commentFormHandler(event) {
     event.preventDefault();
 
-    if (1) {
-        const response = await fetch('/api/trail', {
-        method: 'GET',
-        })
-        .then(response => response.json())
-        .then(function (json) {
-            Add_Map(json[0].lat, json[0].lon);
-
-            const city_input = document.querySelector("select[name='state-option']").value;
-            const animal_input = document.querySelector("select[name='state-option']").value;
-
-            if(json[0].city_name === city_input && json[0].animal.animal_name === animal_input){
-                AddMarker(json[0].lat, json[0].lon, json[0].id, '123', json[0].trail_name);
-            }
-         
-        });
+    if(first === 0){
+        Map_reset();
     }
 
+    const response = await fetch('/api/trail', {
+    method: 'GET',
+    })
+    .then(response => response.json())
+    .then(function (json) {
+        Add_Map(json[0].lat, json[0].lon);
 
+        const city_input = document.querySelector('#CityInput').value.trim();
+        const animal_input = document.querySelector("select[name='AnimalInput']").value;
+        var found = 0;
+
+        if(animal_input != "All"){
+            for(var i = 0; i < json.length; i++){ //track city
+                for(var j = 0; j < json[i].animals.length; j++) { //track animals
+                    if(json[i].city_name === city_input && json[i].animals[j].animal_name === animal_input){
+                        AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name, json[i].animals[j].trail_animal.sighting);
+                        found++;
+                    }
+                }
+            }
+        }//If look for all animals
+        else {
+            for(var i = 0; i < json.length; i++){
+                AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name, 0);
+                found++;
+            }
+        }
+         
+    });
 }
 
 document.querySelector('.SearchCity').addEventListener('click', commentFormHandler);
 
-/*
-var formSubmitHandler = function (event) { //Get Input
-    event.preventDefault();
-
-    Map_reset(); //clear old map & markers
-
-    city = cityInputEl.value.trim();
-    state = document.querySelector("select[name='state-option']").value;
-
-    AddHouse(city, state);
-};
-
-
-var buttonClickHandler = function (event) { //If user click search histories
-
-    Map_reset(); //clear old map & markers
-    
-    var searchHistory = event.target.textContent;
-    var history = searchHistory.split(", ");
-    AddHouse(history[0], history[1]);
-};
-
-
-*/
 

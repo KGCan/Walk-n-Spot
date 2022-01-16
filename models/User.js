@@ -21,7 +21,8 @@ User.init(
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      unique: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -50,7 +51,7 @@ User.init(
 =======
     trail_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'trail',
         key: 'id'

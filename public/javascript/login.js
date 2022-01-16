@@ -17,7 +17,7 @@ async function loginHandler(event) {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert(response.statusText);
+      alert('Incorrect email and/or password!');
     }
   }
 };
@@ -39,7 +39,7 @@ async function signupHandler(event) {
     });
     // check the response status
     if (response.ok) {
-      console.log('success');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
