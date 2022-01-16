@@ -1,5 +1,15 @@
 <section class="yourTrails">
-    <h1>Your Trails</h1>
+
+    <div class="album py-5 bg-light">
+        <h1>Your Trails</h1>
+        <div class="container">
+            <div class="">
+                {{#each trails as |trail| }}
+                {{> cards-dashboard trail }}
+                {{/each}}
+            </div>
+        </div>
+    </div>
 
 </section>
 
