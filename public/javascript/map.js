@@ -57,12 +57,20 @@ async function commentFormHandler(event) {
         const animal_input = document.querySelector("select[name='AnimalInput']").value;
         var found = 0;
 
-        for(var i = 0; i < json.length; i++){ //track city
-            for(var j = 0; j < json[i].animals.length; j++) { //track animals
-                if(json[i].city_name === city_input && json[i].animals[j].animal_name === animal_input){
-                    AddMarker(json[i].lat, json[i].lon, found, '123', json[i].trail_name);
-                    found++;
+        if(animal_input != "All"){
+            for(var i = 0; i < json.length; i++){ //track city
+                for(var j = 0; j < json[i].animals.length; j++) { //track animals
+                    if(json[i].city_name === city_input && json[i].animals[j].animal_name === animal_input){
+                        AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name);
+                        found++;
+                    }
                 }
+            }
+        }//If look for all animals
+        else {
+            for(var i = 0; i < json.length; i++){
+                AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name);
+                found++;
             }
         }
          
@@ -71,28 +79,4 @@ async function commentFormHandler(event) {
 
 document.querySelector('.SearchCity').addEventListener('click', commentFormHandler);
 
-/*
-var formSubmitHandler = function (event) { //Get Input
-    event.preventDefault();
-
-    Map_reset(); //clear old map & markers
-
-    city = cityInputEl.value.trim();
-    state = document.querySelector("select[name='state-option']").value;
-
-    AddHouse(city, state);
-};
-
-
-var buttonClickHandler = function (event) { //If user click search histories
-
-    Map_reset(); //clear old map & markers
-    
-    var searchHistory = event.target.textContent;
-    var history = searchHistory.split(", ");
-    AddHouse(history[0], history[1]);
-};
-
-
-*/
 

@@ -1,19 +1,19 @@
 const router = require('express').Router();
-const { User, Animal, Trail, TrailAnimal} = require("../../models");
+const { User, Animal, Trail, TrailAnimal } = require("../../models");
 
 
-// GET /api/users
+// GET /api/trails
 router.get('/', (req, res) => {
-  // Access our User model and run .findAll() method)
+  // Access Trail model and run .findAll() method)
   Trail.findAll({
     // attributes: { exclude: ['password'] }
     //map()
-    attributes: ['id', 'trail_name','city_name', 'lat', 'lon'],
+    attributes: ['id', 'trail_name', 'city_name', 'lat', 'lon', 'trail_img'],
     include: [
       {
         model: Animal,
         attributes: ['animal_name']
-        
+
       }
     ]
 
