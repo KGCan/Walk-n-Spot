@@ -22,11 +22,9 @@ var Add_Map = function (lat, lon) {
     }
 };
 
-var AddMarker = function (lat, lon, n, img_url, address) {
-        if(lat&&lon){
-        marker[n] = L.marker([lat, lon]).addTo(mymap);
-        marker[n].bindPopup(/*'<img src=' + img_url + '>' + */address).openPopup();
-        }
+var AddMarker = function (lat, lon, n, img_url, trail_name, sighting) {
+    marker[n] = L.marker([lat, lon]).addTo(mymap);
+    marker[n].bindPopup(/*'<img src=' + img_url + '>' + */trail_name + " has " + sighting + " people spotted").openPopup();
 };
 
 var Map_reset = function () { 
@@ -61,7 +59,7 @@ async function commentFormHandler(event) {
             for(var i = 0; i < json.length; i++){ //track city
                 for(var j = 0; j < json[i].animals.length; j++) { //track animals
                     if(json[i].city_name === city_input && json[i].animals[j].animal_name === animal_input){
-                        AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name);
+                        AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name, json[i].animals[j].trail_animal.sighting);
                         found++;
                     }
                 }
@@ -69,7 +67,7 @@ async function commentFormHandler(event) {
         }//If look for all animals
         else {
             for(var i = 0; i < json.length; i++){
-                AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name);
+                AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name, 0);
                 found++;
             }
         }
