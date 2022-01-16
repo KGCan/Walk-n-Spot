@@ -40,15 +40,18 @@ var Map_reset = function () {
 async function commentFormHandler(event) {
     event.preventDefault();
 
-    if(first === 0){
-        Map_reset();
-    }
+    // if(first === 0){
+    //     Map_reset();
+    // }
+
 
     const response = await fetch('/api/trail', {
     method: 'GET',
     })
     .then(response => response.json())
     .then(function (json) {
+        console.log('Success')
+        // window.location.href = '/results';
         Add_Map(json[0].lat, json[0].lon);
 
         const city_input = document.querySelector('#CityInput').value.trim();
@@ -73,6 +76,7 @@ async function commentFormHandler(event) {
         }
          
     });
+
 }
 
 document.querySelector('.SearchCity').addEventListener('click', commentFormHandler);

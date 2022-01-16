@@ -36,3 +36,19 @@ header nav ul li a:hover {
     border-radius: 15px;
     color: black;
 }
+
+h5 {
+    color: black;
+}
+
+.form-signin form div label {
+    color: grey;
+}
+
+.verticalAlign{
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+
+}
