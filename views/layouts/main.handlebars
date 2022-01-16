@@ -114,23 +114,31 @@
             <h1 class="fw-light text-light">Walk'n Spot</h1>
             <p class="lead text-light">Find & share your favorite animals</p>
             <p>
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control w-50"
-                  aria-label="Text input with dropdown button"
-                  placeholder="Search your city for a trail with"
-                />
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Animals</option>
-                  <option value="1">Hawks</option>
-                  <option value="2">Deer</option>
-                  <option value="3">Turtles</option>
-                </select>
-                <button type="button" class="SearchCity btn btn-primary"><i
-                    class="fas fa-search text-light"
-                  ></i></button>
-              </div>
+                <div class="input-group mb-3">
+                    <input
+                        type="text"
+                        id="CityInput"
+                        class="form-control w-50"
+                        aria-label="Text input with dropdown button"
+                        placeholder="Search your city for a trail with"
+                    />
+                    <select name="AnimalInput" class="form-select" aria-label="Default select example">
+                        <option value="All">Animals</option>
+                        <option value="Deer">Deer</option>
+                        <option value="Bear">Bear</option>
+                        <option value="Turtles">Turtles</option>
+                        <option value="Cow">Cow</option>
+                        <option value="Dog">Dog</option>
+                        <option value="Mountain Lion">Mountain Lion</option>
+                        <option value="Coyote">Coyote</option>
+                        <option value="Fish">Fish</option>
+                        <option value="Pig">Pig</option>
+                        <option value="Horse">Horse</option>
+                    </select>
+                    <button type="button" class="SearchCity btn btn-primary"><i
+                        class="fas fa-search text-light"
+                    ></i></button>
+                  </div>
             </p>
           </div>
         </div>
@@ -200,7 +208,7 @@
 
         </div>
 
-    </div>
+    </div>!}}
     {{#if loggedIn}}
     <script src="../javascript/logout.js"></script>
     {{/if}}
