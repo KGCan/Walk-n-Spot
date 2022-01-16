@@ -36,9 +36,14 @@ Trail.init(
       allowNull: false,
     },
 
+    trail_img: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
     animal_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'animal',
         key: 'id'
