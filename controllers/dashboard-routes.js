@@ -1,31 +1,31 @@
 const router = require('express').Router();
 // const withAuth = require('../utils/auth');
 const sequelize = require('../config/connection');
-const { Trail } = require('../models');
+const { User } = require('../models');
 
 
 router.get('/', (req, res) => {
-  Trail.findAll({
-    where: {
-      // use the ID from the session
-      user_id: req.session.user_id
-    },
-    attributes: [
-      'id',
-      'trail_name',
-      'city_name',
-      'created_at',
-    ],
-  })
-    .then(dbPostData => {
-      // serialize data before passing to template
-      const trails = dbPostData.map(trail => trail.get({ plain: true }));
-      res.render('dashboard', { trails, loggedIn: true });
+    console.log(req.session);
+    User.findAll({
+        where: {
+            id: req.session.user_id
+        },
+
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+        .then(trailData => {
+
+            const trails = trailData.map(trail => trail.get({ plain: true }));
+            console.log(trailData)
+
+            res.render('dashboard', {
+                trails,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
