@@ -84,7 +84,7 @@ function renderSearchCards(trailImg, trail_name, all_trails) {
 
   //Card
   var searchCard = document.createElement("div");
-  searchCard.classList = "card m-3";
+  searchCard.classList = "result-card-div m-3";
   searchCardContainer.appendChild(searchCard);
 
 
@@ -100,7 +100,7 @@ function renderSearchCards(trailImg, trail_name, all_trails) {
 
   //Card img
   var searchCardImg = document.createElement("img");
-  searchCardImg.classList = "img-fluid rounded-start";
+  searchCardImg.classList = "result-card-img img-fluid rounded-start";
   // searchCardImg.src = './assets/images/creek-2.jpg'
   searchCardImg.src = trailImg
 
@@ -145,7 +145,35 @@ function renderSearchCards(trailImg, trail_name, all_trails) {
 }
 
 
+// async function trailSaveHandler(event) {
+//   event.preventDefault();
 
+//   const saved_trail = document.querySelector('textarea[name="comment-body"]').value.trim();
+//   const post_id = window.location.toString().split('/')[
+//     window.location.toString().split('/').length - 1
+//   ];
+
+//   if (comment_text) {
+//     const response = await fetch('/api/comments', {
+//       method: 'POST',
+//       body: JSON.stringify({
+//         post_id,
+//         comment_text
+//       }),
+//       headers: {
+//         'Content-Type': 'application/json'
+//       }
+//     });
+
+//     if (response.ok) {
+//       document.location.reload();
+//     } else {
+//       alert(response.statusText);
+//     }
+//   }
+// }
+
+// document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
 
 
 document.querySelector('.SearchCity').addEventListener('click', searchFormHandler);
