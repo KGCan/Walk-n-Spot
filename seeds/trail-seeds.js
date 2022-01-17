@@ -8,7 +8,7 @@ const trailData = [
         lon: '-121.5077',
         trail_img: './public/assets/images/creek-1-sm.jpg',
         animal_id: 1,
-        all_trails: 'alltrails test'
+        trail_info: 'https://regionalparks.saccounty.net/Parks/Pages/AmericanRiverParkway.aspx'
     },
     {
         trail_name: 'Sacramento River Parkway',
@@ -17,6 +17,7 @@ const trailData = [
         lon: '-121.5060',
         trail_img: './public/assets/images/creek-2.jpg',
         animal_id: 1,
+        trail_info: "https://www.cityofsacramento.org/Public-Works/Engineering-Services/Projects/Current-Projects/Sacramento-River-Parkway"
     },
     {
         trail_name: 'Riverfront Promenade',
@@ -25,6 +26,7 @@ const trailData = [
         lon: '-121.5086',
         trail_img: './public/assets/images/creek-3.jpg',
         animal_id: 2,
+        trail_info: "https://www.cityofsacramento.org/Public-Works/Engineering-Services/Projects/Current-Projects/Sacramento-River-Parkway"
 
     },
     {
@@ -34,6 +36,7 @@ const trailData = [
         lon: '-121.3938',
         trail_img: './public/assets/images/creek-3.jpg',
         animal_id: 7,
+        trail_info: "https://www.fecrpd.com/creekside-nature-area"
 
     },
     {
@@ -43,6 +46,7 @@ const trailData = [
         lon: '-121.5046',
         trail_img: './public/assets/images/creek-3.jpg',
         animal_id: 1,
+        trail_info: "http://www.cityofsacramento.org/parksandrec/parks/park-directory/south-natomas/bannon-creek"
     }
 ]
 

@@ -41,15 +41,19 @@ async function searchFormHandler(event) {
               console.log(json[i].animals[j].animal_name)
               console.log(json[i].trail_name)
               console.log(json[i].trail_img)
+              console.log(json[i].trail_info)
 
               let text1 = "."
               let text2 = (json[i].trail_img).slice(8)
               let trailImg = text1.concat(text2);
               console.log(trailImg)
-              console.log(json[i].all_trails)
 
-              renderSearchCards(trailImg, json[i].trail_name, json[i].all_trails)
-              // Need What if No Animal Option
+              let trailUrl = json[i].trail_info
+
+
+
+              renderSearchCards(trailImg, json[i].trail_name, trailUrl)
+              // ************ Need What if No Animal Option ***************
               //   alert(`A ${animal_input} hasn't been spoted before on these trails!`)
               // }
             }
@@ -66,9 +70,10 @@ async function searchFormHandler(event) {
           let text1 = "."
           let text2 = (json[i].trail_img).slice(8)
           let trailImg = text1.concat(text2);
+          let trailUrl = (json[i].trail_info);
           console.log(trailImg)
           console.log(json[i].all_trails)
-          renderSearchCards(trailImg, json[i].trail_name, json[i].all_trails)
+          renderSearchCards(trailImg, json[i].trail_name, trailUrl)
         }
       }
     });
@@ -80,7 +85,7 @@ var searchCardContainer = document.querySelector(".card-container");
 // searchCardContainer.appendChild(searchCard);
 
 
-function renderSearchCards(trailImg, trail_name, all_trails) {
+function renderSearchCards(trailImg, trail_name, trailUrl) {
 
   //Card
   var searchCard = document.createElement("div");
@@ -133,15 +138,15 @@ function renderSearchCards(trailImg, trail_name, all_trails) {
   searchCardBody.appendChild(searchCardAnCount);
 
 
-  //Card All-Trails URL
-  var searchCardAllTrails = document.createElement("a");
-  searchCardAllTrails.classList = "card-allT-url";
-  var atURL = document.createTextNode("Learn more!")
-  searchCardAllTrails.appendChild(atURL)
-  searchCardAllTrails.title = "Learn more at All Trails"
-  searchCardAllTrails.href = all_trails
-  searchCardBody.appendChild(searchCardAllTrails);
-
+  //Card Trail_info URL
+  var trailUrla = document.createElement("a");
+  trailUrla.classList = "card-trail-url";
+  var atURL = document.createTextNode("Learn more about this trail!")
+  trailUrla.appendChild(atURL)
+  trailUrla.title = "Learn more at All Trails"
+  trailUrla.href = trailUrl
+  trailUrla.setAttribute("target", "_blank")
+  searchCardBody.appendChild(trailUrla);
 }
 
 
@@ -174,6 +179,8 @@ function renderSearchCards(trailImg, trail_name, all_trails) {
 // }
 
 // document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+
+
 
 
 document.querySelector('.SearchCity').addEventListener('click', searchFormHandler);

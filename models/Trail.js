@@ -50,9 +50,10 @@ Trail.init(
       }
     },
 
-    all_trails: {
+    trail_info: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false,
+      isURL: true
     },
   },
   {

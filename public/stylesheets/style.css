@@ -75,6 +75,23 @@ h5 {
   background-color: var(--color4);
 }
 
+.card-trail-url {
+  text-decoration: none;
+  color: var(--color4);
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 10px;
+  background-color: var(--color5);
+  border: 3px black;
+  border-radius: 15px;
+}
+
+.card-trail-url:hover {
+  background: var(--color2);
+  border-radius: 15px;
+  color: var(--color1);
+}
+
 .verticalAlign {
   content: "";
   display: inline-block;
