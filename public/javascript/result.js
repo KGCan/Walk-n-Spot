@@ -42,7 +42,13 @@ async function searchFormHandler(event) {
               console.log(json[i].trail_name)
               console.log(json[i].trail_img)
 
-              renderSearchCards(json[i].trail_name)
+              let text1 = "."
+              let text2 = (json[i].trail_img).slice(8)
+              let trailImg = text1.concat(text2);
+              console.log(trailImg)
+              console.log(json[i].all_trails)
+
+              renderSearchCards(trailImg, json[i].trail_name, json[i].all_trails)
               // Need What if No Animal Option
               //   alert(`A ${animal_input} hasn't been spoted before on these trails!`)
               // }
@@ -100,21 +106,32 @@ function renderSearchCards(trailImg, trail_name, all_trails) {
 
   searchCardCol4.appendChild(searchCardImg);
 
+
   //Card Col-8
   var searchCardCol8 = document.createElement("div");
   searchCardCol8.classList = "col-md-8";
   searchCardRow.appendChild(searchCardCol8);
+
 
   //Card body
   var searchCardBody = document.createElement("div");
   searchCardBody.classList = "card-body";
   searchCardCol8.appendChild(searchCardBody);
 
+
   //Card Title
   var searchCardTitle = document.createElement("h3");
   searchCardTitle.classList = "card-title";
   searchCardTitle.textContent = trail_name
   searchCardBody.appendChild(searchCardTitle);
+
+
+  //Card Total Animal Count
+  var searchCardAnCount = document.createElement("p");
+  searchCardAnCount.classList = "card-text text-muted card-animal-count";
+  searchCardAnCount.textContent = "A total of 9 animals of all types have been seen on this trail."
+  searchCardBody.appendChild(searchCardAnCount);
+
 
   //Card All-Trails URL
   var searchCardAllTrails = document.createElement("a");
