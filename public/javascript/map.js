@@ -38,11 +38,10 @@ var Map_reset = function () {
 };
 
 async function commentFormHandler(event) {
-    event.preventDefault();
 
-    // if(first === 0){
-    //     Map_reset();
-    // }
+   if(first === 0){
+        Map_reset();
+    }
 
 
     const response = await fetch('/api/trail', {
@@ -50,12 +49,13 @@ async function commentFormHandler(event) {
     })
     .then(response => response.json())
     .then(function (json) {
-        console.log('Success')
-        // window.location.href = '/results';
+
+        map.style.display = "flex";
         Add_Map(json[0].lat, json[0].lon);
 
-        const city_input = document.querySelector('#CityInput').value.trim();
+        const city_input = document.querySelector('#CityInput').value.trim().toUpperCase() ;
         const animal_input = document.querySelector("select[name='AnimalInput']").value;
+
         var found = 0;
 
         if(animal_input != "All"){
@@ -70,15 +70,19 @@ async function commentFormHandler(event) {
         }//If look for all animals
         else {
             for(var i = 0; i < json.length; i++){
-                AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name, 0);
-                found++;
+                if(json[i].city_name === city_input){
+                    AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name, 0);
+                    found++;
+                }
             }
         }
-         
     });
+
 
 }
 
+
 document.querySelector('.SearchCity').addEventListener('click', commentFormHandler);
+
 
 

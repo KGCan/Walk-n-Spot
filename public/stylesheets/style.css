@@ -9,6 +9,7 @@
 }
 
 #map {
+    display: none;
     margin-top: 20px; 
     height: 350px; 
 }
