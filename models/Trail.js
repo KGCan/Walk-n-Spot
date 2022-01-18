@@ -48,15 +48,12 @@ Trail.init(
         key: 'id'
       }
     },
- cb64c5b7a95816f5d876dd32c72084768b30
     trail_info: {
       type: DataTypes.STRING,
       allowNull: true,
       isURL: true
     },
 
- c8f322280caa69700c1be882cce28ca73e3fb953
- cb64c5b7a95816f5d876dd32c72084768b30
   },
   {
     sequelize,
