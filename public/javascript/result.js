@@ -69,9 +69,11 @@ async function searchFormHandler(event) {
           // let trailImg = (json[i].trail_img).replace("./public", ".")
           console.log(json[i].trail_img)
 
-          let text1 = "."
-          let text2 = (json[i].trail_img).slice(8)
-          let trailImg = text1.concat(text2);
+          // let text1 = "."
+          // let text2 = (json[i].trail_img).slice(8)
+          //let trailImg = text1.concat(text2);
+
+          let trailImg = (json[i].trail_img);
           let trailUrl = (json[i].trail_info);
           console.log(trailImg)
           console.log(json[i].all_trails)
@@ -108,9 +110,7 @@ function renderSearchCards(trailImg, trail_name, trailUrl) {
   //Card img
   var searchCardImg = document.createElement("img");
   searchCardImg.classList = "result-card-img img-fluid rounded-start";
-  // searchCardImg.src = './assets/images/creek-2.jpg'
   searchCardImg.src = trailImg
-
   searchCardCol4.appendChild(searchCardImg);
 
 
@@ -127,29 +127,36 @@ function renderSearchCards(trailImg, trail_name, trailUrl) {
 
 
   //Card Title
-  var searchCardTitle = document.createElement("h3");
-  searchCardTitle.classList = "card-title";
-  searchCardTitle.textContent = trail_name
+  var searchCardTitle = document.createElement("h2");
+  searchCardTitle.classList = "card-title  mb-3";
+  searchCardTitle.textContent = trail_name;
   searchCardBody.appendChild(searchCardTitle);
 
 
-  //Card Total Animal Count
-  var searchCardAnCount = document.createElement("p");
-  searchCardAnCount.classList = "card-text text-muted card-animal-count";
-  searchCardAnCount.textContent = "A total of 9 animals of all types have been seen on this trail."
-  searchCardBody.appendChild(searchCardAnCount);
+  // //Card Total Animal Count
+  // var searchCardAnCount = document.createElement("p");
+  // searchCardAnCount.classList = "card-text text-muted card-animal-count";
+  // searchCardAnCount.textContent = "A total of 9 animals of all types have been seen on this trail."
+  // // searchCardBody.appendChild(searchCardAnCount);
 
 
   //Card Trail_info URL
   var trailUrla = document.createElement("a");
-  trailUrla.classList = "card-trail-url";
+  trailUrla.classList = "card-trail-url me-2 btn";
   var atURL = document.createTextNode("Learn more about this trail!")
   trailUrla.appendChild(atURL)
   trailUrla.title = "Learn more at All Trails"
   trailUrla.href = trailUrl
   trailUrla.setAttribute("target", "_blank")
   searchCardBody.appendChild(trailUrla);
-}
+
+
+  // // Result Save Trail Link Button
+  var saveTrailBtn = document.createElement("button");
+  var atURL = document.createTextNode("Save This Trail");
+  saveTrailBtn.classList = "trail-save-btn ms-2 text-nowrap btn btn-save";
+  searchCardBody.appendChild(saveTrailBtn);
+};
 
 
 // async function trailSaveHandler(event) {
