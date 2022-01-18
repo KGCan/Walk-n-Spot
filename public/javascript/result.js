@@ -38,6 +38,8 @@ async function searchFormHandler(event) {
 
             if (json[i].city_name === city_input && json[i].animals[j].animal_name === animal_input) {
               console.log("I am 2nd for loop")
+
+
               console.log(json[i].animals[j].animal_name)
               console.log(json[i].trail_name)
               console.log(json[i].trail_img)
@@ -54,7 +56,7 @@ async function searchFormHandler(event) {
 
               renderSearchCards(trailImg, json[i].trail_name, trailUrl)
               // ************ Need What if No Animal Option ***************
-              //   alert(`A ${animal_input} hasn't been spoted before on these trails!`)
+              //   alert(`A ${animal_input} hasn't been spoted before on this trail!`)
               // }
             }
           }
