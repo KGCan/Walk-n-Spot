@@ -25,4 +25,24 @@ router.get('/', (req, res) => {
     });
 });
 
+router.put('/', (req, res) => {
+  Trail.update(
+    {
+      sighting: req.body.animals
+    },
+
+  )
+    .then(sightingData =>{
+      if (!sightingData) {
+        res.status(404).json({message: 'Error'});
+        return;
+      }
+      res.json(sightingData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
+})
+
 module.exports = router;
