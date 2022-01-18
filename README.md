@@ -37,6 +37,22 @@ Find your favorite animals on your hike
 
 ## Technologies Used
 
+- Node
+- Express with Sessions
+- MySQL
+- Sequelize
+- Handlebars
+- Dotenv
+- Heroku
+- Bootstrap
+- Validator (Maybe)
+
+## Following practices of:
+
+- RESTful API
+- MVC Structuring
+- Protecting sensitive data
+
 ## Contributors
 
 - Sam Place
@@ -50,6 +66,11 @@ Find your favorite animals on your hike
 - https://github.com/KGCan/Walk-n-Spot.git
 
 ## Link to deployed application using Heroku
+
+
+=======
+
+# References
 
 #### Sites We Used or Were Inspired By
 
@@ -78,15 +99,3 @@ Find your favorite animals on your hike
 - https://www.pexels.com/license/
 - https://evanhahn.com/when-stringify-doesnt-return-a-string
 - https://www.delftstack.com/howto/javascript/check-value-is-object-in-javascript/#:~:text=object%20or%20not.-,Use%20the%20instanceof%20Function%20to%20Check%20Whether%20a%20Value%20Is,is%20of%20an%20object%20type.
-
-=======
-
-# References
-
-#### Sites We Used or Were Inspired By
-
-If we use picks form here we need to give credit:
-https://unsplash.com/s/photos/trail
-& unsplash license
-
-another free site Pexels.com
