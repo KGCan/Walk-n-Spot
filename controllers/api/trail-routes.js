@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   Trail.findAll({
     // attributes: { exclude: ['password'] }
     //map()
-    attributes: ['id', 'trail_name', 'city_name', 'lat', 'lon', 'trail_img'],
+    attributes: ['id', 'trail_name', 'city_name', 'lat', 'lon', 'trail_img', 'trail_info'],
     include: [
       {
         model: Animal,

@@ -49,6 +49,12 @@ Trail.init(
         key: 'id'
       }
     },
+
+    trail_info: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      isURL: true
+    },
   },
   {
     sequelize,

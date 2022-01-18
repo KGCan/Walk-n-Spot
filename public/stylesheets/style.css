@@ -1,54 +1,112 @@
+:root {
+  --color1: #4d4b30;
+  --color2: #9acd32;
+  --color3: #f1e9dc;
+  --color4: #e1c9b2;
+  --color5: #925217;
+  --color6: #56371a;
+  --color7: #5c8e2b;
+}
+
+body {
+  background-color: var(--color2);
+  background-image: url("../assets/images/pawprint-4.png");
+  /* opacity: 0.5; */
+  background-repeat: none;
+  z-index: 9999;
+  font-size: 16px;
+}
+
 .lg-icon {
-    font-size:1.5rem;
+  font-size: 1.5rem;
 }
 
 .hero {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.55)), url("../assets/images/hero-deer-2.jpg");
-    background-size:cover;
-    background-position: 50% 30%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("../assets/images/hero-deer-2.jpg");
+  background-size: cover;
+  background-position: 50% 30%;
 }
 
 #map {
-    margin-top: 20px; 
-    height: 350px; 
+  margin-top: 20px;
+  height: 350px;
 }
 
 header nav {
-    margin: 7px 0;
+  margin: 7px 0;
 }
 
 header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
 }
 
 header nav ul li a {
-    padding: 10px 22px;
-    font-weight:lighter;
-    font-size:23px;
+  padding: 10px 22px;
+  font-weight: lighter;
+  font-size: 23px;
 }
 
 header nav ul li a:hover {
-    background: yellowgreen;
-    border-radius: 15px;
-    color: black;
+  background: var(--color2);
+  border-radius: 15px;
+  color: black;
 }
 
 h5 {
-    color: black;
+  /* color: black; */
+  color: var(--color1);
 }
 
 .form-signin form div label {
-    color: grey;
+  /* color: grey; */
+  color: var(--color1);
 }
 
-.verticalAlign{
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
+.result-card-div {
+  background-color: var(--color4);
+}
 
+.card-trail-url {
+  text-decoration: none;
+  color: var(--color4);
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 10px;
+  background-color: var(--color5);
+  border: 3px black;
+  border-radius: 15px;
+}
+
+.card-trail-url:hover {
+  background: var(--color2);
+  border-radius: 15px;
+  color: var(--color1);
+}
+
+.verticalAlign {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+@media screen and (min-width: 488px) {
+  .result-card-img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .result-card-img {
+    width: auto;
+  }
 }
