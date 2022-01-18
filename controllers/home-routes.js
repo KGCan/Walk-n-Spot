@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { reverseMultiplyAndSum } = require('validator/lib/util/algorithms');
 const sequelize = require('../config/connection');
-//const { Post, User, Comment } = require('../models');
 const { Trail, User, Animal, TrailAnimal } = require('../models');
 
 // Homepage route
@@ -14,18 +13,18 @@ router.get('/', (req, res) => {
             'trail_id',
         ],
     })
-    .then(userData => {
-        // pass a single post object into the homepage template
-        const users = userData.map(user => user.get({ plain: true }));
-        res.render('homepage', {
-          users,
-          loggedIn: req.session.loggedIn
+        .then(userData => {
+            // pass a single post object into the homepage template
+            const users = userData.map(user => user.get({ plain: true }));
+            res.render('homepage', {
+                users,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
 });
 
 
@@ -37,37 +36,74 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-// Get Trails from search for Cards
-router.get('/results', (req, res) => {
-    Trail.findAll({
-        // attributes: { exclude: ['password'] }
-        //map()
-        attributes: ['id', 'trail_name', 'trail_img'],
-        include: [
-            {
-                model: Animal,
-                attributes: ['animal_name']
-                
-            }
-        ]
-
-    })
-        .then(trailData => {
-            const trails = trailData.map(trail => trail.get({ plain: true }));
-            console.log(trailData[0].animals[1].trail_animal.sighting)
 
 
-            // console.log(trails)
-            res.render('results', {
-                trails,
-                loggedIn: req.session.loggedIn
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+// //  ---------  Render Results Route -----
+// //  Get ALL Trails Draft Code
+// // Get Trails from search, for Cards
+
+// router.get('/results', (req, res) => {
+//     res.render('results', {
+//         // name: `${json[i].trail_name}`,
+//         // trail_img: `${json[i].trail_img}`
+//         //    ${json[i].animals[j].trail_animal.sighting}
+//         name: "Test Trail Name",
+//         trail_img: '../public/assets/images/creek-1-sm.jpg'
+//     })
+// })
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
+
+
+
+
+
+
+
+
+// //  Get ALL Trails Draft Code
+// // Get Trails from search, for Cards
+// router.get('/results', (req, res) => {
+//     Trail.findAll({
+//         // attributes: { exclude: ['password'] }
+//         //map()
+//         attributes: ['id', 'trail_name', 'trail_img'],
+//         include: [
+//             {
+//                 model: Animal,
+//                 attributes: ['animal_name']
+
+//             }
+//         ]
+//     })
+//         .then(trailData => {
+//             const trails = trailData.map(trail => trail.get({ plain: true }));
+//             console.log(trailData[0].animals[1].trail_animal.sighting)
+
+
+//             // console.log(trails)
+//             res.render('results', {
+//                 trails,
+//                 loggedIn: req.session.loggedIn,
+
+//             });
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
+
+
+
+
+
+
+
+
+
 
 
 // ---------  pseudocode card & results Direction ----------
