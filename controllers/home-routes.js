@@ -37,6 +37,7 @@ router.get('/login', (req, res) => {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 // //  ---------  Render Results Route -----
@@ -103,6 +104,8 @@ router.get('/login', (req, res) => {
 
 
 =======
+=======
+>>>>>>> 7023cb64c5b7a95816f5d876dd32c72084768b30
 // Get Trails from search for Cards
 router.get('/results', (req, res) => {
     Trail.findAll({
@@ -116,7 +119,6 @@ router.get('/results', (req, res) => {
                 
             }
         ]
-
     })
         .then(trailData => {
 
@@ -132,6 +134,7 @@ router.get('/results', (req, res) => {
 
             const trails = trailData.map(trail => trail.get({ plain: true }));
             // console.log(trailData[0].animals[1].trail_animal.sighting)
+<<<<<<< HEAD
             console.log(trailData)
 >>>>>>> c8f322280caa69700c1be882cce28ca73e3fb953
 
@@ -158,3 +161,28 @@ router.get('/results', (req, res) => {
 
 
 module.exports = router;
+=======
+            console.log(trailData);
+        })
+        
+    });
+    
+    
+    module.exports = router;
+
+
+    // ---------  pseudocode card & results Direction ----------
+    // when user searches then redirects to Results Page
+    //if they then decided to login 
+    // they should be redirected back to Results Page
+    // if  havent searched city yet, then login =>  redir to homepage;
+    // if searched then log in, ==> redir to search Results
+    
+    // router.get('/cards', (req, res) => {
+    //     // if (req.session.loggedIn) {
+    //     //     res.redirect('/');
+    //     //     return;
+    //     //}
+    
+    //     res.render('cards');
+>>>>>>> 7023cb64c5b7a95816f5d876dd32c72084768b30
