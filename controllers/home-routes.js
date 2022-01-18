@@ -36,6 +36,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+<<<<<<< HEAD
 
 
 // //  ---------  Render Results Route -----
@@ -101,6 +102,38 @@ router.get('/login', (req, res) => {
 
 
 
+=======
+// Get Trails from search for Cards
+router.get('/results', (req, res) => {
+    Trail.findAll({
+        // attributes: { exclude: ['password'] }
+        //map()
+        attributes: ['id', 'trail_name', 'trail_img', 'city_name'],
+        include: [
+            {
+                model: Animal,
+                attributes: ['animal_name']
+                
+            }
+        ]
+
+    })
+        .then(trailData => {
+
+            // for (var i = 0)
+            const city_input = document.querySelector('#CityInput').value.trim();
+            const animal_input = document.querySelector("select[name='AnimalInput']").value;
+            for(var i = 0; i < json.length; i++){ //track city
+                for(var j = 0; j < json[i].animals.length; j++) { //track animals
+                    if(json[i].city_name === city_input && json[i].animals[j].animal_name === animal_input){
+                    }
+                }
+            }
+
+            const trails = trailData.map(trail => trail.get({ plain: true }));
+            // console.log(trailData[0].animals[1].trail_animal.sighting)
+            console.log(trailData)
+>>>>>>> c8f322280caa69700c1be882cce28ca73e3fb953
 
 
 

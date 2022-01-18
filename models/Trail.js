@@ -41,6 +41,10 @@ Trail.init(
       allowNull: true,
     },
 
+    alltrails: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     animal_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -50,11 +54,14 @@ Trail.init(
       }
     },
 
+<<<<<<< HEAD
     trail_info: {
       type: DataTypes.STRING,
       allowNull: false,
       isURL: true
     },
+=======
+>>>>>>> c8f322280caa69700c1be882cce28ca73e3fb953
   },
   {
     sequelize,

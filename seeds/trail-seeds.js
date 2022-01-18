@@ -3,16 +3,17 @@ const { Trail } = require('../models');
 const trailData = [
     {
         trail_name: 'American River Parkway Trailhead',
-        city_name: 'Sacramento',
+        city_name: 'SACRAMENTO',
         lat: '38.6010',
         lon: '-121.5077',
-        trail_img: './public/assets/images/creek-1-sm.jpg',
+        trail_img: './assets/images/creek-1-sm.jpg',
+        alltrails: 'https://www.alltrails.com/trail/us/california/american-river-bike-trail-jedediah-smith-memorial-trail',
         animal_id: 1,
         trail_info: 'https://regionalparks.saccounty.net/Parks/Pages/AmericanRiverParkway.aspx'
     },
     {
         trail_name: 'Sacramento River Parkway',
-        city_name: 'Sacramento',
+        city_name: 'SACRAMENTO',
         lat: '38.5838',
         lon: '-121.5060',
         trail_img: './public/assets/images/creek-2.jpg',
@@ -21,7 +22,7 @@ const trailData = [
     },
     {
         trail_name: 'Riverfront Promenade',
-        city_name: 'Sacramento',
+        city_name: 'SACRAMENTO',
         lat: '38.5770',
         lon: '-121.5086',
         trail_img: './public/assets/images/creek-3.jpg',

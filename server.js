@@ -27,7 +27,7 @@ app.use(session(sess));
 
 
 const helpers = require('./utils/helpers');
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({helpers});
 
 
 app.engine('handlebars', hbs.engine);
@@ -46,7 +46,5 @@ app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`
-  ------ LISTENING on port: ${PORT} ------
-  `));
+  app.listen(PORT, () => console.log('Now listening'));
 });
