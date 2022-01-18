@@ -7,6 +7,7 @@ Handlebars.registerHelper("link", function(text, url) {
         text = Handlebars.escapeExpression(text)
         
    return new Handlebars.SafeString("<a href='" + url + "'>" + text +"</a>");
+
 });
 
 

@@ -32,6 +32,7 @@ router.get('/', (req, res) => {
                 // console.log(userData)
                 
             })
+
             var trailArray=[]
             // const trails = trailData.map(trail => trail.get({ plain: true }));
             if (trailData[0].dataValues.trails[0]== null) {
@@ -44,13 +45,40 @@ router.get('/', (req, res) => {
                         trail_img: trailData[0].dataValues.trails[i].trail_img,
                         alltrails: trailData[0].dataValues.trails[i].alltrails,
                     }
+
+                    Trail.findAll({
+                        where: {
+                            id: trailData[0].dataValues.trails[i].id
+                        },
+                        include: [
+                          {
+                            model: Animal,
+                            attributes: ['animal_name']
+                    
+                          }
+                        ]
+        
+                    }).then(userData => {
+                        console.log('----------------------------------------Here is the trail data------------------------------------');
+                        console.log(userData);
+
+                        trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
+
+                        for(var j = 1; j < userData[0].dataValues.animals.length; j++) {
+                            trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+                        }
+                        
+                    })
+
                     // id: "", username: "", email: "", trails
                     trailArray.push(trail)
                 }
             }
             console.log(trailArray);
+
             // console.log(trailData)
             // console.log(trail)
+
             res.render('dashboard', {
                 trailArray,
                 loggedIn: req.session.loggedIn
@@ -61,6 +89,10 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
+
+module.exports = router;
 
 // router.get('/', (req, res) => {
 //     console.log(req.session);
@@ -110,3 +142,4 @@ router.get('/', (req, res) => {
 // });
 
 module.exports = router;
+
