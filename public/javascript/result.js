@@ -154,6 +154,7 @@ function renderSearchCards(trailImg, trail_name, trailUrl) {
   // // Result Save Trail Link Button
   var saveTrailBtn = document.createElement("button");
   var saveText = document.createTextNode("Save This Trail");
+  saveTrailBtn.setAttribute("id", "result-save-btn");
   saveTrailBtn.classList = "trail-save-btn ms-2 text-nowrap btn btn-save";
   saveTrailBtn.appendChild(saveText)
   searchCardBody.appendChild(saveTrailBtn);
