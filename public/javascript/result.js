@@ -11,7 +11,7 @@ async function searchFormHandler(event) {
     .then(response => response.json())
     .then(function (json) {
 
-      console.log('Success')
+     // console.log('Success')
 
       // const city_input = document.querySelector('#CityInput').value.trim();
       // const animal_input = document.querySelector("select[name='AnimalInput']").value;
@@ -19,34 +19,34 @@ async function searchFormHandler(event) {
       const city_input = document.querySelector('#CityInput').value.trim();
       const animal_input = document.querySelector("select[name='AnimalInput']").value;
 
-      console.log(city_input);
-      console.log(animal_input)
+     // console.log(city_input);
+      //console.log(animal_input)
 
       if (animal_input != "All") {
 
-        console.log(json[0])
+        //console.log(json[0])
         // console.log(json[1].animals[0].animal_name)
-        console.log(animal_input)
+        //console.log(animal_input)
 
         // Check for City match
         for (var i = 0; i < json.length; i++) {
-          console.log(json[i].city_name)
+          //console.log(json[i].city_name)
 
           // Check for Animal match
           for (var j = 0; j < json[i].animals.length; j++) {
             // console.log(json[i].animals[j].animal_name)
 
             if (json[i].city_name === city_input && json[i].animals[j].animal_name === animal_input) {
-              console.log("I am 2nd for loop")
+             /* console.log("I am 2nd for loop")
               console.log(json[i].animals[j].animal_name)
               console.log(json[i].trail_name)
               console.log(json[i].trail_img)
-              console.log(json[i].trail_info)
+              console.log(json[i].trail_info)*/
 
               let text1 = "."
               let text2 = (json[i].trail_img).slice(8)
               let trailImg = text1.concat(text2);
-              console.log(trailImg)
+              //console.log(trailImg)
 
               let trailUrl = json[i].trail_info
 
@@ -65,14 +65,14 @@ async function searchFormHandler(event) {
         for (var i = 0; i < json.length; i++) {
           console.log(json[i].trail_name)
           // let trailImg = (json[i].trail_img).replace("./public", ".")
-          console.log(json[i].trail_img)
+          //console.log(json[i].trail_img)
 
           let text1 = "."
           let text2 = (json[i].trail_img).slice(8)
           let trailImg = text1.concat(text2);
           let trailUrl = (json[i].trail_info);
-          console.log(trailImg)
-          console.log(json[i].all_trails)
+         // console.log(trailImg)
+         // console.log(json[i].all_trails)
           renderSearchCards(trailImg, json[i].trail_name, trailUrl)
         }
       }

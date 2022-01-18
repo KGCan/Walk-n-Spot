@@ -24,7 +24,7 @@ var Add_Map = function (lat, lon) {
 
 var AddMarker = function (lat, lon, n, img_url, trail_name, sighting) {
     marker[n] = L.marker([lat, lon]).addTo(mymap);
-    marker[n].bindPopup(/*'<img src=' + img_url + '>' + */trail_name + " has " + sighting + " people spotted").openPopup();
+    marker[n].bindPopup(/*'<img src=' + img_url + '>' + */trail_name + " has had " + sighting + " of animal sightings.").openPopup();
 };
 
 var Map_reset = function () { 
@@ -38,6 +38,7 @@ var Map_reset = function () {
 };
 
 async function commentFormHandler(event) {
+    event.preventDefault();
 
    if(first === 0){
         Map_reset();
