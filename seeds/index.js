@@ -24,9 +24,6 @@ const seedAll = async () => {
   await seedTrailAnimal();
   console.log('\n----- TrailAnimal SEEDED -----\n');
 
-  // await seedCity();
-  // console.log('\n----- Cities SEEDED -----\n');
-
   await seedUser();
   console.log('\n----- User SEEDED -----\n');
 

@@ -40,11 +40,6 @@ Trail.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-
-    alltrails: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     animal_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -55,7 +50,7 @@ Trail.init(
     },
     trail_info: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       isURL: true
     },
   },
