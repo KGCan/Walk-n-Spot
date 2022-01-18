@@ -32,7 +32,12 @@ TrailAnimal.init(
         model: 'animal',
         key: 'id'
       }
+    },
+    sighting: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     }
+
   },
   // 2nd param of init
   {

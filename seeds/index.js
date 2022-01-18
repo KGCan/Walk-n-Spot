@@ -10,6 +10,7 @@ const sequelize = require('../config/connection');
 
 
 const seedAll = async () => {
+
   await sequelize.sync({ force: false });
 
   console.log('\n----- DATABASE SYNCED -----\n');
@@ -23,10 +24,7 @@ const seedAll = async () => {
   await seedTrailAnimal();
   console.log('\n----- TrailAnimal SEEDED -----\n');
 
-  // await seedCity();
-  // console.log('\n----- Cities SEEDED -----\n');
-
- await seedUser();
+  await seedUser();
   console.log('\n----- User SEEDED -----\n');
 
   await seedUserTrail();

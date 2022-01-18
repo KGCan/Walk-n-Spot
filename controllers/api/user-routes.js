@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Animal, Trail, TrailAnimal, } = require("../../models");
+const { User, Animal, Trail, TrailAnimal, UserTrail, } = require("../../models");
 
 
 
@@ -10,17 +10,15 @@ router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] },
     include: [
-      // {
-      //   model: Animal,
-      //   attributes: ['animal_name']
-      // },
       {
         model: Trail,
-        attributes: [['id', 'trail_id'], 'trail_name', 'animal_id'],
 
-        through: {
-          attributes: [],
-        },
+        // through: {
+        //   model: UserTrail
+        // },
+        // include: [
+        //   model: Animal
+        // ]
       },
     ]
   })
@@ -30,7 +28,6 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 // GET /api/users/1
 router.get('/:id', (req, res) => {
@@ -124,15 +121,13 @@ router.post('/login', (req, res) => {
   }).then(userData => {
     if (!userData) {
       res.status(400).json({ message: 'Incorrect email and/or password!' });
-      alert('Incorrect email and/or password!')
       return;
     }
-    const validPassword = userData.checkPassword(req.body.password);
-    if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect email and/or password!' });
-      alert
-      return;
-    }
+    // const validPassword = userData.checkPassword(req.body.password);
+    // if (!validPassword) {
+    //   res.status(400).json({ message: 'Incorrect email and/or password!' });
+    //   return;
+    // }
     req.session.save(() => {
       // declare session variables
       req.session.user_id = userData.id;

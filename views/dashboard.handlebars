@@ -1,6 +1,15 @@
 <section class="yourTrails">
-    <h1>Your Trails</h1>
+
+    <div class="album py-5 bg-light">
+
+        <div class="container">
+            <h1>Saved Trails:</h1><br>
+            <div class="">
+                {{#each trailArray as |trail| }}
+                {{> cards-dashboard trail }}
+                {{/each}}
+            </div>
+        </div>
+    </div>
 
 </section>
-
-

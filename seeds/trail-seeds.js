@@ -37,7 +37,6 @@ const trailData = [
         trail_img: './assets/images/trail-4.jpg',
         animal_id: 7,
         trail_info: "https://www.fecrpd.com/creekside-nature-area"
-
     },
     {
         trail_name: 'Bannon Creek Park & Parkway',
@@ -147,6 +146,7 @@ const trailData = [
         animal_id: 1,
         trail_info: "http://www.auburnrec.com/parks_bicentennial.php"
     },
+ 
 ]
 
 const seedTrails = () => Trail.bulkCreate(trailData);

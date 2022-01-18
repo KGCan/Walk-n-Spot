@@ -1,0 +1,79 @@
+<main class="hero">
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light text-light">Walk'n Spot</h1>
+        <p class="lead text-light">Find & share your favorite animals</p>
+        <p>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              id="CityInput"
+              class="form-control w-50"
+              aria-label="Text input with dropdown button"
+              placeholder="Search your city for a trail with"
+            />
+            <select
+              name="AnimalInput"
+              class="form-select"
+              aria-label="Default select example"
+            >
+                <option value="All">Animals</option>
+                <option value="Bat">Bat</option>
+                <option value="Bear">Bear</option>
+                <option value="Beaver">Beaver</option>
+                <option value="Blue Herring">Blue Herring</option>
+                <option value="Bluejay">Bluejay</option>
+                <option value="Bobcat">Bobcat</option>
+                <option value="Cow">Cow</option>
+                <option value="Coyote">Coyote</option>
+                <option value="Crane">Crane</option>
+                <option value="Deer">Deer</option>
+                <option value="Dog">Dog</option>
+                <option value="Donkey">Donkey</option>
+                <option value="Emu">Emu</option>
+                <option value="Fish">Fish</option>
+                <option value="Frog">Frog</option>
+                <option value="Hawk">Hawk</option>
+                <option value="Horse">Horse</option>
+                <option value="Lizard">Lizard</option>
+                <option value="Llama">Llama</option>
+                <option value="Mountain Lion">Mountain Lion</option> 
+                <option value="Opossum">Opossum</option>
+                <option value="Pig">Pig</option>
+                <option value="Quail">Quail</option>
+                <option value="Raccoon">Raccoon</option>
+                <option value="Rat">Rat</option>  
+                <option value="River Otter">River Otter</option>
+                <option value="Skunk">Skunk</option>
+                <option value="Snake">Snake</option>
+                <option value="Squirrel">Squirrel</option>
+                <option value="Turtle">Turtle</option>
+                <option value="Woodpecker">Woodpecker</option>
+            </select>
+            <button type="button" class="SearchCity btn btn-primary"><i
+                class="fas fa-search text-light"
+              ></i></button>
+          </div>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="section">
+  <div class="container">
+    <div id="map"></div>
+  </div>
+</section>
+
+{{! -----RESULT  CARDS  START --}}
+<section class="card-section">
+  <div class="card-container">
+    <div id="cards"></div>
+  </div>
+</section>
+
+<script src="../javascript/map.js"></script>
+<script src="../javascript/result.js"></script>
