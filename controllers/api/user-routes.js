@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Animal, Trail, TrailAnimal, } = require("../../models");
+const { User, Animal, Trail, TrailAnimal, UserTrail, } = require("../../models");
 
 
 
@@ -10,17 +10,15 @@ router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] },
     include: [
-      // {
-      //   model: Animal,
-      //   attributes: ['animal_name']
-      // },
       {
         model: Trail,
-        attributes: [['id', 'trail_id'], 'trail_name', 'animal_id'],
 
-        through: {
-          attributes: [],
-        },
+        // through: {
+        //   model: UserTrail
+        // },
+        // include: [
+        //   model: Animal
+        // ]
       },
     ]
   })
@@ -125,11 +123,11 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'Incorrect email and/or password!' });
       return;
     }
-    const validPassword = userData.checkPassword(req.body.password);
-    if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect email and/or password!' });
-      return;
-    }
+    // const validPassword = userData.checkPassword(req.body.password);
+    // if (!validPassword) {
+    //   res.status(400).json({ message: 'Incorrect email and/or password!' });
+    //   return;
+    // }
     req.session.save(() => {
       // declare session variables
       req.session.user_id = userData.id;

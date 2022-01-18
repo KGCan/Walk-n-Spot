@@ -25,6 +25,18 @@ const userTrailData = [
     user_id: 5,
     trail_id: 3
   },
+  {
+    user_id: 1,
+    trail_id: 2
+  },
+  {
+    user_id: 1,
+    trail_id: 3
+  },
+  {
+    user_id: 1,
+    trail_id: 4
+  },
 ]
 
 const seedUserTrail = () => UserTrail.bulkCreate(userTrailData);
