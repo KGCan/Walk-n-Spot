@@ -31,7 +31,7 @@ const trailData = [
     },
     {
         trail_name: 'Creekside Park & Nature Area',
-        city_name: 'Sacramento',
+        city_name: 'SACRAMENTO',
         lat: '38.6140',
         lon: '-121.3938',
         trail_img: './assets/images/trail-4.jpg',
@@ -40,7 +40,7 @@ const trailData = [
     },
     {
         trail_name: 'Bannon Creek Park & Parkway',
-        city_name: 'Sacramento',
+        city_name: 'SACRAMENTO',
         lat: '38.6146',
         lon: '-121.5046',
         trail_img: './assets/images/trail-5.jpg',
