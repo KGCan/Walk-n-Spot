@@ -61,23 +61,15 @@ router.get('/', (req, res) => {
                             trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
                         }
                     })
-                    // Possible alternative add in the code below 
+                    // Possible alternative add in the code below after the intial .then option??
 
                     // trail.sightingNone = userData[0].dataValues.animals[null] + " No animals matching your search have been sighted ";
 
                     // for(var j = 0; j < userData[0].dataValues.animals.length; j++) {
-                    //     trail.sightingNone += userData[0].dataValues.animals[j] + " No animals matching your search have been sighted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+                    //     trail.sightingNone += userData[0].dataValues.animals[j] + " No animals matching your search have been sighted "
                     //}
                     
-                      // if (trail.sighting == null) {
-                      //console.log(trailData)
-                      // } else if (trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n")}
-                      // } else (var j = 1; j < userData[0].dataValues.animals.length; j++) {
-                      //     trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
-                        // }
-
-
-                    // Possible alternative option to above changed j = 0 vs j = 1 in for loop ?? I doubt it's that simple...
+                    // Possible alternative option to above change j = 0 vs j = 1 in for loop ?? I doubt it's that simple...
 
                     // .then(userData => {
                     //     console.log('----------------------------------------Here is the trail data------------------------------------');
