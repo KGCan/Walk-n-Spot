@@ -3,6 +3,53 @@
     <div class="album py-5 bg-light">
 
         <div class="container">
+            <h6>What Animals did you see?</h4>
+            <div>
+                <p>Trail:</p>
+                <select name="trailSubmit" class="form-select" aria-label="Default select example">
+                    <option value="1" id="1">American River Parkway Trailhead</option>
+                    <option value="2" id="2">Sacramento River Parkway</option>
+                    <option value="3" id="3">Riverfront Promenade</option>
+
+                </select> <br>
+                <p>Animal:</p>
+                <select name="animalSubmit" class="form-select" aria-label="Default select example">
+                    <option value="All">Animals</option>
+                    <option value="1" id="Bat">Bat</option>
+                    <option value="2" id="Bear">Bear</option>
+                    <option value="Beaver">Beaver</option>
+                    <option value="Blue Herring">Blue Herring</option>
+                    <option value="Bluejay">Bluejay</option>
+                    <option value="Bobcat">Bobcat</option>
+                    <option value="Cow">Cow</option>
+                    <option value="Coyote">Coyote</option>
+                    <option value="Crane">Crane</option>
+                    <option value="Deer">Deer</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Donkey">Donkey</option>
+                    <option value="Emu">Emu</option>
+                    <option value="Fish">Fish</option>
+                    <option value="Frog">Frog</option>
+                    <option value="Hawk">Hawk</option>
+                    <option value="Horse">Horse</option>
+                    <option value="Lizard">Lizard</option>
+                    <option value="Llama">Llama</option>
+                    <option value="Mountain Lion">Mountain Lion</option> 
+                    <option value="Opossum">Opossum</option>
+                    <option value="Pig">Pig</option>
+                    <option value="Quail">Quail</option>
+                    <option value="Raccoon">Raccoon</option>
+                    <option value="Rat">Rat</option>  
+                    <option value="River Otter">River Otter</option>
+                    <option value="Skunk">Skunk</option>
+                    <option value="Snake">Snake</option>
+                    <option value="Squirrel">Squirrel</option>
+                    <option value="Turtle">Turtle</option>
+                    <option value="Woodpecker">Woodpecker</option>
+                </select>
+                <br>
+                <button type="button" class="submitAnimal btn btn-primary">Submit</button> <br>         
+            </div>
             <h1>Saved Trails:</h1><br>
             <div class="">
                 {{#each trailArray as |trail| }}
@@ -13,3 +60,6 @@
     </div>
 
 </section>
+
+<script src="../javascript/submit-animal.js"></script>
+<script src="../javascript/save-button.js"></script>

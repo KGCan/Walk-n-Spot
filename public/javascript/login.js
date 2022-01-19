@@ -24,6 +24,8 @@ async function loginHandler(event) {
 
 async function signupHandler(event) {
   event.preventDefault();
+  var test = document.querySelector('#usernameSignup').id;
+  console.log(test)
   const username = document.querySelector('#usernameSignup').value.trim();
   const email = document.querySelector('#emailSignup').value.trim();
   const password = document.querySelector('#passwordSignup').value.trim();

@@ -92,6 +92,35 @@ router.post('/',  (req, res) => {
     })
 });
 
+router.get('/usertrail', (req, res) => {
+  // create a new tag
+  UserTrail.findall({
+
+  })
+    .then(userData => res.json(userData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+// Will edit Mellie's function to pass trail_id to the renderSearchCards
+// Then with that trail_id, I will give that trail_id to the 'id' of the button or trail name html
+// Then I will create a function similar to login.js, define the id variable with the querySelector and pass it into the post API for /api/user/usertrail
+// Refer to the login.js file and potentially use the document.querySelector('#').id 
+
+router.post('/usertrail', (req, res) => {
+  // create a new tag
+  UserTrail.create({
+    user_id: req.session.user_id,
+    trail_id: req.body.trail_id
+  })
+    .then(userData => res.json(userData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 
 // router.post('/', async (req, res) => {
 //   try {

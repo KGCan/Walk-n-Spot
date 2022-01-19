@@ -28,28 +28,40 @@ async function searchFormHandler(event) {
         for (var i = 0; i < json.length; i++) {
           //console.log(json[i].city_name)
 
+
           // Check for Animal match
           for (var j = 0; j < json[i].animals.length; j++) {
             // console.log(json[i].animals[j].animal_name)
 
             if (json[i].city_name === city_input && json[i].animals[j].animal_name === animal_input) {
 
-             /* console.log("I am 2nd for loop")
+              // console.log("I am 2nd for loop")
 
 
-              console.log(json[i].animals[j].animal_name)
-              console.log(json[i].trail_name)
-              console.log(json[i].trail_img)
-              console.log(json[i].trail_info)*/
+              // console.log(json[i].animals[j].animal_name)
+              // console.log(json[i].trail_name)
+              // console.log(json[i].trail_img)
+              // console.log(json[i].trail_info)
+              console.log(json)
+
 
               let trailImg = json[i].trail_img;
               //console.log(trailImg)
 
               let trailUrl = json[i].trail_info
+              
+              // Adding the trail "id" so it can be used to save
+              let trailID = json[i].id
+              console.log()
+              console.log('----------------------------------------Here is the sighting data------------------------------------');
+
+              console.log(trailID)
 
 
+              renderSearchCards(trailImg, json[i].trail_name, trailUrl, trailID)
               //api/trailCard(trailInfoArr)
               renderSearchCards(trailImg, json[i].trail_name, trailUrl)
+              
               // ************ Need What if No Animal Option ***************
               //   alert(`A ${animal_input} hasn't been spoted before on this trail!`)
               // }
@@ -60,19 +72,23 @@ async function searchFormHandler(event) {
       //If look for All Animals
       else {
         for (var i = 0; i < json.length; i++) {
-          console.log(json[i].trail_name)
+          // console.log(json[i].trail_name)
           // let trailImg = (json[i].trail_img).replace("./public", ".")
+
           //console.log(json[i].trail_img)
 
           // let text1 = "."
           // let text2 = (json[i].trail_img).slice(8)
           //let trailImg = text1.concat(text2);
 
+
           let trailImg = (json[i].trail_img);
           let trailUrl = (json[i].trail_info);
-         // console.log(trailImg)
-         // console.log(json[i].all_trails)
-          renderSearchCards(trailImg, json[i].trail_name, trailUrl)
+
+          // console.log(trailImg)
+          // console.log(json[i].all_trails)
+
+          renderSearchCards(trailImg, json[i].trail_name, trailUrl, trailID)
         }
       }
     });
@@ -82,6 +98,10 @@ async function searchFormHandler(event) {
 var searchCardContainer = document.querySelector(".card-container");
 // var resultCard = document.createElement("div");
 // searchCardContainer.appendChild(searchCard);
+
+
+
+//function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
 
 
 function renderSearchCards(trailImg, trail_name, trailUrl) {
@@ -146,15 +166,25 @@ function renderSearchCards(trailImg, trail_name, trailUrl) {
   searchCardBody.appendChild(trailUrla);
 
 
-  // // Result Save Trail Link Button
-  var saveTrailBtn = document.createElement("button");
-  var saveText = document.createTextNode("Save This Trail");
-  saveTrailBtn.setAttribute("id", "result-save-btn");
-  saveTrailBtn.classList = "trail-save-btn ms-2 text-nowrap btn btn-save";
-  saveTrailBtn.appendChild(saveText)
-  searchCardBody.appendChild(saveTrailBtn);
-};
 
+
+
+  // // Result Save Trail Link Button
+//   var saveTrailBtn = document.createElement("button");
+//   var saveText = document.createTextNode("Save This Trail");
+//   saveTrailBtn.setAttribute("id", trailID);
+//   saveTrailBtn.classList = "trail-save-btn ms-2 text-nowrap btn btn-save";
+//   saveTrailBtn.appendChild(saveText)
+//   searchCardBody.appendChild(saveTrailBtn);
+
+//   var script = document.createElement('script');
+//   script.src = "../javascript/save-button.js";
+//   searchCardBody.appendChild(script);}
+
+
+function saveTrail(id) {
+  
+}
 
 // async function trailSaveHandler(event) {
 //   event.preventDefault();
@@ -186,6 +216,30 @@ function renderSearchCards(trailImg, trail_name, trailUrl) {
 
 // document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
 
+async function saveTrail(event) {
+  event.preventDefault();
+  var user_id = 2;
+  var trail_id = document.querySelector('.trail-save-btn').id.trim();
+  console.log(user_id)
+  console.log(trail_id)
+  if (user_id && trail_id) {
+    const response = fetch('/api/user/usertrail', {
+      method: 'post',
+      body: JSON.stringify({
+        user_id,
+        trail_id
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      console.log('weird')
+    }
+  }
+}
+
+document.querySelector('.trail-save-btn').addEventListener('click', saveTrail);
 
 
 
