@@ -57,10 +57,14 @@ router.get('/', (req, res) => {
                         
                         trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
 
+                        // if (dataValues.animals[0] === null) {
+                        //     alert(message, 'There are no trails matching your search criteria');
+                        // } else {                        
                         for(var j = 0; j < userData[0].dataValues.animals.length; j++) {
                             trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
                         }
                     })
+
                     // Possible alternative add in the code below after the intial .then option??
 
                     // trail.sightingNone = userData[0].dataValues.animals[null] + " No animals matching your search have been sighted ";
