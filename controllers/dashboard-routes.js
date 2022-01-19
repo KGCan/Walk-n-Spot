@@ -60,14 +60,40 @@ router.get('/', (req, res) => {
                     }).then(userData => {
                         console.log('----------------------------------------Here is the trail data------------------------------------');
                         console.log(userData);
-
+                        
                         trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
 
-                        for(var j = 1; j < userData[0].dataValues.animals.length; j++) {
+                        // testing code to get an alert message to pull if no animal data available
+                        // if (dataValues.animals[0] === null) {
+                        //     alert(message, 'There are no trails matching your search criteria');
+                        // } else {                        
+                        for(var j = 0; j < userData[0].dataValues.animals.length; j++) {
                             trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
                         }
-                        
                     })
+
+                    // Possible alternative add in the code below after the intial .then option??
+
+                    // trail.sightingNone = userData[0].dataValues.animals[null] + " No animals matching your search have been sighted ";
+
+                    // for(var j = 0; j < userData[0].dataValues.animals.length; j++) {
+                    //     trail.sightingNone += userData[0].dataValues.animals[j] + " No animals matching your search have been sighted "
+                    //}
+                    
+                    // Possible alternative option to above change j = 0 vs j = 1 in for loop ?? I doubt it's that simple...
+
+                    // .then(userData => {
+                    //     console.log('----------------------------------------Here is the trail data------------------------------------');
+                    //     console.log(userData);
+
+                    //     trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
+
+                    //     for(var j = 0; j < userData[0].dataValues.animals.length; j++) {
+                    //         trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+                    //     }
+                        
+                    // })
+
 
                     // id: "", username: "", email: "", trails
                     trailArray.push(trail)
@@ -140,3 +166,4 @@ module.exports = router;
 //         });
 // });
 
+// module.exports = router;

@@ -1,7 +1,7 @@
 :root {
   --color1: #4d4b30;
   --color2: #9acd32;
-  --color3: #f1e9dc;
+  --color3: #798270;
   --color4: #e1c9b2;
   --color5: #925217;
   --color6: #56371a;
@@ -33,9 +33,9 @@ body {
 }
 
 #map {
-    display: none;
-    margin-top: 20px; 
-    height: 350px; 
+  display: none;
+  margin-top: 20px;
+  height: 350px;
 }
 
 header nav {
@@ -78,16 +78,35 @@ h5 {
 
 .card-trail-url {
   text-decoration: none;
+  margin: 1rem 0;
   color: var(--color4);
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: bold;
   padding: 10px;
   background-color: var(--color5);
-  border: 3px black;
+  /* border: 0.8em black; */
   border-radius: 15px;
 }
 
 .card-trail-url:hover {
+  background: var(--color2);
+  border-radius: 15px;
+  color: var(--color1);
+}
+
+.trail-save-btn {
+  text-decoration: none;
+  margin: 1rem 0;
+  color: var(--color4);
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px;
+  background-color: var(--color7);
+  /* border: 3px black; */
+  border-radius: 15px;
+}
+
+.trail-link-btn:hover {
   background: var(--color2);
   border-radius: 15px;
   color: var(--color1);
