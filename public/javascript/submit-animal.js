@@ -3,6 +3,8 @@
 // const sequelize = require('../../config/connection');
 // const { User, Trail, Animal, TrailAnimal, UserTrail } = require('../../models');
 
+// const { response } = require("express");
+
 
 // async function submitAnimal(event) {
 
@@ -73,7 +75,7 @@ async function updateSighting() {
     const trail_submit = document.querySelector("select[name='trailSubmit']").value;
     const animal_submit = document.querySelector("select[name='animalSubmit']").value;
 
-    var sighting = submitAnimal()
+    var sighting = 20
     console.log(sighting)
 
     const response = await fetch(`/api/animal/${trail_submit}/${animal_submit}/`, {
@@ -84,13 +86,11 @@ async function updateSighting() {
        })
     });
     if (response.ok) {
-        // document.location.replace('/dashboard');
+        document.location.replace('/dashboard');
         console.log('works')
     } else {
         alert('Select again');
     }
-       
-
 }
 
     //  const response = await fetch(`/api/animal/${trail_submit}/${animal_submit}/`, {

@@ -55,6 +55,10 @@ async function searchFormHandler(event) {
               
               // Adding the trail "id" so it can be used to save
               let trailID = json[i].id
+              console.log()
+              console.log('----------------------------------------Here is the sighting data------------------------------------');
+
+              console.log(trailID)
 
 
 
@@ -161,7 +165,10 @@ function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
   saveTrailBtn.classList = "trail-save-btn ms-2 text-nowrap btn btn-save";
   saveTrailBtn.appendChild(saveText)
   searchCardBody.appendChild(saveTrailBtn);
-}
+
+  var script = document.createElement('script');
+  script.src = "../javascript/save-button.js";
+  searchCardBody.appendChild(script);}
 
 
 function saveTrail(id) {
@@ -198,6 +205,30 @@ function saveTrail(id) {
 
 // document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
 
+async function saveTrail(event) {
+  event.preventDefault();
+  var user_id = 2;
+  var trail_id = document.querySelector('.trail-save-btn').id.trim();
+  console.log(user_id)
+  console.log(trail_id)
+  if (user_id && trail_id) {
+    const response = fetch('/api/user/usertrail', {
+      method: 'post',
+      body: JSON.stringify({
+        user_id,
+        trail_id
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      console.log('weird')
+    }
+  }
+}
+
+document.querySelector('.trail-save-btn').addEventListener('click', saveTrail);
 
 
 
