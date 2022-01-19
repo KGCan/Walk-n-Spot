@@ -1,4 +1,3 @@
-
 var trailInfoArr = [];
 var generatedCard = "";
 var searchCardContainer = "";
@@ -98,75 +97,75 @@ searchCardContainer = document.querySelector(".card-container");
 
 function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
 
-  
-
-// Card
-var searchCard = document.createElement("div");
-searchCard.classList = "result-card-div m-3";
-searchCardContainer.appendChild(searchCard);
 
 
-// Card Row
-var searchCardRow = document.createElement("div");
-searchCardRow.classList = "row g-0";
-searchCard.appendChild(searchCardRow);
-
-// Card Col-4
-var searchCardCol4 = document.createElement("div");
-searchCardCol4.classList = "col-md-4";
-searchCardRow.appendChild(searchCardCol4);
-
-// Card img
-var searchCardImg = document.createElement("img");
-searchCardImg.classList = "result-card-img img-fluid rounded-start";
-searchCardImg.src = trailImg
-searchCardCol4.appendChild(searchCardImg);
+  // Card
+  var searchCard = document.createElement("div");
+  searchCard.classList = "result-card-div m-3";
+  searchCardContainer.appendChild(searchCard);
 
 
-// Card Col-8
-var searchCardCol8 = document.createElement("div");
-searchCardCol8.classList = "col-md-8";
-searchCardRow.appendChild(searchCardCol8);
+  // Card Row
+  var searchCardRow = document.createElement("div");
+  searchCardRow.classList = "row g-0";
+  searchCard.appendChild(searchCardRow);
+
+  // Card Col-4
+  var searchCardCol4 = document.createElement("div");
+  searchCardCol4.classList = "col-md-4";
+  searchCardRow.appendChild(searchCardCol4);
+
+  // Card img
+  var searchCardImg = document.createElement("img");
+  searchCardImg.classList = "result-card-img img-fluid rounded-start";
+  searchCardImg.src = trailImg
+  searchCardCol4.appendChild(searchCardImg);
 
 
-// Card body
-var searchCardBody = document.createElement("div");
-searchCardBody.classList = "card-body";
-searchCardCol8.appendChild(searchCardBody);
+  // Card Col-8
+  var searchCardCol8 = document.createElement("div");
+  searchCardCol8.classList = "col-md-8";
+  searchCardRow.appendChild(searchCardCol8);
 
 
-// Card Title
-var searchCardTitle = document.createElement("h2");
-searchCardTitle.classList = "card-title  mb-3";
-searchCardTitle.textContent = trail_name;
-searchCardBody.appendChild(searchCardTitle);
+  // Card body
+  var searchCardBody = document.createElement("div");
+  searchCardBody.classList = "card-body";
+  searchCardCol8.appendChild(searchCardBody);
 
 
-//Card Total Animal Count
-var searchCardAnCount = document.createElement("p");
-searchCardAnCount.classList = "card-text text-muted card-animal-count";
-searchCardAnCount.textContent = "A total of 9 animals of all types have been seen on this trail."
-// searchCardBody.appendChild(searchCardAnCount);
+  // Card Title
+  var searchCardTitle = document.createElement("h2");
+  searchCardTitle.classList = "card-title  mb-3";
+  searchCardTitle.textContent = trail_name;
+  searchCardBody.appendChild(searchCardTitle);
 
 
-// Card Trail_info URL
-var trailUrla = document.createElement("a");
-trailUrla.classList = "card-trail-url me-2 btn";
-var atURL = document.createTextNode("Learn more about this trail!")
-trailUrla.appendChild(atURL)
-trailUrla.title = "Learn more at All Trails"
-trailUrla.href = trailUrl
-trailUrla.setAttribute("target", "_blank")
-searchCardBody.appendChild(trailUrla);
+  //Card Total Animal Count
+  var searchCardAnCount = document.createElement("p");
+  searchCardAnCount.classList = "card-text text-muted card-animal-count";
+  searchCardAnCount.textContent = "A total of 9 animals of all types have been seen on this trail."
+  // searchCardBody.appendChild(searchCardAnCount);
 
 
-// Result Save Trail Link Button
-var saveTrailBtn = document.createElement("button");
-var saveText = document.createTextNode("Save This Trail");
-saveTrailBtn.setAttribute("id", trailID);
-saveTrailBtn.classList = "trail-save-btn ms-2 text-nowrap btn btn-save";
-saveTrailBtn.appendChild(saveText)
-searchCardBody.appendChild(saveTrailBtn);
+  // Card Trail_info URL
+  var trailUrla = document.createElement("a");
+  trailUrla.classList = "card-trail-url me-2 btn";
+  var atURL = document.createTextNode("Learn more about this trail!")
+  trailUrla.appendChild(atURL)
+  trailUrla.title = "Learn more at All Trails"
+  trailUrla.href = trailUrl
+  trailUrla.setAttribute("target", "_blank")
+  searchCardBody.appendChild(trailUrla);
+
+
+  // Result Save Trail Link Button
+  var saveTrailBtn = document.createElement("button");
+  var saveText = document.createTextNode("Save This Trail");
+  saveTrailBtn.setAttribute("id", trailID);
+  saveTrailBtn.classList = "trail-save-btn ms-2 text-nowrap btn btn-save";
+  saveTrailBtn.appendChild(saveText)
+  searchCardBody.appendChild(saveTrailBtn);
 
 }
 
@@ -226,6 +225,3 @@ document.querySelector('.SearchCity').addEventListener('click', searchFormHandle
 // }
 
 // document.querySelector('.trail-save-btn').addEventListener('click', saveTrail);
-
-
-

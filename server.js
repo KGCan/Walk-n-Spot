@@ -29,9 +29,10 @@ app.use(session(sess));
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 
-
-app.engine('handlebars', hbs.engine);
+// set app to use & confignhndlbz
 app.set('view engine', 'handlebars');
+app.engine('handlebars', hbs.engine);
+
 
 
 //middleware to prepare req.body and serve static files
