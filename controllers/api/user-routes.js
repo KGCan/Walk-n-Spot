@@ -152,11 +152,11 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'Incorrect email and/or password!' });
       return;
     }
-    // const validPassword = userData.checkPassword(req.body.password);
-    // if (!validPassword) {
-    //   res.status(400).json({ message: 'Incorrect email and/or password!' });
-    //   return;
-    // }
+    const validPassword = userData.checkPassword(req.body.password);
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect email and/or password!' });
+      return;
+    }
     req.session.save(() => {
       // declare session variables
       req.session.user_id = userData.id;
