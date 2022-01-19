@@ -54,14 +54,43 @@ router.get('/', (req, res) => {
                     }).then(userData => {
                         console.log('----------------------------------------Here is the trail data------------------------------------');
                         console.log(userData);
-
+                        
                         trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
 
                         for(var j = 1; j < userData[0].dataValues.animals.length; j++) {
                             trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
                         }
-                        
                     })
+                    // Possible alternative add in the code below 
+
+                    // trail.sightingNone = userData[0].dataValues.animals[null] + " No animals matching your search have been sighted ";
+
+                    // for(var j = 0; j < userData[0].dataValues.animals.length; j++) {
+                    //     trail.sightingNone += userData[0].dataValues.animals[j] + " No animals matching your search have been sighted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+                    //}
+                    
+                      // if (trail.sighting == null) {
+                      //console.log(trailData)
+                      // } else if (trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n")}
+                      // } else (var j = 1; j < userData[0].dataValues.animals.length; j++) {
+                      //     trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+                        // }
+
+
+                    // Possible alternative option to above changed j = 0 vs j = 1 in for loop ?? I doubt it's that simple...
+
+                    // .then(userData => {
+                    //     console.log('----------------------------------------Here is the trail data------------------------------------');
+                    //     console.log(userData);
+
+                    //     trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
+
+                    //     for(var j = 0; j < userData[0].dataValues.animals.length; j++) {
+                    //         trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+                    //     }
+                        
+                    // })
+
 
                     // id: "", username: "", email: "", trails
                     trailArray.push(trail)
