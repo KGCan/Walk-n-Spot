@@ -1,6 +1,6 @@
-# Walk 'n Spot
+# Walk'n Spot
 
-Find your favorite animals on your hike
+Hiking and animal lovers rejoice! Walk'n Spot is the app where all of your hiking and animal spotting dreams come true! Walk'n Spot is your one stop shop to locate trails within a specified city with various animal sightings.  You can view a list of trials with a total number of animal sightings, narrow your search by a specific animal, save your favorite trails, and add your own animal sightings.
 
 ## User Story
 
@@ -18,7 +18,7 @@ Find your favorite animals on your hike
 - WHEN I am on my dashboard
 - THEN I can note whether I have seen a specific animal on a trail
 
-## Project Requirements
+## Project Goals
 
 - Use Node.js and Express.js to create a RESTful API.
 - Use Handlebars.js as the templating engine.
