@@ -32,9 +32,13 @@ router.get('/', (req, res) => {
                 console.log(trailData)
             } else {
                 for (i=0; i<trailData[0].dataValues.trails.length; i++) {
+                    // console.log('----------------------------------------Here is the my data------------------------------------');
+
+                    // console.log(trailData)
                     console.log(trailData[0].dataValues.trails[i].trail_name)
                     const trail = {
                         trails: trailData[0].dataValues.trails[i].trail_name,
+                        trail_id: trailData[0].dataValues.trails[i].id,
                         trail_img: trailData[0].dataValues.trails[i].trail_img,
                         trail_info: trailData[0].dataValues.trails[i].trail_info,
                     }
@@ -134,4 +138,3 @@ module.exports = router;
 //         });
 // });
 
-module.exports = router;
