@@ -67,7 +67,7 @@ router.get('/', (req, res) => {
                         // if (dataValues.animals[0] === null) {
                         //     alert(message, 'There are no trails matching your search criteria');
                         // } else {                        
-                        for(var j = 0; j < userData[0].dataValues.animals.length; j++) {
+                        for(var j = 1; j < userData[0].dataValues.animals.length; j++) {
                             trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
                         }
                     })
