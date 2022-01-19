@@ -53,6 +53,7 @@ Trail.init(
       allowNull: true,
       isURL: true
     },
+
   },
   {
     sequelize,
