@@ -53,7 +53,7 @@ async function searchFormHandler(event) {
               let trailUrl = json[i].trail_info
 
 
-
+              //api/trailCard(trailInfoArr)
               renderSearchCards(trailImg, json[i].trail_name, trailUrl)
               // ************ Need What if No Animal Option ***************
               //   alert(`A ${animal_input} hasn't been spoted before on this trail!`)
