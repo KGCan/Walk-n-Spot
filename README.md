@@ -80,7 +80,7 @@ To use our app please visit the deployed application link below!
 - https://bestlifeonline.com/animal-puns/
 - https://leanylabs.com/blog/npm-packages-for-nodejs/
 - https://day.js.org/
-- validator
+- https://www.npmjs.com/package/validator
 - https://www.answers.tv/hike-seek
 - https://reiparkscaliforniahikeandseek.splashthat.com/
 - https://www.getyourguide.com/hike-and-seek-s117957/
