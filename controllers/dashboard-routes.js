@@ -1,3 +1,4 @@
+
 const router = require('express').Router();
 // const withAuth = require('../utils/auth');
 const sequelize = require('../config/connection');
@@ -25,14 +26,6 @@ router.get('/', (req, res) => {
         ]
     })
         .then(trailData => {
-            Trail.findAll({
-
-            }).then(userData => {
-                console.log('Here is the trail data')
-                // console.log(userData)
-                
-            })
-
             var trailArray=[]
             // const trails = trailData.map(trail => trail.get({ plain: true }));
             if (trailData[0].dataValues.trails[0]== null) {
@@ -43,7 +36,7 @@ router.get('/', (req, res) => {
                     const trail = {
                         trails: trailData[0].dataValues.trails[i].trail_name,
                         trail_img: trailData[0].dataValues.trails[i].trail_img,
-                        alltrails: trailData[0].dataValues.trails[i].alltrails,
+                        trail_info: trailData[0].dataValues.trails[i].trail_info,
                     }
 
                     Trail.findAll({
@@ -142,4 +135,3 @@ module.exports = router;
 // });
 
 module.exports = router;
-
