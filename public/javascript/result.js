@@ -5,18 +5,14 @@ var trailInfoArr = [];
 async function searchFormHandler(event) {
   event.preventDefault();
 
+
   const response = await fetch('/api/trail', {
     method: 'GET',
   })
     .then(response => response.json())
     .then(function (json) {
 
-     // console.log('Success')
-
-      // const city_input = document.querySelector('#CityInput').value.trim();
-      // const animal_input = document.querySelector("select[name='AnimalInput']").value;
-
-      const city_input = document.querySelector('#CityInput').value.trim();
+      const city_input = document.querySelector('#CityInput').value.trim().toUpperCase();
       const animal_input = document.querySelector("select[name='AnimalInput']").value;
 
      // console.log(city_input);
@@ -46,9 +42,7 @@ async function searchFormHandler(event) {
               console.log(json[i].trail_img)
               console.log(json[i].trail_info)*/
 
-              let text1 = "."
-              let text2 = (json[i].trail_img).slice(8)
-              let trailImg = text1.concat(text2);
+              let trailImg = json[i].trail_img;
               //console.log(trailImg)
 
               let trailUrl = json[i].trail_info
@@ -91,7 +85,7 @@ var searchCardContainer = document.querySelector(".card-container");
 
 
 function renderSearchCards(trailImg, trail_name, trailUrl) {
-
+  
   //Card
   var searchCard = document.createElement("div");
   searchCard.classList = "result-card-div m-3";
