@@ -117,6 +117,61 @@ const TrailAnimalData = [
     sighting: 60
   },
   {
+    animal_id: 11, 
+    trail_id: 6,
+    sighting: 72
+  },
+  {
+    animal_id: 11, 
+    trail_id: 7,
+    sighting: 20
+  },
+  {
+    animal_id: 11, 
+    trail_id: 8,
+    sighting: 30
+  },
+  {
+    animal_id: 11, 
+    trail_id: 9,
+    sighting: 72
+  },
+  {
+    animal_id: 11, 
+    trail_id: 10,
+    sighting: 12
+  },
+  {
+    animal_id: 11, 
+    trail_id: 11,
+    sighting: 66
+  },
+  {
+    animal_id: 11, 
+    trail_id: 12,
+    sighting: 72
+  },
+  {
+    animal_id: 11, 
+    trail_id: 13,
+    sighting: 33
+  },
+  {
+    animal_id: 11, 
+    trail_id: 14,
+    sighting: 52
+  },
+  {
+    animal_id: 11, 
+    trail_id: 15,
+    sighting: 32
+  },
+  {
+    animal_id: 11, 
+    trail_id: 16,
+    sighting: 48
+  },
+  {
     animal_id: 12, //Donkey
     trail_id: 1,
     sighting: 13

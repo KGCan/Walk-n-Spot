@@ -7,7 +7,7 @@ var first = 1; //Use to control different search without reflesh the page
 
 var Add_Map = function (lat, lon) {
     if (first) {
-        mymap = L.map('map').setView([lat, lon], 13);
+        mymap = L.map('map').setView([lat, lon], 11);
         first = 0;
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFnZ2llOTY4NSIsImEiOiJja3Z0NmRsajk3c3pqMzBxcDg4bTU5amc0In0.eZRtZIrAHKxxLrTXZ3jAUg', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -18,7 +18,7 @@ var Add_Map = function (lat, lon) {
             accessToken: 'pk.eyJ1IjoibWFnZ2llOTY4NSIsImEiOiJja3Z0NmRsajk3c3pqMzBxcDg4bTU5amc0In0.eZRtZIrAHKxxLrTXZ3jAUg'
         }).addTo(mymap);
     } else {
-        mymap.flyTo([lat, lon], 13);
+        mymap.flyTo([lat, lon], 11);
     }
 };
 
@@ -53,6 +53,7 @@ async function commentFormHandler(event) {
 
             map.style.display = "flex";
             Add_Map(json[0].lat, json[0].lon);
+            var total_sighting = 0
 
             const city_input = document.querySelector('#CityInput').value.trim().toUpperCase();
             const animal_input = document.querySelector("select[name='AnimalInput']").value;
@@ -72,8 +73,12 @@ async function commentFormHandler(event) {
             else {
                 for (var i = 0; i < json.length; i++) {
                     if (json[i].city_name === city_input) {
-                        AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name, 0);
+                        for (var j = 0; j < json[i].animals.length; j++) {
+                            total_sighting += json[i].animals[j].trail_animal.sighting;
+                        }
+                        AddMarker(json[i].lat, json[i].lon, found, json[i].trail_img, json[i].trail_name, total_sighting);
                         found++;
+                        
                     }
                 }
             }
