@@ -1,24 +1,20 @@
-# Walk 'n Spot
+![hero-deer-2](https://user-images.githubusercontent.com/88002224/150062090-ab6168c8-2704-4885-9f96-d44783ffa76d.jpg)
 
-Find your favorite animals on your hike
+# Walk'n Spot
 
-## User Story
+Have you ever wanted to go for a hike and see some animals? Try Walk ‘n Spot! 
+Search for trails in your city and narrow down the list by the animal you would like to see to get a list of trails with sightings of that animal. 
+Did you see a new animal on your hike? Log into your account to add your own sightings and save your favorite trails. 
 
-- AS A Hiker and animal lover
-- I WANT to be able to search for trails where I can see different animals
-- SO THAT I can make notes when I have seen a specific animal on a specific trail and save the trails I have visited
+## Concept
 
-## Acceptance Criteria
+Walk'n Spot is an interactive app that allows the user to search for a list of trails by city and narrow the list down by types of animals seen on that trail.  The user is able to create an account to log in and save a list of trails as well as log their own animal sightings to specific trails.
 
-- GIVEN a functional app
-- WHEN I search for a city and select an animal
-- THEN I am given a list of trails in that city where my specified animal has been sighted
-- WHEN I log into the site
-- THEN I am able to save a list of trails
-- WHEN I am on my dashboard
-- THEN I can note whether I have seen a specific animal on a trail
+## Motivation
 
-## Project Requirements
+As a team of early developers that love to hike and animal watch in our spare time, we decided to create an app where we could not only search for hiking trails but also see our favorite animals on that trail.  We wanted a one stop shop where we as users could upload our own animal sightings and eventually pictures of the animals we saw on our hikes.
+
+## Project Goals
 
 - Use Node.js and Express.js to create a RESTful API.
 - Use Handlebars.js as the templating engine.
@@ -47,11 +43,13 @@ Find your favorite animals on your hike
 - Bootstrap
 - Validator (Maybe)
 
-## Following practices of:
+## New to our team Technology/Package/Library Used:
 
-- RESTful API
-- MVC Structuring
-- Protecting sensitive data
+- JSHint https://jshint.com/about/
+
+## Instructions for use
+
+To use our app please visit the deployed application link below!
 
 ## Contributors
 
@@ -67,6 +65,7 @@ Find your favorite animals on your hike
 
 ## Link to deployed application using Heroku
 
+- heroku...
 
 =======
 
@@ -81,7 +80,7 @@ Find your favorite animals on your hike
 - https://bestlifeonline.com/animal-puns/
 - https://leanylabs.com/blog/npm-packages-for-nodejs/
 - https://day.js.org/
-- validator
+- https://www.npmjs.com/package/validator
 - https://www.answers.tv/hike-seek
 - https://reiparkscaliforniahikeandseek.splashthat.com/
 - https://www.getyourguide.com/hike-and-seek-s117957/
