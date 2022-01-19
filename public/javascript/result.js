@@ -28,6 +28,7 @@ async function searchFormHandler(event) {
         for (var i = 0; i < json.length; i++) {
           //console.log(json[i].city_name)
 
+
           // Check for Animal match
           for (var j = 0; j < json[i].animals.length; j++) {
             // console.log(json[i].animals[j].animal_name)
@@ -54,9 +55,11 @@ async function searchFormHandler(event) {
 
               console.log(trailID)
 
-
-
               renderSearchCards(trailImg, json[i].trail_name, trailUrl, trailID)
+              //api/trailCard(trailInfoArr)
+              renderSearchCards(trailImg, json[i].trail_name, trailUrl)
+              
+
               // ************ Need What if No Animal Option ***************
               //   alert(`A ${animal_input} hasn't been spoted before on this trail!`)
               // }
@@ -69,26 +72,30 @@ async function searchFormHandler(event) {
         for (var i = 0; i < json.length; i++) {
           // console.log(json[i].trail_name)
           // let trailImg = (json[i].trail_img).replace("./public", ".")
+
           // console.log(json[i].trail_img)
+
 
           // let text1 = "."
           // let text2 = (json[i].trail_img).slice(8)
           //let trailImg = text1.concat(text2);
 
+
           let trailImg = (json[i].trail_img);
           let trailUrl = (json[i].trail_info);
           // console.log(trailImg)
           // console.log(json[i].all_trails)
-          renderSearchCards(trailImg, json[i].trail_name, trailUrl)
+          renderSearchCards(trailImg, json[i].trail_name, trailUrl. trailID)
+
         }
       }
     });
 }
 
-
 var searchCardContainer = document.querySelector(".card-container");
 // var resultCard = document.createElement("div");
 // searchCardContainer.appendChild(searchCard);
+
 
 
 function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
@@ -152,6 +159,7 @@ function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
   trailUrla.setAttribute("target", "_blank")
   searchCardBody.appendChild(trailUrla);
 
+
   // // Result Save Trail Link Button
   var saveTrailBtn = document.createElement("button");
   var saveText = document.createTextNode("Save This Trail");
@@ -160,44 +168,14 @@ function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
   saveTrailBtn.appendChild(saveText)
   searchCardBody.appendChild(saveTrailBtn);
 
-  var script = document.createElement('script');
-  script.src = "../javascript/save-button.js";
-  searchCardBody.appendChild(script);}
 
+//   var script = document.createElement('script');
+//   script.src = "../javascript/save-button.js";
+//   searchCardBody.appendChild(script);}
 
 function saveTrail(id) {
   
 }
-
-// async function trailSaveHandler(event) {
-//   event.preventDefault();
-
-//   const saved_trail = document.querySelector('textarea[name="comment-body"]').value.trim();
-//   const post_id = window.location.toString().split('/')[
-//     window.location.toString().split('/').length - 1
-//   ];
-
-//   if (comment_text) {
-//     const response = await fetch('/api/comments', {
-//       method: 'POST',
-//       body: JSON.stringify({
-//         post_id,
-//         comment_text
-//       }),
-//       headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     });
-
-//     if (response.ok) {
-//       document.location.reload();
-//     } else {
-//       alert(response.statusText);
-//     }
-//   }
-// }
-
-// document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
 
 // async function saveTrail(event) {
 //   event.preventDefault();
@@ -223,7 +201,5 @@ function saveTrail(id) {
 // }
 
 // document.querySelector('.trail-save-btn').addEventListener('click', saveTrail);
-
-
 
 document.querySelector('.SearchCity').addEventListener('click', searchFormHandler);
