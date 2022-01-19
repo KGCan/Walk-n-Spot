@@ -47,6 +47,10 @@ Find your favorite animals on your hike
 - Bootstrap
 - Validator (Maybe)
 
+## New Technology/Package/Library Used:
+
+- JSHint https://jshint.com/about/
+
 ## Following practices of:
 
 - RESTful API
