@@ -57,6 +57,7 @@ router.get('/', (req, res) => {
                         
                         trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
 
+                        // testing code to get an alert message to pull if no animal data available
                         // if (dataValues.animals[0] === null) {
                         //     alert(message, 'There are no trails matching your search criteria');
                         // } else {                        
