@@ -52,15 +52,17 @@ async function searchFormHandler(event) {
 
               let trailUrl = json[i].trail_info
 
-
+            }
+              // else if(json[i].city_name != city_input && json[i].animals[j].animal_name === animal_input) {
+              //   console.log("There are no trails matching your search criteria")
+            // }}
+          
 
               renderSearchCards(trailImg, json[i].trail_name, trailUrl)
               // ************ Need What if No Animal Option ***************
               //   alert(`A ${animal_input} hasn't been spoted before on this trail!`)
               // }
-            }
-          }
-        }
+        }}
       }
       //If look for All Animals
       else {

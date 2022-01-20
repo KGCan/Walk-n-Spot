@@ -50,22 +50,47 @@ router.get('/', (req, res) => {
                     
                           }
                         ]
-        
-                    }).then(userData => {
-                        console.log('----------------------------------------Here is the trail data------------------------------------');
-                        console.log(userData);
+        //THIS IS THE FUNCTIONING CODE-REMOVE COMMENTS OUT IF THE ALTERNATIVE DOESN'T WORK
+                    // }).then(userData => {
+                    //     console.log('----------------------------------------Here is the trail data------------------------------------');
+                    //     console.log(userData);
                         
-                        trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
+                    //     trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
+                     
+                    //     for(var j = 0; j < userData[0].dataValues.animals.length; j++) {
+                    //         trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+                    //     }
+                    // })
 
-                        // testing code to get an alert message to pull if no animal data available
-                        // if (dataValues.animals[0] === null) {
-                        //     alert(message, 'There are no trails matching your search criteria');
-                        // } else {                        
-                        for(var j = 0; j < userData[0].dataValues.animals.length; j++) {
-                            trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+            // optional test for getting the alert is here
+                }).then(userData => {
+                    console.log('----------------------------------------Here is the trail data------------------------------------');
+                    console.log(userData);
+                    
+                    // trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
+                    var match = false;
+
+                    for(var j = 1; j < userData[0].dataValues.animals.length; j++) {
+                        trailSighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+                        if(trailSighting == y) {
+                            match = true;
+                            // a match is found there is no need to continue
+                            break;
                         }
-                    })
+                    }
 
+                    if(match) {
+                        alert("There are no trails matching your search criteria");
+                    } else {
+                        trailSighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+                    }
+                })
+                    
+                    // testing code to get an alert message to pull if no animal data available
+                    // if (dataValues.animals[0] === null) {
+                    //     alert(message, 'There are no trails matching your search criteria');
+                    // } else {   
+                        
                     // Possible alternative add in the code below after the intial .then option??
 
                     // trail.sightingNone = userData[0].dataValues.animals[null] + " No animals matching your search have been sighted ";
