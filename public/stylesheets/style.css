@@ -120,6 +120,10 @@ h5 {
   height: 100%;
 }
 
+.sightingTitle {
+  font-size: 25px;
+}
+
 @media screen and (min-width: 488px) {
   .result-card-img {
     width: 100%;
