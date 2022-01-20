@@ -85,7 +85,7 @@ async function searchFormHandler(event) {
           let trailUrl = (json[i].trail_info);
           // console.log(trailImg)
           // console.log(json[i].all_trails)
-          renderSearchCards(trailImg, json[i].trail_name, trailUrl. trailID)
+          renderSearchCards(trailImg, json[i].trail_name, trailUrl, trailID)
 
         }
       }
@@ -168,7 +168,7 @@ function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
   saveTrailBtn.appendChild(saveText)
   searchCardBody.appendChild(saveTrailBtn);
 
-
+}
 //   var script = document.createElement('script');
 //   script.src = "../javascript/save-button.js";
 //   searchCardBody.appendChild(script);}

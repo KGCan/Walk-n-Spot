@@ -9,6 +9,16 @@ const TrailAnimalData = [
   {
     animal_id: 1,
     trail_id: 4,
+    sighting: 6 
+  },
+  {
+    animal_id: 1,
+    trail_id: 10,
+    sighting: 13 
+  },
+  {
+    animal_id: 1,
+    trail_id: 14,
     sighting: 9 
   },
   {
@@ -28,8 +38,23 @@ const TrailAnimalData = [
   },
   {
     animal_id: 3,
-    trail_id: 5,
+    trail_id: 10,
+    sighting: 11
+  },
+  {
+    animal_id: 3,
+    trail_id: 12,
     sighting: 7
+  },
+  {
+    animal_id: 3,
+    trail_id: 15,
+    sighting: 17
+  },
+  {
+    animal_id: 3,
+    trail_id: 16,
+    sighting: 14
   },
   {
     animal_id: 4, //Blue Herring
@@ -52,6 +77,21 @@ const TrailAnimalData = [
     sighting: 25
   },
   {
+    animal_id: 4,
+    trail_id: 9,
+    sighting: 18
+  },
+  {
+    animal_id: 4,
+    trail_id: 13,
+    sighting: 21
+  },
+  {
+    animal_id: 4, 
+    trail_id: 14,
+    sighting: 27
+  },
+  {
     animal_id: 5, //Bluejay
     trail_id: 2,
     sighting: 16
@@ -67,9 +107,29 @@ const TrailAnimalData = [
     sighting: 8
   },
   {
+    animal_id: 5, 
+    trail_id: 9,
+    sighting: 12
+  },
+  {
+    animal_id: 5, 
+    trail_id: 13,
+    sighting: 8
+  },
+  {
     animal_id: 6, //Bobcat
     trail_id: 5,
     sighting: 2
+  },
+  {
+    animal_id: 6, 
+    trail_id: 10,
+    sighting: 2
+  },
+  {
+    animal_id: 6, 
+    trail_id: 15,
+    sighting: 4
   },
   {
     animal_id: 7, //Cow
@@ -77,19 +137,69 @@ const TrailAnimalData = [
     sighting: 18
   },
   {
+    animal_id: 7, 
+    trail_id: 9,
+    sighting: 17
+  },
+  {
+    animal_id: 7, 
+    trail_id: 14,
+    sighting: 10
+  },
+  {
+    animal_id: 7, 
+    trail_id: 16,
+    sighting: 15
+  },
+  {
     animal_id: 8, //Coyote
     trail_id: 4,
-    sighting: 28
+    sighting: 2
+  },
+  {
+    animal_id: 8,
+    trail_id: 10,
+    sighting: 9
+  },
+  {
+    animal_id: 8, 
+    trail_id: 16,
+    sighting: 13
   },
   {
     animal_id: 9, //Crane
     trail_id: 3,
-    sighting: 19
+    sighting: 6
+  },
+  {
+    animal_id: 9, //Crane
+    trail_id: 10,
+    sighting: 6
+  },
+  {
+    animal_id: 9, //Crane
+    trail_id: 13,
+    sighting: 11
   },
   {
     animal_id: 10, //Deer
     trail_id: 5,
-    sighting: 25
+    sighting: 8
+  },
+  {
+    animal_id: 10, 
+    trail_id: 9,
+    sighting: 21
+  },
+  {
+    animal_id: 10,
+    trail_id: 12,
+    sighting: 13
+  },
+  {
+    animal_id: 10, 
+    trail_id: 15,
+    sighting: 18
   },
   {
     animal_id: 11, //Dog
@@ -174,12 +284,32 @@ const TrailAnimalData = [
   {
     animal_id: 12, //Donkey
     trail_id: 1,
+    sighting: 5
+  },
+  {
+    animal_id: 12,
+    trail_id: 9,
+    sighting: 9
+  },
+  {
+    animal_id: 12,
+    trail_id: 11,
     sighting: 13
   },
   {
     animal_id: 13, //Emu
-    trail_id: 2,
+    trail_id: 1,
+    sighting: 2
+  },
+  {
+    animal_id: 13, 
+    trail_id: 9,
     sighting: 5
+  },
+  {
+    animal_id: 13, 
+    trail_id: 15,
+    sighting: 7
   },
   {
     animal_id: 14, //Fish
@@ -194,7 +324,27 @@ const TrailAnimalData = [
   {
     animal_id: 14, 
     trail_id: 3,
-    sighting: 36
+    sighting: 15
+  },
+  {
+    animal_id: 14, 
+    trail_id: 10,
+    sighting: 3
+  },
+  {
+    animal_id: 14, 
+    trail_id: 13,
+    sighting: 8
+  },
+  {
+    animal_id: 14, 
+    trail_id: 14,
+    sighting: 9
+  },
+  {
+    animal_id: 14, 
+    trail_id: 16,
+    sighting: 18
   },
   {
     animal_id: 15, //Frog
@@ -209,7 +359,17 @@ const TrailAnimalData = [
   {
     animal_id: 15, 
     trail_id: 3,
-    sighting: 28
+    sighting: 11
+  },
+  {
+    animal_id: 15, 
+    trail_id: 10,
+    sighting: 6
+  },
+  {
+    animal_id: 15, 
+    trail_id: 13,
+    sighting: 8
   },
   {
     animal_id: 16, //Hawk
@@ -217,9 +377,34 @@ const TrailAnimalData = [
     sighting: 7
   },
   {
+    animal_id: 16, 
+    trail_id: 10,
+    sighting: 8
+  },
+  {
+    animal_id: 16, 
+    trail_id: 11,
+    sighting: 10
+  },
+  {
+    animal_id: 16, 
+    trail_id: 16,
+    sighting: 7
+  },
+  {
     animal_id: 17, //Horse
     trail_id: 4,
     sighting: 18
+  },
+  {
+    animal_id: 17,
+    trail_id: 10,
+    sighting: 5
+  },
+  {
+    animal_id: 17, 
+    trail_id: 14,
+    sighting: 8
   },
   {
     animal_id: 18, //Lizard
@@ -237,6 +422,21 @@ const TrailAnimalData = [
     sighting: 19
   },
   {
+    animal_id: 18, 
+    trail_id: 9,
+    sighting: 21
+  },
+  {
+    animal_id: 18, 
+    trail_id: 15,
+    sighting: 15
+  },
+  {
+    animal_id: 18, 
+    trail_id: 16,
+    sighting: 12
+  },
+  {
     animal_id: 19, //Llama
     trail_id: 3,
     sighting: 19
@@ -252,9 +452,29 @@ const TrailAnimalData = [
     sighting: 2 
   },
   {
+    animal_id: 21, 
+    trail_id: 10,
+    sighting: 1 
+  },
+  {
+    animal_id: 21, 
+    trail_id: 13,
+    sighting: 2 
+  },
+  {
     animal_id: 22, //Pig
     trail_id: 1,
     sighting: 13
+  },
+  {
+    animal_id: 22,
+    trail_id: 10,
+    sighting: 12
+  },
+  {
+    animal_id: 22, 
+    trail_id: 15,
+    sighting: 10
   },
   {
     animal_id: 23, //Quail
@@ -262,19 +482,59 @@ const TrailAnimalData = [
     sighting: 5
   },
   {
+    animal_id: 23,
+    trail_id: 9,
+    sighting: 5
+  },
+  {
+    animal_id: 23, 
+    trail_id: 12,
+    sighting: 7
+  },
+  {
     animal_id: 24, //Raccoon
     trail_id: 5,
     sighting: 9
   },
   {
+    animal_id: 24, 
+    trail_id: 10,
+    sighting: 10
+  },
+  {
+    animal_id: 24, 
+    trail_id: 15,
+    sighting: 8
+  },
+  {
     animal_id: 25, //Rat
     trail_id: 3,
-    sighting: 26
+    sighting: 6
+  },
+  {
+    animal_id: 25, 
+    trail_id: 9,
+    sighting: 9
+  },
+  {
+    animal_id: 25, 
+    trail_id: 13,
+    sighting: 13
   },
   {
     animal_id: 26, //River Otter
     trail_id: 1,
+    sighting: 3
+  },
+  {
+    animal_id: 26, 
+    trail_id: 10,
     sighting: 7
+  },
+  {
+    animal_id: 26, 
+    trail_id: 11,
+    sighting: 5
   },
   {
     animal_id: 27, //Skunk
@@ -282,14 +542,49 @@ const TrailAnimalData = [
     sighting: 18
   },
   {
+    animal_id: 27, 
+    trail_id: 9,
+    sighting: 10
+  },
+  {
+    animal_id: 27,
+    trail_id: 14,
+    sighting: 11
+  },
+  {
+    animal_id: 27,
+    trail_id: 16,
+    sighting: 10
+  },
+  {
     animal_id: 28, //Snake
     trail_id: 4,
-    sighting: 28
+    sighting: 21
   },
   {
     animal_id: 28, 
     trail_id: 5,
     sighting: 5
+  },
+  {
+    animal_id: 28, 
+    trail_id: 10,
+    sighting: 8
+  },
+  {
+    animal_id: 28, 
+    trail_id: 12,
+    sighting: 5
+  },
+  {
+    animal_id: 28, 
+    trail_id: 14,
+    sighting: 7
+  },
+  {
+    animal_id: 28, 
+    trail_id: 15,
+    sighting: 15
   },
   {
     animal_id: 29, //Squirrel
@@ -308,22 +603,62 @@ const TrailAnimalData = [
   },
   {
     animal_id: 29,
-    trail_id: 4,
+    trail_id: 6,
     sighting: 63
   },
   {
     animal_id: 29,
-    trail_id: 5,
-    sighting: 13
+    trail_id: 8,
+    sighting: 43
   },
   {
-    animal_id: 30, //Turtle
-    trail_id: 5,
+    animal_id: 29,
+    trail_id: 10,
+    sighting: 38
+  },
+  {
+    animal_id: 29,
+    trail_id: 13,
     sighting: 25
   },
   {
+    animal_id: 29,
+    trail_id: 14,
+    sighting: 37
+  },
+  {
+    animal_id: 29,
+    trail_id: 15,
+    sighting: 18
+  },
+  {
+    animal_id: 30, //Turtle
+    trail_id: 7,
+    sighting: 15
+  },
+  {
+    animal_id: 30, 
+    trail_id: 9,
+    sighting: 20
+  },
+  {
+    animal_id: 30, 
+    trail_id: 13,
+    sighting: 10
+  },
+  {
     animal_id: 31, //Woodpecker
-    trail_id: 5,
+    trail_id: 7,
+    sighting: 10
+  },
+  {
+    animal_id: 31, 
+    trail_id: 9,
+    sighting: 13
+  },
+  {
+    animal_id: 31, 
+    trail_id: 12,
     sighting: 18
   },
 
