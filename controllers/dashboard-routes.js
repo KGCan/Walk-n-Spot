@@ -61,15 +61,16 @@ router.get('/', (req, res) => {
                         console.log('----------------------------------------Here is the trail data------------------------------------');
                         console.log(userData);
                         
-                        trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name  + "\n";
+                        trail.sighting = userData[0].dataValues.animals[0].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[0].animal_name + ", ";
 
                         // testing code to get an alert message to pull if no animal data available
                         // if (dataValues.animals[0] === null) {
                         //     alert(message, 'There are no trails matching your search criteria');
                         // } else {                        
                         for(var j = 1; j < userData[0].dataValues.animals.length; j++) {
-                            trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name  + "\n";
+                            trail.sighting += userData[0].dataValues.animals[j].trail_animal.sighting + " people spotted " + userData[0].dataValues.animals[j].animal_name + ", ";
                         }
+                        console.log(trail)
                     })
 
                     // Possible alternative add in the code below after the intial .then option??

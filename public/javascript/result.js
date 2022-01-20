@@ -163,8 +163,11 @@ searchCardBody.appendChild(trailUrla);
 var saveTrailBtn = document.createElement("button");
 var saveText = document.createTextNode("Save This Trail");
 saveTrailBtn.setAttribute("id", trailID);
-saveTrailBtn.classList = "trail-save-btn ms-2 text-nowrap btn btn-save";
+saveTrailBtn.classList = `trail-save-btn ms-2 text-nowrap btn btn-save-${trailID}`;
 saveTrailBtn.appendChild(saveText)
+saveTrailBtn.addEventListener("click", function(event) {
+  saveTrail(trailID, event)
+})
 searchCardBody.appendChild(saveTrailBtn);
 
 }
