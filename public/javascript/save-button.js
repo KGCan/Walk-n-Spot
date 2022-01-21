@@ -1,4 +1,9 @@
 
+/*
+saveTrail function is being called from the event listener in results.js. In that function in 
+result.js, we are finding the trailID which is then passed to the saveTrail function 
+*/
+
 async function saveTrail(trailID, event) {
     event.preventDefault();
     var user_id = 1
@@ -17,11 +22,10 @@ async function saveTrail(trailID, event) {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        console.log('weird')
+        console.log('User has saved this trail already')
       }
     }
 }
 
-
-
+// The eventListener is dynamically added with the button since that is how we are rendering the cards/results
 // document.querySelector('.trail-save-btn').addEventListener('click', saveTrail);

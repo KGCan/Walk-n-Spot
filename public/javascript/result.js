@@ -207,4 +207,3 @@ function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
 }
 
 document.querySelector('.SearchCity').addEventListener('click', searchFormHandler);
-
