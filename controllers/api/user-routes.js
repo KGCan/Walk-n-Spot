@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { User, Animal, Trail, TrailAnimal, UserTrail, } = require("../../models");
 
-const { User, Animal, Trail, TrailAnimal, } = require("../../models");
 
 
 

@@ -47,6 +47,8 @@ User.init(
         key: 'id'
       }
     },
+  },
+  {
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
       async beforeCreate(newUserData) {
