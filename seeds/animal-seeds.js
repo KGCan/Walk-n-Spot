@@ -2,97 +2,97 @@ const { Animal } = require('../models');
 
 const animalData = [
     {
-        animal_name: 'Deer',
+        animal_name: 'Bat',//1
     },
     {
-        animal_name: 'Bear',
+        animal_name: 'Bear',//2
     },
     {
-        animal_name: 'Turtle',
+        animal_name: 'Beaver',//3
     },
     {
-        animal_name: 'Cow',
+        animal_name: 'Blue Herring',//4
     },
     {
-        animal_name: 'Dog',
+        animal_name: 'Bluejay',//5
     },
     {
-        animal_name: 'Mountain Lion',
+        animal_name: 'Bobcat',//6
     },
     {
-        animal_name: 'Coyote',
+        animal_name: 'Cow',//7
     },
     {
-        animal_name: 'Hawk',
+        animal_name: 'Coyote',//8
     },
     {
-        animal_name: 'Pig',
+        animal_name: 'Crane',//9
     },
     {
-        animal_name: 'Horse',
+        animal_name: 'Deer',//10
     },
     {
-        animal_name: 'Lizard',
+        animal_name: 'Dog',//11
     },
     {
-        animal_name: 'Bobcat',
+        animal_name: 'Donkey',//12
     },
     {
-        animal_name: 'Crane',
+        animal_name: 'Emu',//13
     },
     {
-        animal_name: 'Blue Herring',
+        animal_name: 'Fish',//14
     },
     {
-        animal_name: 'Blue Jay',
+        animal_name: 'Frog',//15
     },
     {
-        animal_name: 'Llama',
+        animal_name: 'Hawk',//16
     },
     {
-        animal_name: 'Emu',
+        animal_name: 'Horse',//17
     },
     {
-        animal_name: 'Donkey',
+        animal_name: 'Lizard',//18
     },
     {
-        animal_name: 'Fish',
+        animal_name: 'Llama',//19
     },
     {
-        animal_name: 'Raccoon',
+        animal_name: 'Mountain Lion',//20
     },
     {
-        animal_name: 'Opossum',
+        animal_name: 'Opossum',//21
     },
     {
-        animal_name: 'Skunk',
+        animal_name: 'Pig',//22
     },
     {
-        animal_name: 'Frog',
+        animal_name: 'Quail',//23
     },
     {
-        animal_name: 'Beaver',
+        animal_name: 'Raccoon',//24
     },
     {
-        animal_name: 'River Otter',
+        animal_name: 'Rat',//25
     },
     {
-        animal_name: 'Snake',
+        animal_name: 'River Otter',//26
     },
     {
-        animal_name: 'Squirrel',
+        animal_name: 'Skunk',//27
     },
     {
-        animal_name: 'Quail',
+        animal_name: 'Snake',//28
     },
     {
-        animal_name: 'Woodpecker',
+        animal_name: 'Squirrel',//29
     },
     {
-        animal_name: 'Bat',
+        animal_name: 'Turtle',//30
     },
     {
-        animal_name: 'Rat',
+        animal_name: 'Woodpecker',//31
     },
 
 ]

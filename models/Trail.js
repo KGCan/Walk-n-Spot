@@ -10,36 +10,35 @@ Trail.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       primaryKey: true,
       autoIncrement: true
     },
 
     trail_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
 
     city_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
 
     lat: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
 
     lon: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
 
     trail_img: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-
     animal_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -48,6 +47,12 @@ Trail.init(
         key: 'id'
       }
     },
+    trail_info: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      isURL: true
+    },
+
   },
   {
     sequelize,
