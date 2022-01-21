@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS  c6un8rsv6gpbe7w1;
+DROP DATABASE IF EXISTS  db_walk_n_spot;
 
-CREATE DATABASE  c6un8rsv6gpbe7w1;
+CREATE DATABASE  db_walk_n_spot;
