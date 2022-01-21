@@ -3,14 +3,11 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 
 const sess = {
   secret: 'Animals Rock The Walk',
@@ -25,21 +22,18 @@ const sess = {
 // Session middleware, creates session, sets cookie, and session obj in req obj, so have session info stored if same user logs in again
 app.use(session(sess));
 
-
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 
-// set app to use & confignhndlbz
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.engine('handlebars', hbs.engine);
-
 
 
 //middleware to prepare req.body and serve static files
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 // turn on routes
 const routes = require('./controllers');

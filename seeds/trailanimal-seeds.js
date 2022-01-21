@@ -462,6 +462,16 @@ const TrailAnimalData = [
     sighting: 2
   },
   {
+    animal_id: 21,
+    trail_id: 10,
+    sighting: 1
+  },
+  {
+    animal_id: 21,
+    trail_id: 13,
+    sighting: 2
+  },
+  {
     animal_id: 22, //Pig
     trail_id: 1,
     sighting: 13

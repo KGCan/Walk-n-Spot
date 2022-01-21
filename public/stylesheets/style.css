@@ -6,11 +6,12 @@
   --color5: #925217;
   --color6: #56371a;
   --color7: #5c8e2b;
+  --color8: black;
 }
 
 body {
-  background-color: var(--color2);
-  background-image: url("../assets/images/pawprint-4.png");
+  /* background-color: var(--color8); */
+  background-image: url("../assets/images/pawprint-4.jpg");
   /* opacity: 0.5; */
   background-repeat: none;
   z-index: 9999;
@@ -117,6 +118,10 @@ h5 {
   display: inline-block;
   vertical-align: middle;
   height: 100%;
+}
+
+.sightingTitle {
+  font-size: 25px;
 }
 
 @media screen and (min-width: 488px) {

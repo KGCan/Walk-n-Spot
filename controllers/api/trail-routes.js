@@ -13,10 +13,8 @@ router.get('/', (req, res) => {
       {
         model: Animal,
         attributes: ['animal_name']
-
       }
     ]
-
   })
     .then(userData => res.json(userData))
     .catch(err => {
@@ -30,7 +28,6 @@ router.put('/', (req, res) => {
     {
       sighting: req.body.animals
     },
-
   )
     .then(sightingData =>{
       if (!sightingData) {
