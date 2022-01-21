@@ -1,51 +1,41 @@
 {{!we need variables here}}
 
-{{! <div class="col">
-  <div class="card shadow-sm">
-    <img src="http://placekitten.com/g/300/200" />
-    <div class="card-body">
-      <p class="card-text">This is a wider card with supporting text below as a
-        natural lead-in to additional content. This content is a little bit
-        longer.</p>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-secondary"
-          >View</button>
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-secondary"
-          >Edit</button>
-        </div>
-        <small class="text-muted">9 mins</small>
+{{#each trailInfoArr as |trail|}}
+
+  <div class="result-card-div mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          src={{trail_img}}
+          class="result-card-img img-fluid rounded-start"
+          alt="Scenery from along the trail"
+        />
       </div>
-    </div>
-  </div>
-</div> --}}
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2 class="card-title mb-3">{{trail_name}}</h2>
 
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img
-        src="http://placekitten.com/g/300/200"
-        class="img-fluid rounded-start"
-        alt="..."
-      />
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as
-          a natural lead-in to additional content. This content is a little bit
-          longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <p class="card-text text-muted card-animal-count">A total of 9 animals
+            of all types have been seen on this trail.</p>
+          <a
+            class="card-trail-url me-2 btn"
+            title="Learn more at All Trails"
+            href={{trail_info}}
+            target="_blank"
+          >Learn more about this trail!</a>
+          //
+          <button
+            id={{id}}
+            class="trail-save-btn ms-2 text-nowrap btn btn-save"
+          >Save This Trail</button></div>
+        //
       </div>
+      //
     </div>
-  </div>
-</div>
+    //
+  </div>`
+{{/each}}
 
 
+<script src="../"
 <script src="../javascript/save-button.js"></script>
-
-
