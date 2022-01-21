@@ -4,7 +4,6 @@ const homeRoutes = require('./home-routes.js');
 const dashboardRoutes = require('./dashboard-routes.js');
 // const resultRoutes = require('./result-routes');
 
-
 router.use('/', homeRoutes);
 router.use('/dashboard', dashboardRoutes);
 // router.use('results', resultRoutes)

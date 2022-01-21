@@ -1,14 +1,16 @@
-function signupRedirect(event) {
-  event.preventDefault();
+// This js file is not used but 
 
-  console.log("works")
-  window.location.href = '/login';
-}
+// function signupRedirect(event) {
+//   event.preventDefault();
 
-function loginRedirect(event) {
-  event.preventDefault();
-  window.location.href = '/login';
-}
+//   console.log("works")
+//   window.location.href = '/login';
+// }
 
-document.getElementById('signupButton').addEventListener('click', signupRedirect);
-document.getElementById('loginButton').addEventListener('click', loginRedirect);
+// function loginRedirect(event) {
+//   event.preventDefault();
+//   window.location.href = '/login';
+// }
+
+// document.getElementById('signupButton').addEventListener('click', signupRedirect);
+// document.getElementById('loginButton').addEventListener('click', loginRedirect);
