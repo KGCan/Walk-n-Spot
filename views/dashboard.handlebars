@@ -1,55 +1,65 @@
 <section class="yourTrails">
-
     <div class="album py-5 bg-light">
-
         <div class="container">
-            <h6>What Animals did you see?</h4>
+            <h1 >What Animals did you see?</h1>
             <div>
                 <p>Trail:</p>
                 <select name="trailSubmit" class="form-select" aria-label="Default select example">
                     <option value="1" id="1">American River Parkway Trailhead</option>
                     <option value="2" id="2">Sacramento River Parkway</option>
                     <option value="3" id="3">Riverfront Promenade</option>
-
+                    <option value="4" id="4">Creekside Park & Nature Area</option>
+                    <option value="5" id="5">Bannon Creek Park & Parkway</option>
+                    <option value="6" id="6">Natomas Oaks Park</option>
+                    <option value="7" id="7">Arcade Creek Park</option>
+                    <option value="8" id="8">Charlie-Jensen Park</option>
+                    <option value="9" id="9">Folsom Point State Park</option>
+                    <option value="10" id="10">Nimbus Flat State Recreation Area</option>
+                    <option value="11" id="11">Lake Clementine Trail</option>
+                    <option value="12" id="12">Quarry Road Trail</option>
+                    <option value="13" id="13">Auburn Trail Run</option>
+                    <option value="14" id="14">Overlook Park</option>
+                    <option value="15" id="15">Auburn Bike Park</option>
+                    <option value="16" id="16">Bicentennial Park</option>
                 </select> <br>
                 <p>Animal:</p>
                 <select name="animalSubmit" class="form-select" aria-label="Default select example">
                     <option value="All">Animals</option>
                     <option value="1" id="Bat">Bat</option>
                     <option value="2" id="Bear">Bear</option>
-                    <option value="Beaver">Beaver</option>
-                    <option value="Blue Herring">Blue Herring</option>
-                    <option value="Bluejay">Bluejay</option>
-                    <option value="Bobcat">Bobcat</option>
-                    <option value="Cow">Cow</option>
-                    <option value="Coyote">Coyote</option>
-                    <option value="Crane">Crane</option>
-                    <option value="Deer">Deer</option>
-                    <option value="Dog">Dog</option>
-                    <option value="Donkey">Donkey</option>
-                    <option value="Emu">Emu</option>
-                    <option value="Fish">Fish</option>
-                    <option value="Frog">Frog</option>
-                    <option value="Hawk">Hawk</option>
-                    <option value="Horse">Horse</option>
-                    <option value="Lizard">Lizard</option>
-                    <option value="Llama">Llama</option>
-                    <option value="Mountain Lion">Mountain Lion</option> 
-                    <option value="Opossum">Opossum</option>
-                    <option value="Pig">Pig</option>
-                    <option value="Quail">Quail</option>
-                    <option value="Raccoon">Raccoon</option>
-                    <option value="Rat">Rat</option>  
-                    <option value="River Otter">River Otter</option>
-                    <option value="Skunk">Skunk</option>
-                    <option value="Snake">Snake</option>
-                    <option value="Squirrel">Squirrel</option>
-                    <option value="Turtle">Turtle</option>
-                    <option value="Woodpecker">Woodpecker</option>
+                    <option value="3" id="Beaver">Beaver</option>
+                    <option value="4">Blue Herring</option>
+                    <option value="5">Bluejay</option>
+                    <option value="6">Bobcat</option>
+                    <option value="7">Cow</option>
+                    <option value="8">Coyote</option>
+                    <option value="9">Crane</option>
+                    <option value="10">Deer</option>
+                    <option value="11">Dog</option>
+                    <option value="12">Donkey</option>
+                    <option value="13">Emu</option>
+                    <option value="14">Fish</option>
+                    <option value="15">Frog</option>
+                    <option value="16">Hawk</option>
+                    <option value="17">Horse</option>
+                    <option value="18">Lizard</option>
+                    <option value="19">Llama</option>
+                    <option value="20">Mountain Lion</option> 
+                    <option value="21">Opossum</option>
+                    <option value="22">Pig</option>
+                    <option value="23">Quail</option>
+                    <option value="24">Raccoon</option>
+                    <option value="25">Rat</option>  
+                    <option value="26">River Otter</option>
+                    <option value="27">Skunk</option>
+                    <option value="28">Snake</option>
+                    <option value="29">Squirrel</option>
+                    <option value="30">Turtle</option>
+                    <option value="31">Woodpecker</option>
                 </select>
                 <br>
-                <button type="button" class="submitAnimal btn btn-primary">Submit</button> <br>         
-            </div>
+                <button class="submitAnimal btn btn-primary">Submit</button> <br>         
+            </div> <br>
             <h1>Saved Trails:</h1><br>
             <div class="">
                 {{#each trailArray as |trail| }}
@@ -58,7 +68,6 @@
             </div>
         </div>
     </div>
-
 </section>
 
 <script src="../javascript/submit-animal.js"></script>

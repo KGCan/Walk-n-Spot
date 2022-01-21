@@ -1,7 +1,5 @@
 const User = require("./User");
 const Trail = require("./Trail")
-// const City = require("./City")
-// const Sighting = require("./Sighting")
 const Animal = require("./Animal");
 const TrailAnimal = require("./TrailAnimal");
 const UserTrail = require("./UserTrail")
@@ -47,15 +45,7 @@ Trail.belongsToMany(Animal, {
 });
 //  ------- Trail &  Animal Associations END --------
 
-
-
-
 module.exports = { User, Trail, Animal, TrailAnimal, UserTrail }
-
-
-
-
-
 
 //  ---------------- DRAFT CODE  ----------------------
 
