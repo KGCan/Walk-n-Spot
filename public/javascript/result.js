@@ -125,9 +125,13 @@ async function searchFormHandler(event) { //When click search
           window.alert(`${animal_input} only spotted in the trail that also spotted ${avoid_animal}! No matching search. Here are all trails in this city.`);
           PrintMatchResult (json, city_input, animal_input, "None", "All");
         } 
-        else {//no search animal on any trail
+        else if(animal_input != "All") {
           window.alert(`${animal_input} hasn't been spotted before on any trail! Here are all trails in this city.`);
           PrintMatchResult (json, city_input, animal_input, avoid_animal, "All");
+        }
+        else {
+          window.alert(`No matching search. Here are all trails in this city.`);
+          PrintMatchResult (json, city_input, animal_input, "None", "All");
         }
       } 
       else if (!city_found) {
