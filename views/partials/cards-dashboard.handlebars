@@ -8,7 +8,11 @@
       <div class="card-body">
         <h5 class="{{trail_id}}" "card-title" id="{{trail_id}}">{{trails}} </h5>
         <p> See more details: {{link trail_info trail_info}}</p>
-        <p>{{sighting}}</p>
+        <div class="row">
+          {{#each sighting}}
+          <p class="col-3">{{this}}</p> 
+          {{/each}}
+        </div>
       </div>
     </div>
   </div>
