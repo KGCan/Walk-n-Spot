@@ -129,7 +129,7 @@ async function searchFormHandler(event) { //When click search
           window.alert(`${animal_input} hasn't been spotted before on any trail! Here are all trails in this city.`);
           PrintMatchResult (json, city_input, animal_input, avoid_animal, "All");
         }
-        else {
+        else { //search all animal but animal want to avoid are on every trail
           window.alert(`No matching search. Here are all trails in this city.`);
           PrintMatchResult (json, city_input, animal_input, "None", "All");
         }
