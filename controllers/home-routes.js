@@ -37,19 +37,8 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-<<<<<<< HEAD
 
 
-module.exports = router;
-//console.log(trailData);
-
-
-//  put result card data here??
-//router.get('/', (req, res) => {
-//     //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-//     res.render('main', {layout : 'index'});
-//     });
-=======
 router.get('/results', (req, res) => {
     Trail.findAll({
         // attributes: { exclude: ['password'] }
@@ -86,7 +75,14 @@ router.get('/results', (req, res) => {
 
 module.exports = router;
 
->>>>>>> develop
+
+
+
+
+
+
+
+
 
 // //  ---------  Render Results Route -----
 // //  Get ALL Trails Draft Code
@@ -148,74 +144,8 @@ module.exports = router;
 
 
 
-// Get Trails from search for Cards
-<<<<<<< HEAD
-// router.get('/results', (req, res) => {
-//     Trail.findAll({
-//         // attributes: { exclude: ['password'] }
-//         //map()
-//         attributes: ['id', 'trail_name', 'trail_img', 'city_name'],
-//         include: [
-//             {
-//                 model: Animal,
-//                 attributes: ['animal_name']
-                
-//             }
-//         ]
-//     })
-//         .then(trailData => {
 
-//             // for (var i = 0)
-//             const city_input = document.querySelector('#CityInput').value.trim();
-//             const animal_input = document.querySelector("select[name='AnimalInput']").value;
-//             for(var i = 0; i < json.length; i++){ //track city
-//                 for(var j = 0; j < json[i].animals.length; j++) { //track animals
-//                     if(json[i].city_name === city_input && json[i].animals[j].animal_name === animal_input){
-//                     }
-//                 }
-//             }
-
-//             const trails = trailData.map(trail => trail.get({ plain: true }));
-//             // console.log(trailData[0].animals[1].trail_animal.sighting)
-
-//             console.log(trailData)
-
-
-
-
-=======
->>>>>>> develop
-
-
-// ---------  pseudocode card & results Direction ----------
-// when user searches then redirects to Results Page
-//if they then decided to login 
-// they should be redirected back to Results Page
-// if  havent searched city yet, then login =>  redir to homepage;
-// if searched then log in, ==> redir to search Results
-
-// router.get('/cards', (req, res) => {
-//     // if (req.session.loggedIn) {
-//     //     res.redirect('/');
-//     //     return;
-//     //}
-
-//     res.render('cards');
-// });
-
-<<<<<<< HEAD
-
-    //     })
-        
-    // });
-    
-    
-    // module.exports = router;
-
-
-=======
->>>>>>> develop
-    // ---------  pseudocode card & results Direction ----------
+    // ---------  pseudocode card & results Direction Decided not to go this route ----------
     // when user searches then redirects to Results Page
     //if they then decided to login 
     // they should be redirected back to Results Page
