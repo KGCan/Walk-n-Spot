@@ -15,14 +15,9 @@ const trailData = [
         city_name: 'SACRAMENTO',
         lat: '38.5838',
         lon: '-121.5060',
-<<<<<<< HEAD
-        trail_img: './public/assets/images/creek-2-sm.jpg',
-        animal_id: 1,
-=======
         trail_img: './assets/images/trail-2.jpg',
         animal_id: 1,
         trail_info: "https://www.cityofsacramento.org/Public-Works/Engineering-Services/Projects/Current-Projects/Sacramento-River-Parkway"
->>>>>>> main
     },
     {
         trail_name: 'Riverfront Promenade',//3
@@ -107,23 +102,6 @@ const trailData = [
         trail_info: "https://www.visitplacer.com/lake-clementine-trail/"
     },
     {
-<<<<<<< HEAD
-        trail_name: 'Creekside Park & Nature Area',
-        city_name: 'Sacramento',
-        lat: '38.6140',
-        lon: '-121.3938',
-        trail_img: './public/assets/images/creek-3-sm.jpg',
-        animal_id: 7
-    },
-    {
-        trail_name: 'Bannon Creek Park & Parkway',
-        city_name: 'Sacramento',
-        lat: '38.6146',
-        lon: '-121.5046',
-        trail_img: './public/assets/images/creek-3-sm.jpg',
-        animal_id: 1
-    }
-=======
         trail_name: 'Quarry Road Trail',//12
         city_name: 'AUBURN',
         lat: '38.9123',
@@ -168,8 +146,7 @@ const trailData = [
         animal_id: 1,
         trail_info: "http://www.auburnrec.com/parks_bicentennial.php"
     },
- 
->>>>>>> main
+
 ]
 
 const seedTrails = () => Trail.bulkCreate(trailData);
