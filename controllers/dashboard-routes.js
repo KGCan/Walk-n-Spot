@@ -35,11 +35,6 @@ router.get('/', (req, res) => {
                     var animal_sighting = [];
 
                     for(var j = 0; j < trailData[0].dataValues.trails[i].animals.length; j++) {
-<<<<<<< HEAD
-=======
-                        console.log(trailData[0].dataValues.trails[i].animals[j].trail_animal.sighting)
-
->>>>>>> e7af797b8dda01418b1146f0e151ac4818c24418
                         animal_sighting.push(trailData[0].dataValues.trails[i].animals[j].trail_animal.sighting + " people spotted " + trailData[0].dataValues.trails[i].animals[j].animal_name);
                     }
                     const trail = {

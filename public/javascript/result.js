@@ -12,8 +12,6 @@ var animal_found = 0;
 
 
 
-
-
 var Add_Map = function (lat, lon) {
   if (first) {
     mymap = L.map('map').setView([lat, lon], 11);
@@ -43,6 +41,7 @@ var Reset = function () {
       marker[i].remove();
       i++;
     }
+  }
     city_found = 0;
     animal_found = 0;
     total_sighting = 0;
@@ -156,20 +155,24 @@ async function searchFormHandler(event) { //When click search
 
 
       if (found === 0 && city_found) { //If no match trail find for the city
-        if (animal_found) { //have result if not avoid any animal
-          // window.alert(`${animal_input} only spotted in the trail that also spotted ${avoid_animal}! No matching search. Here are all trails in this city.`);
-          window.alert(`Your searched animal - ${animal_input} - was only spotted on the same trail(s) as the animal(s) you want to avoid - ${avoid_animal}! You can still take a hike though! Here are the trails in your searched city.`);
-
-
+        if (animal_found > 1) { //have more than 1 trail matching result but all of them have animal to avoid (plural). Example: look for fish avoid dog
+          window.alert(`Your searched animal - ${animal_input} - was only spotted on the same trails as the animal(s) you want to avoid - ${avoid_animal}! You can still take a hike though! Here are the trails in your searched city.`);
           PrintMatchResult(json, city_input, animal_input, "None", "All");
         }
-        else {//no search animal on any trail
+        else if(animal_found === 1){ //have only one trail matching result but has animal want to avoid (singular) Example: look for bear avoid dog
+          window.alert(`Your searched animal - ${animal_input} - was only spotted on the same trail as the animal(s) you want to avoid - ${avoid_animal}! You can still take a hike though! Here are the trails in your searched city.`);
+          PrintMatchResult(json, city_input, animal_input, "None", "All");
+        }
+        else if(animal_input != "All") {//no search animal on any trail. Example: look for bear in auburn
           window.alert(`Your searched animal - ${animal_input} -  hasn't been spotted before on any trail! You can still take a hike though! Here are the trails in your searched city.`);
           PrintMatchResult(json, city_input, animal_input, avoid_animal, "All");
         }
+        else { //search ALL animal but animal want to avoid are on every trail. Example: look for All but avoid dog
+          window.alert(`Animal you want to avoid - ${avoid_animal} was spotted on every trail! Here are the trails in your searched city.`);
+          PrintMatchResult (json, city_input, animal_input, "None", "All");
+        }
       }
-
-      else if (!city_found) {
+      else if (city_found === 0) {
         window.alert(`Couldn't find ${city_input_org}. Please verify and search again.`);
 
       }
