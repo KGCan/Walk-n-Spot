@@ -146,7 +146,7 @@ const trailData = [
         animal_id: 1,
         trail_info: "http://www.auburnrec.com/parks_bicentennial.php"
     },
- 
+
 ]
 
 const seedTrails = () => Trail.bulkCreate(trailData);

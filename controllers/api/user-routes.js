@@ -8,6 +8,7 @@ const { User, Animal, Trail, TrailAnimal, UserTrail, } = require("../../models")
 router.get('/', (req, res) => {
   // Access our User model and run .findAll() method)
   User.findAll({
+
     attributes: { exclude: ['password'] },
     include: [
       {
@@ -19,6 +20,7 @@ router.get('/', (req, res) => {
         }
       },
     ]
+
   })
     .then(userData => res.json(userData))
     .catch(err => {
@@ -59,7 +61,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/users
-router.post('/',  (req, res) => {
+router.post('/', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
     username: req.body.username,
