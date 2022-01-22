@@ -7,7 +7,6 @@ const animalRoutes = require('./animal-routes.js');
 
 router.use('/user', userRoutes);
 router.use('/trail', trailRoutes);
-
 router.use('/animal', animalRoutes);
 
 module.exports = router;
