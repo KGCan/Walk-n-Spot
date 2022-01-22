@@ -65,7 +65,7 @@ To use our app please visit the deployed application link below!
 
 ## Link to deployed application using Heroku
 
-- heroku...
+- https://walk-n-spot.herokuapp.com/
 
 =======
 
