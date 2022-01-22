@@ -13,6 +13,11 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Trail,
+        attributes: ['id', 'trail_name',],
+        include: {
+          model: Animal,
+          attributes: ['id', 'animal_name',]
+        }
       },
     ]
 

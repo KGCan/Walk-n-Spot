@@ -130,6 +130,7 @@ async function searchFormHandler(event) { //When click search
         PrintMatchResult(json, city_input, animal_input, avoid_animal, "All");
       }
 
+
       if (found === 0 && city_found) { //If no match trail find for the city
         if (animal_found) { //have result if not avoid any animal
           // window.alert(`${animal_input} only spotted in the trail that also spotted ${avoid_animal}! No matching search. Here are all trails in this city.`);
@@ -143,6 +144,7 @@ async function searchFormHandler(event) { //When click search
           PrintMatchResult(json, city_input, animal_input, avoid_animal, "All");
         }
       }
+
       else if (!city_found) {
         window.alert(`Couldn't find ${city_input}. Please verify and search again.`);
       }
