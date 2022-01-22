@@ -13,11 +13,6 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Trail,
-        attributes: ['id', 'trail_name',],
-        include: {
-          model: Animal,
-          attributes: ['id', 'animal_name',]
-        }
       },
     ]
 
@@ -101,8 +96,11 @@ router.post('/usertrail', (req, res) => {
   })
     .then(userData => res.json(userData))
     .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+      if(err.message === 'notNull Violation: user-trail.user_id cannot be null'){
+        res.status(503).json(err); //503 Service Unavailable
+      }else{
+        res.status(500).json(err); //500 Internal Server Error
+      }
     });
 });
 

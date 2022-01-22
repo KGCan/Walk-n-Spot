@@ -18,11 +18,17 @@ async function saveTrail(trailID, event) {
           trail_id
         }),
         headers: { 'Content-Type': 'application/json' }
-      });
+    });
       if (response.ok) {
         document.location.replace('/');
       } else {
-        console.log('User has saved this trail already')
+        console.log(response.status);
+        if(response.status === 503) {
+          window.alert("Please sign up or log in.");
+        }
+        else {
+          console.log('User has saved this trail already');
+        }
       }
     }
 }

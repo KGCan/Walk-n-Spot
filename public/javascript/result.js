@@ -7,10 +7,8 @@ var mymap;
 var first = 1; //Use to control different search without reflesh the page
 var found = 0; //counter for pins on map so can clear later
 var total_sighting = 0;
-var city_found = false;
-var animal_found = false;
-
-
+var city_found = 0;
+var animal_found = 0;
 
 
 
@@ -44,10 +42,10 @@ var Reset = function () {
       i++;
     }
   }
-  city_found = false;
-  animal_found = false;
-  total_sighting = 0;
-  found = 0;
+    city_found = 0;
+    animal_found = 0;
+    total_sighting = 0;
+    found = 0; 
 };
 
 ///////////////////////////End of Map Section//////////////////////////
@@ -55,7 +53,7 @@ var Reset = function () {
 var PrintMatchResult = function (json, city_input, animal_input, avoid_animal, search_type) {
   for (var i = 0; i < json.length; i++) {
     if (json[i].city_name === city_input) {
-      city_found = true;
+      city_found++;
       map.style.display = "flex";
       Add_Map(json[i].lat, json[i].lon);
 
@@ -67,8 +65,8 @@ var PrintMatchResult = function (json, city_input, animal_input, avoid_animal, s
 
         if (json[i].animals[j].animal_name === animal_input) {
           //if match, save sighting counts
-          match_sighting = json[i].animals[j].trail_animal.sighting;
-          animal_found = true;
+          match_sighting = json[i].animals[j].trail_animal.sighting; 
+          animal_found++;
         }
         if (json[i].animals[j].animal_name === avoid_animal) {
           avoid = true;
@@ -113,6 +111,7 @@ async function searchFormHandler(event) { //When click search
       console.log(json)
 
       const city_input = document.querySelector('#CityInput').value.trim().toUpperCase();
+      const city_input_org = document.querySelector('#CityInput').value.trim();
       const animal_input = document.querySelector("select[name='AnimalInput']").value;
       const avoid_animal = document.querySelector("select[name='AvoidInput']").value;
 
@@ -130,23 +129,52 @@ async function searchFormHandler(event) { //When click search
         PrintMatchResult(json, city_input, animal_input, avoid_animal, "All");
       }
 
+    /*  
+      if(found === 0 && city_found)  { //If no match trail find for the city
+        if(animal_found > 1){ //have more than 1 trail matching result but all of them have animal to avoid (plural)
+          window.alert(`(plural)${animal_input} only spotted in the trail that also spotted (plural)${avoid_animal}! No matching search. Here are all trails in this city.`);
+          PrintMatchResult (json, city_input, animal_input, "None", "All");
+        } 
+        else if(animal_found === 1){ //have only one trail matching result but has animal want to avoid (singular)
+          window.alert(`(singular)${animal_input} only spotted in the trail that also spotted (singular)${avoid_animal}! No matching search. Here are all trails in this city.`);
+          PrintMatchResult (json, city_input, animal_input, "None", "All");
+        } 
+        else if(animal_input != "All") {
+          window.alert(`${animal_input} hasn't been spotted before on any trail! Here are all trails in this city.`);
+          PrintMatchResult (json, city_input, animal_input, avoid_animal, "All");
+        }
+        else { //search all animal but animal want to avoid are on every trail
+          window.alert(`No matching search. Here are all trails in this city.`);
+          PrintMatchResult (json, city_input, animal_input, "None", "All");
+        }
+      } 
+      else if (city_found === 0) { //City not found in our database
+        window.alert(`No city found. Please verify and search again.`);
+        */
+
+
 
       if (found === 0 && city_found) { //If no match trail find for the city
-        if (animal_found) { //have result if not avoid any animal
-          // window.alert(`${animal_input} only spotted in the trail that also spotted ${avoid_animal}! No matching search. Here are all trails in this city.`);
-          window.alert(`Your searched animal - ${animal_input} - was only spotted on the same trail(s) as the animal(s) you want to avoid - ${avoid_animal}! You can still take a hike though! Here are the trails in your searched city.`);
-
-
+        if (animal_found > 1) { //have more than 1 trail matching result but all of them have animal to avoid (plural). Example: look for fish avoid dog
+          window.alert(`Your searched animal - ${animal_input} - was only spotted on the same trails as the animal(s) you want to avoid - ${avoid_animal}! You can still take a hike though! Here are the trails in your searched city.`);
           PrintMatchResult(json, city_input, animal_input, "None", "All");
         }
-        else {//no search animal on any trail
+        else if(animal_found === 1){ //have only one trail matching result but has animal want to avoid (singular) Example: look for bear avoid dog
+          window.alert(`Your searched animal - ${animal_input} - was only spotted on the same trail as the animal(s) you want to avoid - ${avoid_animal}! You can still take a hike though! Here are the trails in your searched city.`);
+          PrintMatchResult(json, city_input, animal_input, "None", "All");
+        }
+        else if(animal_input != "All") {//no search animal on any trail. Example: look for bear in auburn
           window.alert(`Your searched animal - ${animal_input} -  hasn't been spotted before on any trail! You can still take a hike though! Here are the trails in your searched city.`);
           PrintMatchResult(json, city_input, animal_input, avoid_animal, "All");
         }
+        else { //search ALL animal but animal want to avoid are on every trail. Example: look for All but avoid dog
+          window.alert(`Animal you want to avoid - ${avoid_animal} was spotted on every trail! Here are the trails in your searched city.`);
+          PrintMatchResult (json, city_input, animal_input, "None", "All");
+        }
       }
+      else if (city_found === 0) {
+        window.alert(`Couldn't find ${city_input_org}. Please verify and search again.`);
 
-      else if (!city_found) {
-        window.alert(`Couldn't find ${city_input}. Please verify and search again.`);
       }
     });
 
