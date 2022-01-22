@@ -120,6 +120,7 @@ async function searchFormHandler(event) { //When click search
 
 
       if (animal_input === avoid_animal) {
+
         window.alert(`You can't simultaneously avoid and see the same animal! You can still take a hike though! Here are all the trails in the city.`);
         PrintMatchResult(json, city_input, animal_input, "None", "All");
       }
@@ -220,3 +221,38 @@ function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
 }
 
 document.querySelector('.SearchCity').addEventListener('click', searchFormHandler);
+
+
+
+
+
+
+
+
+// ---------Sample alternative Partial Front End Code---------
+
+// async function searchFormHandler(event) { //When click search
+
+//   searchCardContainer.innerHTML = "";
+//   event.preventDefault();
+
+//   if (first === 0) { //Clear any control if search again 
+//     Reset();
+//   }
+//   const city_input = document.querySelector('#CityInput').value.trim().toUpperCase();
+
+
+//   const response = await fetch(`/api/trail/${city_input}`, {
+//     method: 'GET',
+//     body: {
+//       animal_name: document.querySelector("select[name='AnimalInput']").value
+//     }
+
+//   })
+//     .then(response => response.json())
+//     .then(function (json) {
+//       console.log(json)
+
+
+//       const animal_input = document.querySelector("select[name='AnimalInput']").value;
+//       const avoid_animal = document.querySelector("select[name='AvoidInput']").value;
