@@ -18,19 +18,6 @@ Animal.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
-    // sighting_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'sighting',
-    //     key: 'id'
-    //   }
-    // },
-
-    // counter: {
-
-    // }
   },
   // 2nd param of init
   {

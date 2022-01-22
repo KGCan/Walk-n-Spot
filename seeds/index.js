@@ -1,13 +1,10 @@
 const seedAnimal = require('./animal-seeds');
 const seedTrail = require('./trail-seeds');
-// const seedCity = require('./city-seeds');
 const seedUser = require('./user-seeds');
 const seedTrailAnimal = require('./trailanimal-seeds');
 const seedUserTrail = require('./usertrail-seeds');
 
-
 const sequelize = require('../config/connection');
-
 
 const seedAll = async () => {
 

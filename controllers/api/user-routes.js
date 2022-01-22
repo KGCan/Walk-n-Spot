@@ -12,13 +12,11 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Trail,
-
-        // through: {
-        //   model: UserTrail
-        // },
-        // include: [
-        //   model: Animal
-        // ]
+        attributes: ['id', 'trail_name',],
+        include: {
+          model: Animal,
+          attributes: ['id', 'animal_name',]
+        }
       },
     ]
   })
@@ -45,20 +43,6 @@ router.get('/:id', (req, res) => {
           attributes: ['id', 'animal_name',]
         }
       },
-      //   {
-      //     model: Comment,
-      //     attributes: ['id', 'comment_text', 'created_at'],
-      //     include: {
-      //       model: Post,
-      //       attributes: ['title']
-      //     }
-      //   },
-      //   {
-      //     model: Post,
-      //     attributes: ['title'],
-      //     through: Vote,
-      //     as: 'voted_posts'
-      //   }
     ]
   })
     .then(userData => {
@@ -73,8 +57,8 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-// POST /api/users
 
+// POST /api/users
 router.post('/',  (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
@@ -92,26 +76,33 @@ router.post('/',  (req, res) => {
     })
 });
 
+// GET /api/users/usertrail
+router.get('/usertrail', (req, res) => {
+  // create a new tag
+  UserTrail.findall({
 
-// router.post('/', async (req, res) => {
-//   try {
-//     const newUser = await User.create({
-//       username: req.body.username,
-//       email: req.body.email,
-//       password: req.body.password,
-//     });
+  })
+    .then(userData => res.json(userData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-//     req.session.save(() => {
-//       req.session.userId = newUser.id;
-//       req.session.username = newUser.username;
-//       req.session.loggedIn = true;
-
-//       res.json(newUser);
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+// POST /api/users/usertrail
+// Allows user to save trails
+router.post('/usertrail', (req, res) => {
+  // create a new tag
+  UserTrail.create({
+    user_id: req.session.user_id,
+    trail_id: req.body.trail_id
+  })
+    .then(userData => res.json(userData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 router.post('/login', (req, res) => {
   User.findOne({
@@ -123,11 +114,11 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'Incorrect email and/or password!' });
       return;
     }
-    // const validPassword = userData.checkPassword(req.body.password);
-    // if (!validPassword) {
-    //   res.status(400).json({ message: 'Incorrect email and/or password!' });
-    //   return;
-    // }
+    const validPassword = userData.checkPassword(req.body.password);
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect email and/or password!' });
+      return;
+    }
     req.session.save(() => {
       // declare session variables
       req.session.user_id = userData.id;
@@ -137,6 +128,7 @@ router.post('/login', (req, res) => {
     });
   });
 });
+
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -147,6 +139,7 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
@@ -158,6 +151,7 @@ router.put('/:id', (req, res) => {
     }
   })
 });
+
 // DELETE /api/users/1
 router.delete('/:id', (req, res) => {
   User.destroy({
@@ -177,4 +171,5 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 module.exports = router;
