@@ -2,24 +2,16 @@
 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
-      <div class="col-lg-8 col-md-10 mx-auto">
+
+      <div class="col-12 col-md-8 mx-auto">
         <h1 class="fw-light text-light">Walk'n Spot</h1>
         <p class="lead text-light">Find & share your favorite animals</p>
-        <p>
-          <div class="input-group d-flex flex-md-nowrap flex-sm-wrap col mb-3">
-            <input
-              type="text"
-              id="CityInput"
-              class="form-control w-75"
-              aria-label="Text input with dropdown button"
-              placeholder="Search your city for a trail to"
-            />
-            <select
-              name="AnimalInput"
-              class="form-select w-50"
-              aria-label="Default select example"
-            >
-              <option value="All">See Animals</option>
+        <div class="d-lg-flex">
+          <input type="text" id="CityInput" class="form-control rounded-0 mb-3" aria-label="Text input with dropdown button"
+            placeholder="Search your city for a trail to" />
+          <div class="input-group">
+            <select name="AnimalInput" class="form-select rounded-0 mb-3" aria-label="Default select example">
+              <option value="All">Find Animals</option>
               <option value="Bat">Bat</option>
               <option value="Bear">Bear</option>
               <option value="Beaver">Beaver</option>
@@ -53,11 +45,7 @@
               <option value="Woodpecker">Woodpecker</option>
 
             </select>
-            <select
-              name="AvoidInput"
-              class="form-select w-50"
-              aria-label="Default select example"
-            >
+            <select name="AvoidInput" class="form-select rounded-0 mb-3" aria-label="Default select example">
               <option value="None">Avoid Animals</option>
               <option value="Bat">Bat</option>
               <option value="Bear">Bear</option>
@@ -90,13 +78,10 @@
               <option value="Squirrel">Squirrel</option>
               <option value="Turtle">Turtle</option>
               <option value="Woodpecker">Woodpecker</option>
-
             </select>
-            <button type="button" class="SearchCity btn btn-primary"><i
-                class="fas fa-search text-light"
-              ></i></button>
+            <button type="button" class="SearchCity btn btn-primary mb-3"><i class="fas fa-search text-light rounded-0"></i></button>
           </div>
-        </p>
+        </div>
       </div>
     </div>
   </section>
