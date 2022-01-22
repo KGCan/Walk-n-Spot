@@ -5,8 +5,8 @@ var mymap;
 var first = 1; //Use to control different search without reflesh the page
 var found = 0; //counter for pins on map so can clear later
 var total_sighting = 0;
-var city_found = false;
-var animal_found = false;
+var city_found = 0;
+var animal_found = 0;
 
 var Add_Map = function (lat, lon) {
     if (first) {
@@ -38,8 +38,8 @@ var Reset = function () {
             i++;
         }
     }
-    city_found = false;
-    animal_found = false;
+    city_found = 0;
+    animal_found = 0;
     total_sighting = 0;
     found = 0; 
 };
@@ -49,7 +49,7 @@ var Reset = function () {
 var PrintMatchResult = function(json, city_input, animal_input, avoid_animal, search_type) {
   for (var i = 0; i < json.length; i++) {
     if (json[i].city_name === city_input) {
-      city_found = true;
+      city_found++;
       map.style.display = "flex";
       Add_Map(json[i].lat, json[i].lon);
 
@@ -62,7 +62,7 @@ var PrintMatchResult = function(json, city_input, animal_input, avoid_animal, se
         if(json[i].animals[j].animal_name === animal_input) {
           //if match, save sighting counts
           match_sighting = json[i].animals[j].trail_animal.sighting; 
-          animal_found = true;
+          animal_found++;
         }
         if(json[i].animals[j].animal_name === avoid_animal) {
           avoid = true;
@@ -121,8 +121,12 @@ async function searchFormHandler(event) { //When click search
       }
       
       if(found === 0 && city_found)  { //If no match trail find for the city
-        if(animal_found){ //have result if not avoid any animal
-          window.alert(`${animal_input} only spotted in the trail that also spotted ${avoid_animal}! No matching search. Here are all trails in this city.`);
+        if(animal_found > 1){ //have more than 1 trail matching result but all of them have animal to avoid (plural)
+          window.alert(`(plural)${animal_input} only spotted in the trail that also spotted (plural)${avoid_animal}! No matching search. Here are all trails in this city.`);
+          PrintMatchResult (json, city_input, animal_input, "None", "All");
+        } 
+        else if(animal_found === 1){ //have only one trail matching result but has animal want to avoid (singular)
+          window.alert(`(singular)${animal_input} only spotted in the trail that also spotted (singular)${avoid_animal}! No matching search. Here are all trails in this city.`);
           PrintMatchResult (json, city_input, animal_input, "None", "All");
         } 
         else if(animal_input != "All") {
@@ -134,7 +138,7 @@ async function searchFormHandler(event) { //When click search
           PrintMatchResult (json, city_input, animal_input, "None", "All");
         }
       } 
-      else if (!city_found) {
+      else if (city_found === 0) { //City not found in our database
         window.alert(`No city found. Please verify and search again.`);
       }
     });
