@@ -1,14 +1,14 @@
-// imp primary parts of sequelize lib
+// // imp primary parts of sequelize lib
 const { Model, DataTypes } = require('sequelize');
 
-// import db connection from config
+// // import db connection from config
 const sequelize = require('../config/connection');
 
 
-// Initialize model (table) by extending off Seq Model class
+// // Initialize model (table) by extending off Seq Model class
 class TrailAnimal extends Model { }
 
-//create Junction Model/join/Through Table
+// //create Junction Model/join/Through Table
 
 TrailAnimal.init(
   // define columns

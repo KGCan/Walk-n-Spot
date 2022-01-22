@@ -1,8 +1,8 @@
 const User = require("./User");
 const Trail = require("./Trail")
 const Animal = require("./Animal");
+const UserTrail = require("./UserTrail");
 const TrailAnimal = require("./TrailAnimal");
-const UserTrail = require("./UserTrail")
 
 
 

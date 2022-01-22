@@ -1,3 +1,5 @@
+// const searchAlert = require('./pluralize')
+
 ////////////////////// Map Section Start/////////////////////////////////////
 var map = document.getElementById("map"); //know where to display map
 var marker = []; //to store pin/marker
@@ -7,6 +9,10 @@ var found = 0; //counter for pins on map so can clear later
 var total_sighting = 0;
 var city_found = false;
 var animal_found = false;
+
+
+
+
 
 var Add_Map = function (lat, lon) {
   if (first) {
@@ -104,13 +110,17 @@ async function searchFormHandler(event) { //When click search
   })
     .then(response => response.json())
     .then(function (json) {
+      console.log(json)
 
       const city_input = document.querySelector('#CityInput').value.trim().toUpperCase();
       const animal_input = document.querySelector("select[name='AnimalInput']").value;
       const avoid_animal = document.querySelector("select[name='AvoidInput']").value;
 
+
+
+
       if (animal_input === avoid_animal) {
-        window.alert(`You can't avoid and look for the same animal! Here is all trails in the city.`);
+        window.alert(`You can't simultaneously avoid and see the same animal! You can still take a hike though! Here are all the trails in the city.`);
         PrintMatchResult(json, city_input, animal_input, "None", "All");
       }
       else if (animal_input != "All") {
@@ -122,16 +132,19 @@ async function searchFormHandler(event) { //When click search
 
       if (found === 0 && city_found) { //If no match trail find for the city
         if (animal_found) { //have result if not avoid any animal
-          window.alert(`${animal_input} only spotted in the trail that also spotted ${avoid_animal}! No matching search. Here are all trails in this city.`);
+          // window.alert(`${animal_input} only spotted in the trail that also spotted ${avoid_animal}! No matching search. Here are all trails in this city.`);
+          window.alert(`Your searched animal - ${animal_input} - was only spotted on the same trail(s) as the animal(s) you want to avoid - ${avoid_animal}! You can still take a hike though! Here are the trails in your searched city.`);
+
+
           PrintMatchResult(json, city_input, animal_input, "None", "All");
         }
         else {//no search animal on any trail
-          window.alert(`${animal_input} hasn't been spotted before on any trail! Here are all trails in this city.`);
+          window.alert(`Your searched animal - ${animal_input} -  hasn't been spotted before on any trail! You can still take a hike though! Here are the trails in your searched city.`);
           PrintMatchResult(json, city_input, animal_input, avoid_animal, "All");
         }
       }
       else if (!city_found) {
-        window.alert(`No city found. Please verify and search again.`);
+        window.alert(`Couldn't find ${city_input}. Please verify and search again.`);
       }
     });
 

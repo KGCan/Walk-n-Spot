@@ -1,41 +1,19 @@
-{{!-- {{!we need variables here}}
 
-{{#each trailInfoArr as |trail|}}
-
-  <div class="result-card-div mb-3">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img
-          src={{trail_img}}
-          class="result-card-img img-fluid rounded-start"
-          alt="Scenery from along the trail"
-        />
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h2 class="card-title mb-3">{{trail_name}}</h2>
-
-          <p class="card-text text-muted card-animal-count">A total of 9 animals
-            of all types have been seen on this trail.</p>
-          <a
-            class="card-trail-url me-2 btn"
-            title="Learn more at All Trails"
-            href={{trail_info}}
-            target="_blank"
-          >Learn more about this trail!</a>
-          //
-          <button
-            id={{id}}
-            class="trail-save-btn ms-2 text-nowrap btn btn-save"
-          >Save This Trail</button></div>
-        //
-      </div>
-      //
+<div class="card mb-3" >
+  <div class="row g-0">
+    <div class="col-md-4 ">
+      <img src="{{trail_img}}" class="img-fluid rounded-start verticalAlign" alt="...">
     </div>
-    //
-  </div>`
-{{/each}}
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="{{trail_id}}" "card-title" id="{{trail_id}}">{{trails}} </h5>
+        <p> See more details: {{link trail_info trail_info}}</p>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<script src="../"
-<script src="../javascript/save-button.js"></script> --}}
+
+
