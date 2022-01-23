@@ -55,7 +55,7 @@ To use our app please visit the deployed application link below!
 
 - Sam Place
 - Michael Li
-- Melanie Dubberly
+- Melanie Dubberley
 - Maggie Lai
 - Kirsten Canady
 
