@@ -1,20 +1,45 @@
 ![hero-deer-2](https://user-images.githubusercontent.com/88002224/150062090-ab6168c8-2704-4885-9f96-d44783ffa76d.jpg)
 
-# Walk'n Spot
+# **Walk'n Spot**
 
-Have you ever wanted to go for a hike and see some animals? Try Walk ‘n Spot! 
-Search for trails in your city and narrow down the list by the animal you would like to see to get a list of trails with sightings of that animal. 
-Did you see a new animal on your hike? Log into your account to add your own sightings and save your favorite trails. 
+## Walk-Through Video Link
+
+Watch on Screencastify: [Walkn Spot Walk Through](https://watch.screencastify.com/v/0NQFwBTmteqm9fwoLsqj)
+
+## Intro
+
+Have you ever wanted to go for a hike and see some animals? Try Walk‘n Spot!
+Search for trails in your city and narrow the list by animals you would like to see or avoid, then get a list of trails.
+Did you see a new animal on your hike? Log into your account to add your own sightings and save your favorite trails.
+&nbsp;
+
+## Table of Contents
+
+---
+
+- [Concept](#concept)
+- [Motivation](#motivation)
+- [Goals](#goals)
+- [Technologies](#technologies)
+- [Usage](#usage)
+- [Future](#future)
+- [Team](#team)
+- [References](#references)
+- [License](#license)
+
+&nbsp;
 
 ## Concept
 
-Walk'n Spot is an interactive app that allows the user to search for a list of trails by city and narrow the list down by types of animals seen on that trail.  The user is able to create an account to log in and save a list of trails as well as log their own animal sightings to specific trails.
+Walk'n Spot is an interactive app that allows the user to search for a list of trails by city and narrow the list down by types of animals seen on that trail. The user is able to create an account to log in and save a list of trails as well as log their own animal sightings to specific trails.
+&nbsp;
 
 ## Motivation
 
-As a team of early developers that love to hike and animal watch in our spare time, we decided to create an app where we could not only search for hiking trails but also see our favorite animals on that trail.  We wanted a one stop shop where we as users could upload our own animal sightings and eventually pictures of the animals we saw on our hikes.
+As a team of early developers that love to hike and animal watch in our spare time, we decided to create an app where we could not only search for hiking trails but also see our favorite animals on that trail. We wanted a one stop shop where we as users could upload our own animal sightings and eventually pictures of the animals we saw on our hikes.
+&nbsp;
 
-## Project Goals
+## Goals
 
 - Use Node.js and Express.js to create a RESTful API.
 - Use Handlebars.js as the templating engine.
@@ -30,8 +55,9 @@ As a team of early developers that love to hike and animal watch in our spare ti
 - Protect API keys and sensitive information with environment variables.
 - Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class/id naming conventions, indentation, quality comments, etc.).
 - Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+  &nbsp;
 
-## Technologies Used
+## Technologies
 
 - Node
 - Express with Sessions
@@ -41,17 +67,50 @@ As a team of early developers that love to hike and animal watch in our spare ti
 - Dotenv
 - Heroku
 - Bootstrap
-- Validator (Maybe)
+- JSHint
 
-## New to our team Technology/Package/Library Used:
+  &nbsp;
 
-- JSHint https://jshint.com/about/
+## Usage
 
-## Instructions for use
+Visit the links below!
 
-To use our app please visit the deployed application link below!
+Please note:
 
-## Contributors
+- This is an MVP with three cities seeded
+  - Auburn
+  - Folsom
+  - Sacramento
+- After Login, navigate to Dashboard using button
+- If incorrect Login credentials are used, there is not an aleart; please refresh the page and try again
+
+
+Github: [Github Repo](https://github.com/KGCan/Walk-n-Spot.git)
+
+Heroku: [Heroku Deployed Site](https://walk-n-spot.herokuapp.com/)
+
+&nbsp;
+
+## Future
+
+Some enhancements and ideas for the future
+
+- Auto redirect to Dashboard after Login
+- Alert and auto refresh if incorrect Login credentials are used
+- Expand City database
+- 3rd party API for other data, like trails etc
+- Login credentials for Admin
+- Expanded Animal database to include characteristics like color and breed
+- User interactivity: Add posts own trails/routes, pics, comments, votes
+- Log Animal Sightings with option for User to enter date first saw the animal
+- Use Check List instead of drop-down for Animal Search list
+- Partner with Animal Conservation Organizations to monitor Animal Population locations and numbers over time
+
+&nbsp;
+
+---
+
+## Team
 
 - Sam Place
 - Michael Li
@@ -59,17 +118,9 @@ To use our app please visit the deployed application link below!
 - Maggie Lai
 - Kirsten Canady
 
-## GitHub Repository URL
+  &nbsp;
 
-- https://github.com/KGCan/Walk-n-Spot.git
-
-## Link to deployed application using Heroku
-
-- heroku...
-
-=======
-
-# References
+## References
 
 #### Sites We Used or Were Inspired By
 
@@ -98,3 +149,32 @@ To use our app please visit the deployed application link below!
 - https://www.pexels.com/license/
 - https://evanhahn.com/when-stringify-doesnt-return-a-string
 - https://www.delftstack.com/howto/javascript/check-value-is-object-in-javascript/#:~:text=object%20or%20not.-,Use%20the%20instanceof%20Function%20to%20Check%20Whether%20a%20Value%20Is,is%20of%20an%20object%20type.
+
+### **License**
+
+---
+
+Copyright (c)
+
+- Sam Place
+- Michael Li
+- Melanie Dubberley
+- Maggie Lai
+- Kirsten Canady
+
+Licensed under the [MIT](https://choosealicense.com/licenses) license.
+<img src="https://img.shields.io/badge/license-MIT-blue.svg">
+&nbsp;
+
+##### Go Back
+
+- [Concept](#concept)
+- [Motivation](#motivation)
+- [Goals](#goals)
+- [Technologies](#technologies)
+- [Usage](#usage)
+- [Future](#future)
+- [Team](#team)
+- [References](#references)
+- [License](#license)
+

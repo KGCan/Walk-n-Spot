@@ -68,9 +68,14 @@ h5 {
   color: var(--color1);
 }
 
-.form-signin form div label {
+.form-signin form div label,
+.drop-title {
   /* color: grey; */
   color: var(--color1);
+}
+
+.input-size {
+  width: 300px !important;
 }
 
 .result-card-div {
@@ -122,6 +127,32 @@ h5 {
 
 .sightingTitle {
   font-size: 25px;
+}
+
+.btn-pallet-d1 {
+  background-color: #F1E9DC;
+}
+
+.btn-pallet-d2 {
+  background-color: #B69779;
+}
+
+.btn-primary {
+  background-color:#5C8E2B;
+  border-color:#5C8E2B;
+}
+
+.btn-primary:hover {
+  background-color:#9ACD32;
+  border-color:#5C8E2B;
+}
+
+a {
+  color:#5C8E2B;
+}
+
+a:hover {
+  color:#9ACD32;
 }
 
 @media screen and (min-width: 488px) {
