@@ -8,19 +8,23 @@
       <div class="card-body">
         <h5 class="{{trail_id}}" "card-title" id="{{trail_id}}">{{trails}} </h5>
         <p> See more details: {{link trail_info trail_info}}</p>
-          <row class="d-flex">
+        <p>Total number of sightings on this trail by animal:</p>
+          <div class="row">
             {{#each animal_name}}
-              <button type="button" class="btn btn-sml btn-success position-relative rounded-pill">
+            <div class="col-auto my-2 px-2">
+              <button type="button" class="btn btn-sml btn-light position-relative rounded-pill py-0" style="font-size:.7rem;">
                 {{.}}
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
                 {{lookup ../sighting @index}}
                 </span>
+                </button>
+            </div>
             {{/each}}
               
               <span class="visually-hidden">animal sightings</span>
             </span>
           </button>
-          </row>
+          </div>
         </div>
       </div>
     </div>

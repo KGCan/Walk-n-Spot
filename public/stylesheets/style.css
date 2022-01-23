@@ -129,6 +129,10 @@ h5 {
   font-size: 25px;
 }
 
+.btn-light {
+  background-color: #e7e6e6;
+}
+
 @media screen and (min-width: 488px) {
   .result-card-img {
     width: 100%;
