@@ -32,16 +32,12 @@ router.get('/', (req, res) => {
                     console.log('----------------------------------------Here is the my data------------------------------------');
                     // console.log(trailData[0].dataValues.trails[i]);
 
-                    var sighting_temp = {};
-                    var animal_name_temp = {};
+                    var sighting_temp = [];
+                    var animal_name_temp = [];
 
                     for(var j = 0; j < trailData[0].dataValues.trails[i].animals.length; j++) {
-                        sighting_temp[i] = trailData[0].dataValues.trails[i].animals[j].trail_animal.sighting;
-                        animal_name_temp[i] = trailData[0].dataValues.trails[i].animals[j].animal_name;
-                    }
-                    var count = {
-                        animal_name1: animal_name_temp,
-                        sighting1: sighting_temp
+                        sighting_temp.push(trailData[0].dataValues.trails[i].animals[j].trail_animal.sighting);
+                        animal_name_temp.push(trailData[0].dataValues.trails[i].animals[j].animal_name);
                     }
 
                     const trail = {
@@ -52,17 +48,15 @@ router.get('/', (req, res) => {
                         trail_info: trailData[0].dataValues.trails[i].trail_info,
                         animal_name: animal_name_temp,//[deer, bat, dog, sighting[]]
                         sighting: sighting_temp,//[10, 2, 3]
-                        counts: count
                     }
 
                     trailArray.push(trail)
                 }
             }
             console.log(trailArray);
-            console.log("here is count......." + count);
+
             res.render('dashboard', {
                 trailArray,
-                count, 
                 loggedIn: req.session.loggedIn
             });
         })
