@@ -236,6 +236,9 @@ function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
   trailUrla.setAttribute("target", "_blank")
   searchCardBody.appendChild(trailUrla);
 
+  var dashboardExists = document.getElementById("dashboard");
+
+  if (dashboardExists) {      
   // Result Save Trail Link Button
   var saveTrailBtn = document.createElement("button");
   var saveText = document.createTextNode("Save This Trail");
@@ -246,7 +249,7 @@ function renderSearchCards(trailImg, trail_name, trailUrl, trailID) {
     saveTrail(trailID, event)
   })
   searchCardBody.appendChild(saveTrailBtn);
-
+  }
 }
 
 document.querySelector('.SearchCity').addEventListener('click', searchFormHandler);

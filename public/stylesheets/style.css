@@ -129,6 +129,32 @@ h5 {
   font-size: 25px;
 }
 
+.btn-pallet-d1 {
+  background-color: #F1E9DC;
+}
+
+.btn-pallet-d2 {
+  background-color: #B69779;
+}
+
+.btn-primary {
+  background-color:#5C8E2B;
+  border-color:#5C8E2B;
+}
+
+.btn-primary:hover {
+  background-color:#9ACD32;
+  border-color:#5C8E2B;
+}
+
+a {
+  color:#5C8E2B;
+}
+
+a:hover {
+  color:#9ACD32;
+}
+
 @media screen and (min-width: 488px) {
   .result-card-img {
     width: 100%;

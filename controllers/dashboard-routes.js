@@ -28,28 +28,33 @@ router.get('/', (req, res) => {
             if (trailData[0].dataValues.trails[0]== null) {
                 // console.log(trailData)
             } else {
-                for (i=0; i<trailData[0].dataValues.trails.length; i++) {
+                for (var i=0; i<trailData[0].dataValues.trails.length; i++) {
                     console.log('----------------------------------------Here is the my data------------------------------------');
                     // console.log(trailData[0].dataValues.trails[i]);
 
-                    var animal_sighting = [];
+                    var sighting_temp = [];
+                    var animal_name_temp = [];
 
                     for(var j = 0; j < trailData[0].dataValues.trails[i].animals.length; j++) {
-                        animal_sighting.push(trailData[0].dataValues.trails[i].animals[j].trail_animal.sighting + " people spotted " + trailData[0].dataValues.trails[i].animals[j].animal_name);
+                        sighting_temp.push(trailData[0].dataValues.trails[i].animals[j].trail_animal.sighting);
+                        animal_name_temp.push(trailData[0].dataValues.trails[i].animals[j].animal_name);
                     }
+
                     const trail = {
                         user_id: trailData[0].dataValues.id,
                         trails: trailData[0].dataValues.trails[i].trail_name,
                         trail_id: trailData[0].dataValues.trails[i].id,
                         trail_img: trailData[0].dataValues.trails[i].trail_img,
                         trail_info: trailData[0].dataValues.trails[i].trail_info,
-                        sighting: animal_sighting
+                        animal_name: animal_name_temp,//[deer, bat, dog, sighting[]]
+                        sighting: sighting_temp,//[10, 2, 3]
                     }
 
                     trailArray.push(trail)
                 }
             }
             console.log(trailArray);
+
             res.render('dashboard', {
                 trailArray,
                 loggedIn: req.session.loggedIn
