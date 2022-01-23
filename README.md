@@ -113,7 +113,7 @@ Some enhancements and ideas for the future
 
 - Sam Place
 - Michael Li
-- Melanie Dubberly
+- Melanie Dubberley
 - Maggie Lai
 - Kirsten Canady
 
