@@ -84,6 +84,7 @@ Please note:
 - After Login, navigate to Dashboard using button
 - If incorrect Login credentials are used, there is not an aleart; please refresh the page and try again
 
+
 Github: [Github Repo](https://github.com/KGCan/Walk-n-Spot.git)
 
 Heroku: [Heroku Deployed Site](https://walk-n-spot.herokuapp.com/)
@@ -157,7 +158,7 @@ Copyright (c)
 
 - Sam Place
 - Michael Li
-- Melanie Dubberly
+- Melanie Dubberley
 - Maggie Lai
 - Kirsten Canady
 
@@ -176,3 +177,4 @@ Licensed under the [MIT](https://choosealicense.com/licenses) license.
 - [Team](#team)
 - [References](#references)
 - [License](#license)
+
