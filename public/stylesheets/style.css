@@ -147,6 +147,14 @@ h5 {
   border-color:#5C8E2B;
 }
 
+a {
+  color:#5C8E2B;
+}
+
+a:hover {
+  color:#9ACD32;
+}
+
 @media screen and (min-width: 488px) {
   .result-card-img {
     width: 100%;
