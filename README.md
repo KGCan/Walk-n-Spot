@@ -84,10 +84,8 @@ Please note:
 - After Login, navigate to Dashboard using button
 - If incorrect Login credentials are used, there is not an aleart; please refresh the page and try again
 
-
-Github: [Github Repo](https://github.com/KGCan/Walk-n-Spot.git)
-
-Heroku: [Heroku Deployed Site](https://walk-n-spot.herokuapp.com/)
+[Walk 'n Spot Github Repo](https://github.com/KGCan/Walk-n-Spot.git)
+[Walk 'n Spot on Heroku](https://walk-n-spot.herokuapp.com/)
 
 &nbsp;
 
