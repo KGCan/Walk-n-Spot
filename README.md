@@ -31,7 +31,7 @@ Did you see a new animal on your hike? Log into your account to add your own sig
 
 ## Concept
 
-Walk'n Spot is an interactive app that allows the user to search for a list of trails by city and narrow the list down by types of animals seen on that trail. The user is able to create an account to log in and save a list of trails as well as log their own animal sightings to specific trails.
+Walk'n Spot is an interactive app that allows the user to search for a list of trails by city and narrow the list down by types of animals seen on that trail or by animals to avoid. The user is able to create an account to log in and save a list of trails as well as log their own animal sightings to specific trails.
 &nbsp;
 
 ## Motivation
@@ -45,16 +45,15 @@ As a team of early developers that love to hike and animal watch in our spare ti
 - Use Handlebars.js as the templating engine.
 - Use MySQL and the Sequelize ORM for the database.
 - Have both GET and POST routes for retrieving and adding new data.
-- Be deployed using Heroku (with data).
-- Use at least one new library, package, or technology that we haven’t discussed.
+- Deploy using Heroku (with data).
+- Use at least one new library, package, or technology.
 - Have a polished UI.
 - Be responsive.
 - Be interactive (i.e., accept and respond to user input).
 - Have a folder structure that meets the MVC paradigm.
 - Include authentication (express-session and cookies).
 - Protect API keys and sensitive information with environment variables.
-- Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class/id naming conventions, indentation, quality comments, etc.).
-- Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+- Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class/id naming conventions, indentation, quality comments, etc.)
   &nbsp;
 
 ## Technologies
@@ -81,13 +80,13 @@ Please note:
   - Auburn
   - Folsom
   - Sacramento
+- Animals Are also seeded
 - After Login, navigate to Dashboard using button
 - If incorrect Login credentials are used, there is not an aleart; please refresh the page and try again
 
 Github: [Walk 'n Spot Github Repo](https://github.com/KGCan/Walk-n-Spot.git)
 
 Heroku: [Walk 'n Spot on Heroku](https://walk-n-spot.herokuapp.com/)
-
 
 &nbsp;
 
@@ -177,4 +176,3 @@ Licensed under the [MIT](https://choosealicense.com/licenses) license.
 - [Team](#team)
 - [References](#references)
 - [License](#license)
-
