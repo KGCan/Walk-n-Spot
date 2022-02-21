@@ -82,7 +82,7 @@ Please note:
   - Sacramento
 - Animals Are also seeded
 - After Login, navigate to Dashboard using button
-- If incorrect Login credentials are used, there is not an aleart; please refresh the page and try again
+- If incorrect Login credentials are used, there is not an alert; please refresh the page and try again
 
 Github: [Walk 'n Spot Github Repo](https://github.com/KGCan/Walk-n-Spot.git)
 
